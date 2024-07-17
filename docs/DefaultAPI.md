@@ -34,7 +34,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/diverged/openalex-go-openapi31"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -106,7 +106,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/diverged/openalex-go-openapi31"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -186,7 +186,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/diverged/openalex-go-openapi31"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -266,7 +266,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/diverged/openalex-go-openapi31"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -346,7 +346,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/diverged/openalex-go-openapi31"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -426,7 +426,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/diverged/openalex-go-openapi31"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -506,7 +506,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/diverged/openalex-go-openapi31"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -586,7 +586,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/diverged/openalex-go-openapi31"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -666,7 +666,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/diverged/openalex-go-openapi31"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
@@ -746,7 +746,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/diverged/openalex-go-openapi31"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
 func main() {
