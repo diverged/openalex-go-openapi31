@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **Topics** | Pointer to [**[]ListWorks200ResponseResultsInnerTopicsInner**](ListWorks200ResponseResultsInnerTopicsInner.md) | The top ranked Topics for this work. | [optional] 
 **Type** | Pointer to **string** | The type of the work. | [optional] 
 **TypeCrossref** | Pointer to **string** | Legacy type information, using Crossref&#39;s \&quot;type\&quot; controlled vocabulary. | [optional] 
-**UpdatedDate** | Pointer to **time.Time** | The last time anything in this Work object changed, including counts, formatted as an ISO 8601 date-time. This date is updated for any change at all, including increases in various counts. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 
 ## Methods
 
@@ -1171,20 +1171,20 @@ HasTypeCrossref returns a boolean if a field has been set.
 
 ### GetUpdatedDate
 
-`func (o *ListWorks200ResponseResultsInner) GetUpdatedDate() time.Time`
+`func (o *ListWorks200ResponseResultsInner) GetUpdatedDate() string`
 
 GetUpdatedDate returns the UpdatedDate field if non-nil, zero value otherwise.
 
 ### GetUpdatedDateOk
 
-`func (o *ListWorks200ResponseResultsInner) GetUpdatedDateOk() (*time.Time, bool)`
+`func (o *ListWorks200ResponseResultsInner) GetUpdatedDateOk() (*string, bool)`
 
 GetUpdatedDateOk returns a tuple with the UpdatedDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedDate
 
-`func (o *ListWorks200ResponseResultsInner) SetUpdatedDate(v time.Time)`
+`func (o *ListWorks200ResponseResultsInner) SetUpdatedDate(v string)`
 
 SetUpdatedDate sets UpdatedDate field to given value.
 

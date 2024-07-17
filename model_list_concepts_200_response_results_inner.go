@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the ListConcepts200ResponseResultsInner type satisfies the MappedNullable interface at compile time
@@ -48,8 +47,8 @@ type ListConcepts200ResponseResultsInner struct {
 	CountsByYear []ListAuthors200ResponseResultsInnerCountsByYearInner `json:"counts_by_year,omitempty"`
 	// An URL that will get you a list of all the works tagged with this concept.
 	WorksApiUrl *string `json:"works_api_url,omitempty"`
-	// The last time anything in this concept object changed, expressed as an ISO 8601 date string.
-	UpdatedDate *time.Time `json:"updated_date,omitempty"`
+	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
+	UpdatedDate *string `json:"updated_date,omitempty"`
 	// The date this Concept object was created in the OpenAlex dataset, expressed as an ISO 8601 date string.
 	CreatedDate *string `json:"created_date,omitempty"`
 	SummaryStats *ListConcepts200ResponseResultsInnerSummaryStats `json:"summary_stats,omitempty"`
@@ -553,9 +552,9 @@ func (o *ListConcepts200ResponseResultsInner) SetWorksApiUrl(v string) {
 }
 
 // GetUpdatedDate returns the UpdatedDate field value if set, zero value otherwise.
-func (o *ListConcepts200ResponseResultsInner) GetUpdatedDate() time.Time {
+func (o *ListConcepts200ResponseResultsInner) GetUpdatedDate() string {
 	if o == nil || IsNil(o.UpdatedDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.UpdatedDate
@@ -563,7 +562,7 @@ func (o *ListConcepts200ResponseResultsInner) GetUpdatedDate() time.Time {
 
 // GetUpdatedDateOk returns a tuple with the UpdatedDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListConcepts200ResponseResultsInner) GetUpdatedDateOk() (*time.Time, bool) {
+func (o *ListConcepts200ResponseResultsInner) GetUpdatedDateOk() (*string, bool) {
 	if o == nil || IsNil(o.UpdatedDate) {
 		return nil, false
 	}
@@ -579,8 +578,8 @@ func (o *ListConcepts200ResponseResultsInner) HasUpdatedDate() bool {
 	return false
 }
 
-// SetUpdatedDate gets a reference to the given time.Time and assigns it to the UpdatedDate field.
-func (o *ListConcepts200ResponseResultsInner) SetUpdatedDate(v time.Time) {
+// SetUpdatedDate gets a reference to the given string and assigns it to the UpdatedDate field.
+func (o *ListConcepts200ResponseResultsInner) SetUpdatedDate(v string) {
 	o.UpdatedDate = &v
 }
 

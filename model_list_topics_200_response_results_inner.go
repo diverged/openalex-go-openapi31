@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 	"bytes"
 	"fmt"
 )
@@ -38,8 +37,8 @@ type ListTopics200ResponseResultsInner struct {
 	Keywords []string `json:"keywords,omitempty"`
 	// The number of works tagged with this topic.
 	WorksCount *int32 `json:"works_count,omitempty"`
-	// The last time anything in this topic object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts.
-	UpdatedDate *time.Time `json:"updated_date,omitempty"`
+	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
+	UpdatedDate *string `json:"updated_date,omitempty"`
 	// The number of citations to works tagged with this topic.
 	CitedByCount *int32 `json:"cited_by_count,omitempty"`
 	// URL to retrieve works tagged with this topic.
@@ -374,9 +373,9 @@ func (o *ListTopics200ResponseResultsInner) SetWorksCount(v int32) {
 }
 
 // GetUpdatedDate returns the UpdatedDate field value if set, zero value otherwise.
-func (o *ListTopics200ResponseResultsInner) GetUpdatedDate() time.Time {
+func (o *ListTopics200ResponseResultsInner) GetUpdatedDate() string {
 	if o == nil || IsNil(o.UpdatedDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.UpdatedDate
@@ -384,7 +383,7 @@ func (o *ListTopics200ResponseResultsInner) GetUpdatedDate() time.Time {
 
 // GetUpdatedDateOk returns a tuple with the UpdatedDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListTopics200ResponseResultsInner) GetUpdatedDateOk() (*time.Time, bool) {
+func (o *ListTopics200ResponseResultsInner) GetUpdatedDateOk() (*string, bool) {
 	if o == nil || IsNil(o.UpdatedDate) {
 		return nil, false
 	}
@@ -400,8 +399,8 @@ func (o *ListTopics200ResponseResultsInner) HasUpdatedDate() bool {
 	return false
 }
 
-// SetUpdatedDate gets a reference to the given time.Time and assigns it to the UpdatedDate field.
-func (o *ListTopics200ResponseResultsInner) SetUpdatedDate(v time.Time) {
+// SetUpdatedDate gets a reference to the given string and assigns it to the UpdatedDate field.
+func (o *ListTopics200ResponseResultsInner) SetUpdatedDate(v string) {
 	o.UpdatedDate = &v
 }
 

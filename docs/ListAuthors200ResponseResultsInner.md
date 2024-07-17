@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **LastKnownInstitutions** | Pointer to [**[]ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution**](ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution.md) | This author&#39;s last known institutional affiliations. | [optional] 
 **Orcid** | Pointer to **string** | The ORCID ID for this author. | [optional] 
 **SummaryStats** | Pointer to [**ListAuthors200ResponseResultsInnerSummaryStats**](ListAuthors200ResponseResultsInnerSummaryStats.md) |  | [optional] 
-**UpdatedDate** | Pointer to **time.Time** | The last time anything in this author object changed. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksApiUrl** | Pointer to **string** | A URL that will get you a list of all this author&#39;s works. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of Works this author has created. | [optional] 
 **XConcepts** | Pointer to [**[]ListAuthors200ResponseResultsInnerXConceptsInner**](ListAuthors200ResponseResultsInnerXConceptsInner.md) | The concepts most frequently applied to works created by this author (deprecated). | [optional] 
@@ -342,20 +342,20 @@ HasSummaryStats returns a boolean if a field has been set.
 
 ### GetUpdatedDate
 
-`func (o *ListAuthors200ResponseResultsInner) GetUpdatedDate() time.Time`
+`func (o *ListAuthors200ResponseResultsInner) GetUpdatedDate() string`
 
 GetUpdatedDate returns the UpdatedDate field if non-nil, zero value otherwise.
 
 ### GetUpdatedDateOk
 
-`func (o *ListAuthors200ResponseResultsInner) GetUpdatedDateOk() (*time.Time, bool)`
+`func (o *ListAuthors200ResponseResultsInner) GetUpdatedDateOk() (*string, bool)`
 
 GetUpdatedDateOk returns a tuple with the UpdatedDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedDate
 
-`func (o *ListAuthors200ResponseResultsInner) SetUpdatedDate(v time.Time)`
+`func (o *ListAuthors200ResponseResultsInner) SetUpdatedDate(v string)`
 
 SetUpdatedDate sets UpdatedDate field to given value.
 

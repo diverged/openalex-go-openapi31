@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Roles** | Pointer to [**[]ListFunders200ResponseResultsInnerRolesInner**](ListFunders200ResponseResultsInnerRolesInner.md) | List of role objects, which include the role, the id, and the works_count. | [optional] 
 **SourcesApiUrl** | Pointer to **string** | An URL that will get you a list of all the sources published by this publisher. | [optional] 
 **SummaryStats** | Pointer to [**ListPublishers200ResponseResultsInnerSummaryStats**](ListPublishers200ResponseResultsInnerSummaryStats.md) |  | [optional] 
-**UpdatedDate** | Pointer to **time.Time** | The last time anything in this publisher object changed, expressed as an ISO 8601 date string. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of works published by this publisher. | [optional] 
 
 ## Methods
@@ -444,20 +444,20 @@ HasSummaryStats returns a boolean if a field has been set.
 
 ### GetUpdatedDate
 
-`func (o *ListPublishers200ResponseResultsInner) GetUpdatedDate() time.Time`
+`func (o *ListPublishers200ResponseResultsInner) GetUpdatedDate() string`
 
 GetUpdatedDate returns the UpdatedDate field if non-nil, zero value otherwise.
 
 ### GetUpdatedDateOk
 
-`func (o *ListPublishers200ResponseResultsInner) GetUpdatedDateOk() (*time.Time, bool)`
+`func (o *ListPublishers200ResponseResultsInner) GetUpdatedDateOk() (*string, bool)`
 
 GetUpdatedDateOk returns a tuple with the UpdatedDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedDate
 
-`func (o *ListPublishers200ResponseResultsInner) SetUpdatedDate(v time.Time)`
+`func (o *ListPublishers200ResponseResultsInner) SetUpdatedDate(v string)`
 
 SetUpdatedDate sets UpdatedDate field to given value.
 

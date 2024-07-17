@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **Societies** | Pointer to [**[]ListSources200ResponseResultsInnerSocietiesInner**](ListSources200ResponseResultsInnerSocietiesInner.md) | Societies on whose behalf the source is published and maintained, obtained from our crowdsourced list. | [optional] 
 **SummaryStats** | Pointer to [**ListSources200ResponseResultsInnerSummaryStats**](ListSources200ResponseResultsInnerSummaryStats.md) |  | [optional] 
 **Type** | Pointer to **string** | The type of source. | [optional] 
-**UpdatedDate** | Pointer to **time.Time** | The last time anything in this Source object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksApiUrl** | Pointer to **string** | A URL that will get you a list of all this source&#39;s Works. We express this as an API URL (instead of just listing the works themselves) because sometimes a source&#39;s publication list is too long to reasonably fit into a single Source object. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of Works this source hosts. | [optional] 
 **XConcepts** | Pointer to [**[]ListConcepts200ResponseResultsInnerAncestorsInner**](ListConcepts200ResponseResultsInnerAncestorsInner.md) | The Concepts most frequently applied to works hosted by this source. Each is represented as a dehydrated Concept object, with one additional attribute - score (Float) The strength of association between this source and the listed concept, from 0-100. | [optional] 
@@ -602,20 +602,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetUpdatedDate
 
-`func (o *ListSources200ResponseResultsInner) GetUpdatedDate() time.Time`
+`func (o *ListSources200ResponseResultsInner) GetUpdatedDate() string`
 
 GetUpdatedDate returns the UpdatedDate field if non-nil, zero value otherwise.
 
 ### GetUpdatedDateOk
 
-`func (o *ListSources200ResponseResultsInner) GetUpdatedDateOk() (*time.Time, bool)`
+`func (o *ListSources200ResponseResultsInner) GetUpdatedDateOk() (*string, bool)`
 
 GetUpdatedDateOk returns a tuple with the UpdatedDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedDate
 
-`func (o *ListSources200ResponseResultsInner) SetUpdatedDate(v time.Time)`
+`func (o *ListSources200ResponseResultsInner) SetUpdatedDate(v string)`
 
 SetUpdatedDate sets UpdatedDate field to given value.
 

@@ -2378,9 +2378,10 @@ components:
         summary_stats:
           $ref: '#/components/schemas/listAuthors_200_response_results_inner_summary_stats'
         updated_date:
-          description: The last time anything in this author object changed.
+          description: The last time anything in this author object changed. Formatted
+            as ISO 8601 extended format without time zone designator.
           example: 2024-07-13T06:17:17.932040
-          format: date-time
+          format: custom_date_time
           type: string
         works_api_url:
           description: A URL that will get you a list of all this author's works.
@@ -2782,7 +2783,7 @@ components:
           wikipedia: https://en.wikipedia.org/wiki/Altmetrics
           mag: 2778407487
         id: https://openalex.org/C2778407487
-        updated_date: 2021-12-25T14:04:30.578837
+        updated_date: 2024-07-13T06:17:17.932040
         created_date: 2017-08-08
         works_count: 3078
         international:
@@ -2875,10 +2876,10 @@ components:
           example: https://api.openalex.org/works?filter=concept.id:C2778407487
           type: string
         updated_date:
-          description: "The last time anything in this concept object changed, expressed\
-            \ as an ISO 8601 date string."
-          example: 2021-12-25T14:04:30.578837
-          format: date-time
+          description: The last time anything in this author object changed. Formatted
+            as ISO 8601 extended format without time zone designator.
+          example: 2024-07-13T06:17:17.932040
+          format: custom_date_time
           type: string
         created_date:
           description: "The date this Concept object was created in the OpenAlex dataset,\
@@ -2939,7 +2940,7 @@ components:
             wikipedia: https://en.wikipedia.org/wiki/Altmetrics
             mag: 2778407487
           id: https://openalex.org/C2778407487
-          updated_date: 2021-12-25T14:04:30.578837
+          updated_date: 2024-07-13T06:17:17.932040
           created_date: 2017-08-08
           works_count: 3078
           international:
@@ -2992,7 +2993,7 @@ components:
             wikipedia: https://en.wikipedia.org/wiki/Altmetrics
             mag: 2778407487
           id: https://openalex.org/C2778407487
-          updated_date: 2021-12-25T14:04:30.578837
+          updated_date: 2024-07-13T06:17:17.932040
           created_date: 2017-08-08
           works_count: 3078
           international:
@@ -3115,7 +3116,7 @@ components:
           doi: https://doi.org/10.13039/100000002
         created_date: 2023-02-13
         id: https://openalex.org/F4320332161
-        updated_date: 2023-04-21T16:54:19.012138
+        updated_date: 2024-07-13T06:17:17.932040
         works_count: 260210
       properties:
         alternate_titles:
@@ -3206,10 +3207,10 @@ components:
         summary_stats:
           $ref: '#/components/schemas/listFunders_200_response_results_inner_summary_stats'
         updated_date:
-          description: "The last time anything in this funder object changed, expressed\
-            \ as an ISO 8601 date string."
-          example: 2023-04-21T16:54:19.012138
-          format: date-time
+          description: The last time anything in this author object changed. Formatted
+            as ISO 8601 extended format without time zone designator.
+          example: 2024-07-13T06:17:17.932040
+          format: custom_date_time
           type: string
         works_count:
           description: The number of works linked to this funder.
@@ -3274,7 +3275,7 @@ components:
             doi: https://doi.org/10.13039/100000002
           created_date: 2023-02-13
           id: https://openalex.org/F4320332161
-          updated_date: 2023-04-21T16:54:19.012138
+          updated_date: 2024-07-13T06:17:17.932040
           works_count: 260210
         - grants_count: 7109
           cited_by_count: 7823467
@@ -3319,7 +3320,7 @@ components:
             doi: https://doi.org/10.13039/100000002
           created_date: 2023-02-13
           id: https://openalex.org/F4320332161
-          updated_date: 2023-04-21T16:54:19.012138
+          updated_date: 2024-07-13T06:17:17.932040
           works_count: 260210
       properties:
         meta:
@@ -3515,7 +3516,7 @@ components:
           wikidata: https://www.wikidata.org/wiki/Q192334
           mag: 114027177
         created_date: 2017-08-08
-        updated_date: 2022-01-02T00:27:23.088909
+        updated_date: 2024-07-13T06:17:17.932040
         works_count: 202704
       properties:
         associated_institutions:
@@ -3637,9 +3638,10 @@ components:
           example: education
           type: string
         updated_date:
-          description: The last time anything in this Institution changed.
-          example: 2022-01-02T00:27:23.088909
-          format: date-time
+          description: The last time anything in this author object changed. Formatted
+            as ISO 8601 extended format without time zone designator.
+          example: 2024-07-13T06:17:17.932040
+          format: custom_date_time
           type: string
         works_api_url:
           description: A URL that will get you a list of all the Works affiliated
@@ -3760,7 +3762,7 @@ components:
             wikidata: https://www.wikidata.org/wiki/Q192334
             mag: 114027177
           created_date: 2017-08-08
-          updated_date: 2022-01-02T00:27:23.088909
+          updated_date: 2024-07-13T06:17:17.932040
           works_count: 202704
         - lineage:
           - lineage
@@ -3849,7 +3851,7 @@ components:
             wikidata: https://www.wikidata.org/wiki/Q192334
             mag: 114027177
           created_date: 2017-08-08
-          updated_date: 2022-01-02T00:27:23.088909
+          updated_date: 2024-07-13T06:17:17.932040
           works_count: 202704
       properties:
         meta:
@@ -4016,7 +4018,7 @@ components:
           wikidata: https://www.wikidata.org/entity/Q746413
         created_date: 2017-08-08
         id: https://openalex.org/P4310320990
-        updated_date: 2021-12-25T14:04:30.578837
+        updated_date: 2024-07-13T06:17:17.932040
         works_count: 13789818
         hierarchy_level: 1
       properties:
@@ -4129,10 +4131,10 @@ components:
         summary_stats:
           $ref: '#/components/schemas/listPublishers_200_response_results_inner_summary_stats'
         updated_date:
-          description: "The last time anything in this publisher object changed, expressed\
-            \ as an ISO 8601 date string."
-          example: 2021-12-25T14:04:30.578837
-          format: date-time
+          description: The last time anything in this author object changed. Formatted
+            as ISO 8601 extended format without time zone designator.
+          example: 2024-07-13T06:17:17.932040
+          format: custom_date_time
           type: string
         works_count:
           description: The number of works published by this publisher.
@@ -4203,7 +4205,7 @@ components:
             wikidata: https://www.wikidata.org/entity/Q746413
           created_date: 2017-08-08
           id: https://openalex.org/P4310320990
-          updated_date: 2021-12-25T14:04:30.578837
+          updated_date: 2024-07-13T06:17:17.932040
           works_count: 13789818
           hierarchy_level: 1
         - lineage:
@@ -4255,7 +4257,7 @@ components:
             wikidata: https://www.wikidata.org/entity/Q746413
           created_date: 2017-08-08
           id: https://openalex.org/P4310320990
-          updated_date: 2021-12-25T14:04:30.578837
+          updated_date: 2024-07-13T06:17:17.932040
           works_count: 13789818
           hierarchy_level: 1
       properties:
@@ -4531,11 +4533,10 @@ components:
           example: journal
           type: string
         updated_date:
-          description: "The last time anything in this Source object changed, expressed\
-            \ as an ISO 8601 date string. This date is updated for any change at all,\
-            \ including increases in various counts."
+          description: The last time anything in this author object changed. Formatted
+            as ISO 8601 extended format without time zone designator.
           example: 2024-07-13T06:17:17.932040
-          format: date-time
+          format: custom_date_time
           type: string
         works_api_url:
           description: A URL that will get you a list of all this source's Works.
@@ -4783,7 +4784,7 @@ components:
           openalex: https://openalex.org/T11636
           wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
         id: https://openalex.org/T11636
-        updated_date: 2024-02-05T05:00:03.798420
+        updated_date: 2024-07-13T06:17:17.932040
         created_date: 2022-01-01
         works_count: 21737
       properties:
@@ -4834,11 +4835,10 @@ components:
           example: 21737
           type: integer
         updated_date:
-          description: "The last time anything in this topic object changed, expressed\
-            \ as an ISO 8601 date string. This date is updated for any change at all,\
-            \ including increases in various counts."
-          example: 2024-02-05T05:00:03.798420
-          format: date-time
+          description: The last time anything in this author object changed. Formatted
+            as ISO 8601 extended format without time zone designator.
+          example: 2024-07-13T06:17:17.932040
+          format: custom_date_time
           type: string
         cited_by_count:
           description: The number of citations to works tagged with this topic.
@@ -4902,7 +4902,7 @@ components:
             openalex: https://openalex.org/T11636
             wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
           id: https://openalex.org/T11636
-          updated_date: 2024-02-05T05:00:03.798420
+          updated_date: 2024-07-13T06:17:17.932040
           created_date: 2022-01-01
           works_count: 21737
         - cited_by_count: 382
@@ -4934,7 +4934,7 @@ components:
             openalex: https://openalex.org/T11636
             wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
           id: https://openalex.org/T11636
-          updated_date: 2024-02-05T05:00:03.798420
+          updated_date: 2024-07-13T06:17:17.932040
           created_date: 2022-01-01
           works_count: 21737
       properties:
@@ -5561,7 +5561,7 @@ components:
           openalex: https://openalex.org/T11636
           wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
         id: https://openalex.org/T11636
-        updated_date: 2024-02-05T05:00:03.798420
+        updated_date: 2024-07-13T06:17:17.932040
         created_date: 2022-01-01
         works_count: 21737
       properties:
@@ -5612,11 +5612,10 @@ components:
           example: 21737
           type: integer
         updated_date:
-          description: "The last time anything in this topic object changed, expressed\
-            \ as an ISO 8601 date string. This date is updated for any change at all,\
-            \ including increases in various counts."
-          example: 2024-02-05T05:00:03.798420
-          format: date-time
+          description: The last time anything in this author object changed. Formatted
+            as ISO 8601 extended format without time zone designator.
+          example: 2024-07-13T06:17:17.932040
+          format: custom_date_time
           type: string
         cited_by_count:
           description: The number of citations to works tagged with this topic.
@@ -5773,7 +5772,7 @@ components:
             openalex: https://openalex.org/T11636
             wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
           id: https://openalex.org/T11636
-          updated_date: 2024-02-05T05:00:03.798420
+          updated_date: 2024-07-13T06:17:17.932040
           created_date: 2022-01-01
           works_count: 21737
         language: en
@@ -6024,7 +6023,7 @@ components:
         - corresponding_author_ids
         - corresponding_author_ids
         created_date: 2017-08-08
-        updated_date: 2022-01-02T00:22:35.180390
+        updated_date: 2024-07-13T06:17:17.932040
         apc_paid:
           value: 2250
           currency: EUR
@@ -6323,11 +6322,10 @@ components:
           example: journal-article
           type: string
         updated_date:
-          description: "The last time anything in this Work object changed, including\
-            \ counts, formatted as an ISO 8601 date-time. This date is updated for\
-            \ any change at all, including increases in various counts."
-          example: 2022-01-02T00:22:35.180390
-          format: date-time
+          description: The last time anything in this author object changed. Formatted
+            as ISO 8601 extended format without time zone designator.
+          example: 2024-07-13T06:17:17.932040
+          format: custom_date_time
           type: string
     listWorks_200_response:
       example:
@@ -6425,7 +6423,7 @@ components:
               openalex: https://openalex.org/T11636
               wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
             id: https://openalex.org/T11636
-            updated_date: 2024-02-05T05:00:03.798420
+            updated_date: 2024-07-13T06:17:17.932040
             created_date: 2022-01-01
             works_count: 21737
           language: en
@@ -6676,7 +6674,7 @@ components:
           - corresponding_author_ids
           - corresponding_author_ids
           created_date: 2017-08-08
-          updated_date: 2022-01-02T00:22:35.180390
+          updated_date: 2024-07-13T06:17:17.932040
           apc_paid:
             value: 2250
             currency: EUR
@@ -6769,7 +6767,7 @@ components:
               openalex: https://openalex.org/T11636
               wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
             id: https://openalex.org/T11636
-            updated_date: 2024-02-05T05:00:03.798420
+            updated_date: 2024-07-13T06:17:17.932040
             created_date: 2022-01-01
             works_count: 21737
           language: en
@@ -7020,7 +7018,7 @@ components:
           - corresponding_author_ids
           - corresponding_author_ids
           created_date: 2017-08-08
-          updated_date: 2022-01-02T00:22:35.180390
+          updated_date: 2024-07-13T06:17:17.932040
           apc_paid:
             value: 2250
             currency: EUR

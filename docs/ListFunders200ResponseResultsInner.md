@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **ImageUrl** | Pointer to **string** | URL where you can get an image representing this funder. | [optional] 
 **Roles** | Pointer to [**[]ListFunders200ResponseResultsInnerRolesInner**](ListFunders200ResponseResultsInnerRolesInner.md) | List of role objects, which include the role, the id, and the works_count. | [optional] 
 **SummaryStats** | Pointer to [**ListFunders200ResponseResultsInnerSummaryStats**](ListFunders200ResponseResultsInnerSummaryStats.md) |  | [optional] 
-**UpdatedDate** | Pointer to **time.Time** | The last time anything in this funder object changed, expressed as an ISO 8601 date string. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of works linked to this funder. | [optional] 
 
 ## Methods
@@ -418,20 +418,20 @@ HasSummaryStats returns a boolean if a field has been set.
 
 ### GetUpdatedDate
 
-`func (o *ListFunders200ResponseResultsInner) GetUpdatedDate() time.Time`
+`func (o *ListFunders200ResponseResultsInner) GetUpdatedDate() string`
 
 GetUpdatedDate returns the UpdatedDate field if non-nil, zero value otherwise.
 
 ### GetUpdatedDateOk
 
-`func (o *ListFunders200ResponseResultsInner) GetUpdatedDateOk() (*time.Time, bool)`
+`func (o *ListFunders200ResponseResultsInner) GetUpdatedDateOk() (*string, bool)`
 
 GetUpdatedDateOk returns a tuple with the UpdatedDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedDate
 
-`func (o *ListFunders200ResponseResultsInner) SetUpdatedDate(v time.Time)`
+`func (o *ListFunders200ResponseResultsInner) SetUpdatedDate(v string)`
 
 SetUpdatedDate sets UpdatedDate field to given value.
 

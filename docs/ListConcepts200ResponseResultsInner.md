@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **RelatedConcepts** | Pointer to [**[]ListConcepts200ResponseResultsInnerRelatedConceptsInner**](ListConcepts200ResponseResultsInnerRelatedConceptsInner.md) | Concepts that are similar to this one. | [optional] 
 **CountsByYear** | Pointer to [**[]ListAuthors200ResponseResultsInnerCountsByYearInner**](ListAuthors200ResponseResultsInnerCountsByYearInner.md) | The values of works_count and cited_by_count for each of the last ten years, binned by year. | [optional] 
 **WorksApiUrl** | Pointer to **string** | An URL that will get you a list of all the works tagged with this concept. | [optional] 
-**UpdatedDate** | Pointer to **time.Time** | The last time anything in this concept object changed, expressed as an ISO 8601 date string. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **CreatedDate** | Pointer to **string** | The date this Concept object was created in the OpenAlex dataset, expressed as an ISO 8601 date string. | [optional] 
 **SummaryStats** | Pointer to [**ListConcepts200ResponseResultsInnerSummaryStats**](ListConcepts200ResponseResultsInnerSummaryStats.md) |  | [optional] 
 
@@ -419,20 +419,20 @@ HasWorksApiUrl returns a boolean if a field has been set.
 
 ### GetUpdatedDate
 
-`func (o *ListConcepts200ResponseResultsInner) GetUpdatedDate() time.Time`
+`func (o *ListConcepts200ResponseResultsInner) GetUpdatedDate() string`
 
 GetUpdatedDate returns the UpdatedDate field if non-nil, zero value otherwise.
 
 ### GetUpdatedDateOk
 
-`func (o *ListConcepts200ResponseResultsInner) GetUpdatedDateOk() (*time.Time, bool)`
+`func (o *ListConcepts200ResponseResultsInner) GetUpdatedDateOk() (*string, bool)`
 
 GetUpdatedDateOk returns a tuple with the UpdatedDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedDate
 
-`func (o *ListConcepts200ResponseResultsInner) SetUpdatedDate(v time.Time)`
+`func (o *ListConcepts200ResponseResultsInner) SetUpdatedDate(v string)`
 
 SetUpdatedDate sets UpdatedDate field to given value.
 

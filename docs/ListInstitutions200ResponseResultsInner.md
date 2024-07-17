@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **Ror** | Pointer to **string** | The ROR ID for this institution. | [optional] 
 **SummaryStats** | Pointer to [**ListInstitutions200ResponseResultsInnerSummaryStats**](ListInstitutions200ResponseResultsInnerSummaryStats.md) |  | [optional] 
 **Type** | Pointer to **string** | The institution&#39;s primary type, using the ROR \&quot;type\&quot; controlled vocabulary. | [optional] 
-**UpdatedDate** | Pointer to **time.Time** | The last time anything in this Institution changed. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksApiUrl** | Pointer to **string** | A URL that will get you a list of all the Works affiliated with this institution. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of Works created by authors affiliated with this institution. | [optional] 
 **XConcepts** | Pointer to [**[]ListAuthors200ResponseResultsInnerXConceptsInner**](ListAuthors200ResponseResultsInnerXConceptsInner.md) | The Concepts most frequently applied to works affiliated with this institution. | [optional] 
@@ -576,20 +576,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetUpdatedDate
 
-`func (o *ListInstitutions200ResponseResultsInner) GetUpdatedDate() time.Time`
+`func (o *ListInstitutions200ResponseResultsInner) GetUpdatedDate() string`
 
 GetUpdatedDate returns the UpdatedDate field if non-nil, zero value otherwise.
 
 ### GetUpdatedDateOk
 
-`func (o *ListInstitutions200ResponseResultsInner) GetUpdatedDateOk() (*time.Time, bool)`
+`func (o *ListInstitutions200ResponseResultsInner) GetUpdatedDateOk() (*string, bool)`
 
 GetUpdatedDateOk returns a tuple with the UpdatedDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedDate
 
-`func (o *ListInstitutions200ResponseResultsInner) SetUpdatedDate(v time.Time)`
+`func (o *ListInstitutions200ResponseResultsInner) SetUpdatedDate(v string)`
 
 SetUpdatedDate sets UpdatedDate field to given value.
 

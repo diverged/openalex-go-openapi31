@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Ids** | Pointer to [**ListTopics200ResponseResultsInnerIds**](ListTopics200ResponseResultsInnerIds.md) |  | [optional] 
 **Keywords** | Pointer to **[]string** | Keywords consisting of one or several words each, meant to represent the content of the papers in the topic. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of works tagged with this topic. | [optional] 
-**UpdatedDate** | Pointer to **time.Time** | The last time anything in this topic object changed, expressed as an ISO 8601 date string. This date is updated for any change at all, including increases in various counts. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **CitedByCount** | Pointer to **int32** | The number of citations to works tagged with this topic. | [optional] 
 **WorksApiUrl** | Pointer to **string** | URL to retrieve works tagged with this topic. | [optional] 
 **CreatedDate** | Pointer to **string** | The date this topic was created in the OpenAlex database, expressed as an ISO 8601 date string. | [optional] 
@@ -280,20 +280,20 @@ HasWorksCount returns a boolean if a field has been set.
 
 ### GetUpdatedDate
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetUpdatedDate() time.Time`
+`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetUpdatedDate() string`
 
 GetUpdatedDate returns the UpdatedDate field if non-nil, zero value otherwise.
 
 ### GetUpdatedDateOk
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetUpdatedDateOk() (*time.Time, bool)`
+`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetUpdatedDateOk() (*string, bool)`
 
 GetUpdatedDateOk returns a tuple with the UpdatedDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedDate
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetUpdatedDate(v time.Time)`
+`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetUpdatedDate(v string)`
 
 SetUpdatedDate sets UpdatedDate field to given value.
 

@@ -12,7 +12,6 @@ package openapi
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the ListWorks200ResponseResultsInner type satisfies the MappedNullable interface at compile time
@@ -100,8 +99,8 @@ type ListWorks200ResponseResultsInner struct {
 	Type *string `json:"type,omitempty"`
 	// Legacy type information, using Crossref's \"type\" controlled vocabulary.
 	TypeCrossref *string `json:"type_crossref,omitempty"`
-	// The last time anything in this Work object changed, including counts, formatted as an ISO 8601 date-time. This date is updated for any change at all, including increases in various counts.
-	UpdatedDate *time.Time `json:"updated_date,omitempty"`
+	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
+	UpdatedDate *string `json:"updated_date,omitempty"`
 }
 
 // NewListWorks200ResponseResultsInner instantiates a new ListWorks200ResponseResultsInner object
@@ -1530,9 +1529,9 @@ func (o *ListWorks200ResponseResultsInner) SetTypeCrossref(v string) {
 }
 
 // GetUpdatedDate returns the UpdatedDate field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInner) GetUpdatedDate() time.Time {
+func (o *ListWorks200ResponseResultsInner) GetUpdatedDate() string {
 	if o == nil || IsNil(o.UpdatedDate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.UpdatedDate
@@ -1540,7 +1539,7 @@ func (o *ListWorks200ResponseResultsInner) GetUpdatedDate() time.Time {
 
 // GetUpdatedDateOk returns a tuple with the UpdatedDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInner) GetUpdatedDateOk() (*time.Time, bool) {
+func (o *ListWorks200ResponseResultsInner) GetUpdatedDateOk() (*string, bool) {
 	if o == nil || IsNil(o.UpdatedDate) {
 		return nil, false
 	}
@@ -1556,8 +1555,8 @@ func (o *ListWorks200ResponseResultsInner) HasUpdatedDate() bool {
 	return false
 }
 
-// SetUpdatedDate gets a reference to the given time.Time and assigns it to the UpdatedDate field.
-func (o *ListWorks200ResponseResultsInner) SetUpdatedDate(v time.Time) {
+// SetUpdatedDate gets a reference to the given string and assigns it to the UpdatedDate field.
+func (o *ListWorks200ResponseResultsInner) SetUpdatedDate(v string) {
 	o.UpdatedDate = &v
 }
 

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -157,5 +156,4 @@ model_list_works_200_response_results_inner_sustainable_development_goals_inner.
 model_list_works_200_response_results_inner_topics_inner.go
 model_list_works_200_response_results_inner_topics_inner_domain.go
 response.go
-test/api_default_test.go
 utils.go
