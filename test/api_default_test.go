@@ -25,7 +25,7 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 	t.Run("Test DefaultAPIService AutocompleteEntities", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		// 		t.Skip("skip test")  // remove to run test
 
 		var entityType string
 
@@ -39,7 +39,7 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 	t.Run("Test DefaultAPIService ListAuthors", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		// 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.ListAuthors(context.Background()).Execute()
 
@@ -51,7 +51,7 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 	t.Run("Test DefaultAPIService ListConcepts", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		// 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.ListConcepts(context.Background()).Execute()
 
@@ -63,7 +63,7 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 	t.Run("Test DefaultAPIService ListFunders", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		// 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.ListFunders(context.Background()).Execute()
 
@@ -75,9 +75,21 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 	t.Run("Test DefaultAPIService ListInstitutions", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		// 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.ListInstitutions(context.Background()).Execute()
+
+		if err != nil {
+			t.Errorf("Error calling ListInstitutions: %v", err)
+		}
+		if httpRes == nil {
+			t.Error("Received nil HTTP response")
+		} else {
+			t.Logf("HTTP Status Code: %d", httpRes.StatusCode)
+		}
+		if resp == nil {
+			t.Error("Received nil response")
+		}
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -87,7 +99,7 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 	t.Run("Test DefaultAPIService ListKeywords", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		// 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.ListKeywords(context.Background()).Execute()
 
@@ -99,7 +111,7 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 	t.Run("Test DefaultAPIService ListPublishers", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		// 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.ListPublishers(context.Background()).Execute()
 
@@ -111,7 +123,7 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 	t.Run("Test DefaultAPIService ListSources", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		// 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.ListSources(context.Background()).Execute()
 
@@ -123,7 +135,7 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 	t.Run("Test DefaultAPIService ListTopics", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		// 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.ListTopics(context.Background()).Execute()
 
@@ -135,7 +147,7 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 	t.Run("Test DefaultAPIService ListWorks", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		// 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.DefaultAPI.ListWorks(context.Background()).Execute()
 

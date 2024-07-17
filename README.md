@@ -121,6 +121,7 @@ Class | Method | HTTP request | Description
  - [ListFunders200ResponseResultsInnerSummaryStats](docs/ListFunders200ResponseResultsInnerSummaryStats.md)
  - [ListInstitutions200Response](docs/ListInstitutions200Response.md)
  - [ListInstitutions200ResponseResultsInner](docs/ListInstitutions200ResponseResultsInner.md)
+ - [ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner](docs/ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner.md)
  - [ListInstitutions200ResponseResultsInnerGeo](docs/ListInstitutions200ResponseResultsInnerGeo.md)
  - [ListInstitutions200ResponseResultsInnerIds](docs/ListInstitutions200ResponseResultsInnerIds.md)
  - [ListInstitutions200ResponseResultsInnerInternational](docs/ListInstitutions200ResponseResultsInnerInternational.md)

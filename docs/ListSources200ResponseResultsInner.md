@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **HostOrganizationName** | Pointer to **string** | The display_name from the host_organization, shown for convenience. | [optional] 
 **Id** | Pointer to **string** | The OpenAlex ID for this source. | [optional] 
 **Ids** | Pointer to [**ListSources200ResponseResultsInnerIds**](ListSources200ResponseResultsInnerIds.md) |  | [optional] 
+**IsCore** | Pointer to **bool** | Whether this source is identified as a \&quot;core source\&quot; by [CWTS](https://www.cwts.nl/), used in the [Open Leiden Ranking](https://open.leidenranking.com/) of universities around the world. The list of core sources can be found [here](https://zenodo.org/records/10949671). | [optional] 
 **IsInDoaj** | Pointer to **bool** | Whether this is a journal listed in the Directory of Open Access Journals (DOAJ). | [optional] 
 **IsOa** | Pointer to **bool** | Whether this is currently fully-open-access source. This could be true for a preprint repository where everything uploaded is free to read, or for a Gold or Diamond open access journal, where all newly published Works are available for free under an open license. | [optional] 
 **Issn** | Pointer to **[]string** | The ISSNs used by this source. Many publications have multiple ISSNs, so ISSN-L should be used when possible. | [optional] 
@@ -424,6 +425,31 @@ SetIds sets Ids field to given value.
 `func (o *ListSources200ResponseResultsInner) HasIds() bool`
 
 HasIds returns a boolean if a field has been set.
+
+### GetIsCore
+
+`func (o *ListSources200ResponseResultsInner) GetIsCore() bool`
+
+GetIsCore returns the IsCore field if non-nil, zero value otherwise.
+
+### GetIsCoreOk
+
+`func (o *ListSources200ResponseResultsInner) GetIsCoreOk() (*bool, bool)`
+
+GetIsCoreOk returns a tuple with the IsCore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCore
+
+`func (o *ListSources200ResponseResultsInner) SetIsCore(v bool)`
+
+SetIsCore sets IsCore field to given value.
+
+### HasIsCore
+
+`func (o *ListSources200ResponseResultsInner) HasIsCore() bool`
+
+HasIsCore returns a boolean if a field has been set.
 
 ### GetIsInDoaj
 

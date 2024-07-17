@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AssociatedInstitutions** | Pointer to [**[]ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution**](ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution.md) | List of institutions related to this one, represented as dehydrated Institution objects with an additional &#39;relationship&#39; property. | [optional] 
+**AssociatedInstitutions** | Pointer to [**[]ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner**](ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner.md) | List of institutions related to this one, represented as dehydrated Institution objects with an additional &#39;relationship&#39; property. | [optional] 
 **CitedByCount** | Pointer to **int32** | The total number of works that cite a work created by an author affiliated with this institution. | [optional] 
 **CountryCode** | Pointer to **string** | The country where this institution is located, represented as an ISO two-letter country code. | [optional] 
 **CountsByYear** | Pointer to [**[]ListAuthors200ResponseResultsInnerCountsByYearInner**](ListAuthors200ResponseResultsInnerCountsByYearInner.md) | Works count and cited by count for each of the last ten years, binned by year. | [optional] 
@@ -51,20 +51,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAssociatedInstitutions
 
-`func (o *ListInstitutions200ResponseResultsInner) GetAssociatedInstitutions() []ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution`
+`func (o *ListInstitutions200ResponseResultsInner) GetAssociatedInstitutions() []ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner`
 
 GetAssociatedInstitutions returns the AssociatedInstitutions field if non-nil, zero value otherwise.
 
 ### GetAssociatedInstitutionsOk
 
-`func (o *ListInstitutions200ResponseResultsInner) GetAssociatedInstitutionsOk() (*[]ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution, bool)`
+`func (o *ListInstitutions200ResponseResultsInner) GetAssociatedInstitutionsOk() (*[]ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner, bool)`
 
 GetAssociatedInstitutionsOk returns a tuple with the AssociatedInstitutions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAssociatedInstitutions
 
-`func (o *ListInstitutions200ResponseResultsInner) SetAssociatedInstitutions(v []ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution)`
+`func (o *ListInstitutions200ResponseResultsInner) SetAssociatedInstitutions(v []ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner)`
 
 SetAssociatedInstitutions sets AssociatedInstitutions field to given value.
 

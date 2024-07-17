@@ -3333,6 +3333,62 @@ components:
           items:
             $ref: '#/components/schemas/listAuthors_200_response_group_by_inner'
           type: array
+    listInstitutions_200_response_results_inner_associated_institutions_inner:
+      allOf:
+      - description: "A simplified representation of an institution, used when an\
+          \ institution is referenced by another entity."
+        properties:
+          id:
+            description: The OpenAlex ID for this institution.
+            example: https://openalex.org/I114027177
+            type: string
+          display_name:
+            description: The primary name of the institution.
+            example: University of North Carolina at Chapel Hill
+            type: string
+          ror:
+            description: The ROR ID for this institution.
+            example: https://ror.org/00jmfr291
+            type: string
+          country_code:
+            description: "The country where this institution is located, represented\
+              \ as an ISO two-letter country code."
+            example: US
+            type: string
+          type:
+            description: "The institution's primary type, using the ROR \"type\" controlled\
+              \ vocabulary."
+            enum:
+            - education
+            - healthcare
+            - company
+            - archive
+            - nonprofit
+            - government
+            - facility
+            - other
+            example: education
+            type: string
+          lineage:
+            description: OpenAlex IDs of this institution and its parent institutions.
+            example:
+            - https://openalex.org/I114027177
+            items:
+              type: string
+            type: array
+        required:
+        - display_name
+        - id
+        - type
+      - properties:
+          relationship:
+            description: "The relationship between this institution and the main institution.\
+              \ Possible values are `parent`, `child`, and `related`. Institution\
+              \ associations and the relationship vocabulary come from [ROR's Relationships](https://ror.readme.io/docs/ror-data-structure#relationships)"
+            example: related
+            type: string
+      description: "A representation of an associated institution, extending the dehydrated\
+        \ institution with a relationship field."
     listInstitutions_200_response_results_inner_geo:
       description: Geographic information about the institution's location.
       example:
@@ -3381,7 +3437,7 @@ components:
         wikidata:
           type: string
         mag:
-          type: integer
+          type: string
     listInstitutions_200_response_results_inner_international:
       description: The institution's display name in different languages.
       example:
@@ -3530,7 +3586,7 @@ components:
             type: healthcare
             relationship: related
           items:
-            $ref: '#/components/schemas/listAuthors_200_response_results_inner_affiliations_inner_institution'
+            $ref: '#/components/schemas/listInstitutions_200_response_results_inner_associated_institutions_inner'
           type: array
         cited_by_count:
           description: The total number of works that cite a work created by an author
@@ -4330,6 +4386,7 @@ components:
           type: integer
     listSources_200_response_results_inner:
       example:
+        is_core: true
         host_organization_lineage:
         - https://openalex.org/P4310321285
         - https://openalex.org/P4310319900
@@ -4481,6 +4538,13 @@ components:
           type: string
         ids:
           $ref: '#/components/schemas/listSources_200_response_results_inner_ids'
+        is_core:
+          description: "Whether this source is identified as a \"core source\" by\
+            \ [CWTS](https://www.cwts.nl/), used in the [Open Leiden Ranking](https://open.leidenranking.com/)\
+            \ of universities around the world. The list of core sources can be found\
+            \ [here](https://zenodo.org/records/10949671)."
+          example: true
+          type: boolean
         is_in_doaj:
           description: Whether this is a journal listed in the Directory of Open Access
             Journals (DOAJ).
@@ -4580,7 +4644,8 @@ components:
           key_display_name: article
           count: 202814957
         results:
-        - host_organization_lineage:
+        - is_core: true
+          host_organization_lineage:
           - https://openalex.org/P4310321285
           - https://openalex.org/P4310319900
           - https://openalex.org/P4310319965
@@ -4634,7 +4699,8 @@ components:
           created_date: 2017-08-08
           updated_date: 2024-07-13T06:17:17.932040
           works_count: 20184
-        - host_organization_lineage:
+        - is_core: true
+          host_organization_lineage:
           - https://openalex.org/P4310321285
           - https://openalex.org/P4310319900
           - https://openalex.org/P4310319965

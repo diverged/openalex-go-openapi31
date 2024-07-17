@@ -24,7 +24,7 @@ type ListInstitutions200ResponseResultsInnerIds struct {
 	Grid *string `json:"grid,omitempty"`
 	Wikipedia *string `json:"wikipedia,omitempty"`
 	Wikidata *string `json:"wikidata,omitempty"`
-	Mag *int32 `json:"mag,omitempty"`
+	Mag *string `json:"mag,omitempty"`
 }
 
 // NewListInstitutions200ResponseResultsInnerIds instantiates a new ListInstitutions200ResponseResultsInnerIds object
@@ -205,9 +205,9 @@ func (o *ListInstitutions200ResponseResultsInnerIds) SetWikidata(v string) {
 }
 
 // GetMag returns the Mag field value if set, zero value otherwise.
-func (o *ListInstitutions200ResponseResultsInnerIds) GetMag() int32 {
+func (o *ListInstitutions200ResponseResultsInnerIds) GetMag() string {
 	if o == nil || IsNil(o.Mag) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Mag
@@ -215,7 +215,7 @@ func (o *ListInstitutions200ResponseResultsInnerIds) GetMag() int32 {
 
 // GetMagOk returns a tuple with the Mag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstitutions200ResponseResultsInnerIds) GetMagOk() (*int32, bool) {
+func (o *ListInstitutions200ResponseResultsInnerIds) GetMagOk() (*string, bool) {
 	if o == nil || IsNil(o.Mag) {
 		return nil, false
 	}
@@ -231,8 +231,8 @@ func (o *ListInstitutions200ResponseResultsInnerIds) HasMag() bool {
 	return false
 }
 
-// SetMag gets a reference to the given int32 and assigns it to the Mag field.
-func (o *ListInstitutions200ResponseResultsInnerIds) SetMag(v int32) {
+// SetMag gets a reference to the given string and assigns it to the Mag field.
+func (o *ListInstitutions200ResponseResultsInnerIds) SetMag(v string) {
 	o.Mag = &v
 }
 

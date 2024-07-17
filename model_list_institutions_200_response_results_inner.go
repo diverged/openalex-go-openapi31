@@ -20,7 +20,7 @@ var _ MappedNullable = &ListInstitutions200ResponseResultsInner{}
 // ListInstitutions200ResponseResultsInner struct for ListInstitutions200ResponseResultsInner
 type ListInstitutions200ResponseResultsInner struct {
 	// List of institutions related to this one, represented as dehydrated Institution objects with an additional 'relationship' property.
-	AssociatedInstitutions []ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution `json:"associated_institutions,omitempty"`
+	AssociatedInstitutions []ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner `json:"associated_institutions,omitempty"`
 	// The total number of works that cite a work created by an author affiliated with this institution.
 	CitedByCount *int32 `json:"cited_by_count,omitempty"`
 	// The country where this institution is located, represented as an ISO two-letter country code.
@@ -85,9 +85,9 @@ func NewListInstitutions200ResponseResultsInnerWithDefaults() *ListInstitutions2
 }
 
 // GetAssociatedInstitutions returns the AssociatedInstitutions field value if set, zero value otherwise.
-func (o *ListInstitutions200ResponseResultsInner) GetAssociatedInstitutions() []ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution {
+func (o *ListInstitutions200ResponseResultsInner) GetAssociatedInstitutions() []ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner {
 	if o == nil || IsNil(o.AssociatedInstitutions) {
-		var ret []ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution
+		var ret []ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner
 		return ret
 	}
 	return o.AssociatedInstitutions
@@ -95,7 +95,7 @@ func (o *ListInstitutions200ResponseResultsInner) GetAssociatedInstitutions() []
 
 // GetAssociatedInstitutionsOk returns a tuple with the AssociatedInstitutions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInstitutions200ResponseResultsInner) GetAssociatedInstitutionsOk() ([]ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution, bool) {
+func (o *ListInstitutions200ResponseResultsInner) GetAssociatedInstitutionsOk() ([]ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner, bool) {
 	if o == nil || IsNil(o.AssociatedInstitutions) {
 		return nil, false
 	}
@@ -111,8 +111,8 @@ func (o *ListInstitutions200ResponseResultsInner) HasAssociatedInstitutions() bo
 	return false
 }
 
-// SetAssociatedInstitutions gets a reference to the given []ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution and assigns it to the AssociatedInstitutions field.
-func (o *ListInstitutions200ResponseResultsInner) SetAssociatedInstitutions(v []ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution) {
+// SetAssociatedInstitutions gets a reference to the given []ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner and assigns it to the AssociatedInstitutions field.
+func (o *ListInstitutions200ResponseResultsInner) SetAssociatedInstitutions(v []ListInstitutions200ResponseResultsInnerAssociatedInstitutionsInner) {
 	o.AssociatedInstitutions = v
 }
 

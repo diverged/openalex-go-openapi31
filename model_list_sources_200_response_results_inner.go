@@ -48,6 +48,8 @@ type ListSources200ResponseResultsInner struct {
 	// The OpenAlex ID for this source.
 	Id *string `json:"id,omitempty"`
 	Ids *ListSources200ResponseResultsInnerIds `json:"ids,omitempty"`
+	// Whether this source is identified as a \"core source\" by [CWTS](https://www.cwts.nl/), used in the [Open Leiden Ranking](https://open.leidenranking.com/) of universities around the world. The list of core sources can be found [here](https://zenodo.org/records/10949671).
+	IsCore *bool `json:"is_core,omitempty"`
 	// Whether this is a journal listed in the Directory of Open Access Journals (DOAJ).
 	IsInDoaj *bool `json:"is_in_doaj,omitempty"`
 	// Whether this is currently fully-open-access source. This could be true for a preprint repository where everything uploaded is free to read, or for a Gold or Diamond open access journal, where all newly published Works are available for free under an open license.
@@ -568,6 +570,38 @@ func (o *ListSources200ResponseResultsInner) SetIds(v ListSources200ResponseResu
 	o.Ids = &v
 }
 
+// GetIsCore returns the IsCore field value if set, zero value otherwise.
+func (o *ListSources200ResponseResultsInner) GetIsCore() bool {
+	if o == nil || IsNil(o.IsCore) {
+		var ret bool
+		return ret
+	}
+	return *o.IsCore
+}
+
+// GetIsCoreOk returns a tuple with the IsCore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListSources200ResponseResultsInner) GetIsCoreOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsCore) {
+		return nil, false
+	}
+	return o.IsCore, true
+}
+
+// HasIsCore returns a boolean if a field has been set.
+func (o *ListSources200ResponseResultsInner) HasIsCore() bool {
+	if o != nil && !IsNil(o.IsCore) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCore gets a reference to the given bool and assigns it to the IsCore field.
+func (o *ListSources200ResponseResultsInner) SetIsCore(v bool) {
+	o.IsCore = &v
+}
+
 // GetIsInDoaj returns the IsInDoaj field value if set, zero value otherwise.
 func (o *ListSources200ResponseResultsInner) GetIsInDoaj() bool {
 	if o == nil || IsNil(o.IsInDoaj) {
@@ -974,6 +1008,9 @@ func (o ListSources200ResponseResultsInner) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.Ids) {
 		toSerialize["ids"] = o.Ids
+	}
+	if !IsNil(o.IsCore) {
+		toSerialize["is_core"] = o.IsCore
 	}
 	if !IsNil(o.IsInDoaj) {
 		toSerialize["is_in_doaj"] = o.IsInDoaj
