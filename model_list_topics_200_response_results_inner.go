@@ -45,6 +45,8 @@ type ListTopics200ResponseResultsInner struct {
 	WorksApiUrl *string `json:"works_api_url,omitempty"`
 	// The date this topic was created in the OpenAlex database, expressed as an ISO 8601 date string.
 	CreatedDate *string `json:"created_date,omitempty"`
+	// Topics that are closely related to this topic.
+	Siblings []ListTopics200ResponseResultsInnerSiblingsInner `json:"siblings,omitempty"`
 }
 
 type _ListTopics200ResponseResultsInner ListTopics200ResponseResultsInner
@@ -500,6 +502,38 @@ func (o *ListTopics200ResponseResultsInner) SetCreatedDate(v string) {
 	o.CreatedDate = &v
 }
 
+// GetSiblings returns the Siblings field value if set, zero value otherwise.
+func (o *ListTopics200ResponseResultsInner) GetSiblings() []ListTopics200ResponseResultsInnerSiblingsInner {
+	if o == nil || IsNil(o.Siblings) {
+		var ret []ListTopics200ResponseResultsInnerSiblingsInner
+		return ret
+	}
+	return o.Siblings
+}
+
+// GetSiblingsOk returns a tuple with the Siblings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListTopics200ResponseResultsInner) GetSiblingsOk() ([]ListTopics200ResponseResultsInnerSiblingsInner, bool) {
+	if o == nil || IsNil(o.Siblings) {
+		return nil, false
+	}
+	return o.Siblings, true
+}
+
+// HasSiblings returns a boolean if a field has been set.
+func (o *ListTopics200ResponseResultsInner) HasSiblings() bool {
+	if o != nil && !IsNil(o.Siblings) {
+		return true
+	}
+
+	return false
+}
+
+// SetSiblings gets a reference to the given []ListTopics200ResponseResultsInnerSiblingsInner and assigns it to the Siblings field.
+func (o *ListTopics200ResponseResultsInner) SetSiblings(v []ListTopics200ResponseResultsInnerSiblingsInner) {
+	o.Siblings = v
+}
+
 func (o ListTopics200ResponseResultsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -547,6 +581,9 @@ func (o ListTopics200ResponseResultsInner) ToMap() (map[string]interface{}, erro
 	}
 	if !IsNil(o.CreatedDate) {
 		toSerialize["created_date"] = o.CreatedDate
+	}
+	if !IsNil(o.Siblings) {
+		toSerialize["siblings"] = o.Siblings
 	}
 	return toSerialize, nil
 }

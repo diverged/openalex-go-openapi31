@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Openalex** | Pointer to **string** | This concept&#39;s OpenAlex ID. | [optional] 
 **Wikidata** | Pointer to **string** | This concept&#39;s Wikidata ID. | [optional] 
 **Wikipedia** | Pointer to **string** | This concept&#39;s Wikipedia page URL. | [optional] 
-**Mag** | Pointer to **int32** | This concept&#39;s Microsoft Academic Graph (MAG) ID. | [optional] 
+**Mag** | Pointer to **string** | This concept&#39;s Microsoft Academic Graph (MAG) ID. | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasWikipedia returns a boolean if a field has been set.
 
 ### GetMag
 
-`func (o *ListConcepts200ResponseResultsInnerIds) GetMag() int32`
+`func (o *ListConcepts200ResponseResultsInnerIds) GetMag() string`
 
 GetMag returns the Mag field if non-nil, zero value otherwise.
 
 ### GetMagOk
 
-`func (o *ListConcepts200ResponseResultsInnerIds) GetMagOk() (*int32, bool)`
+`func (o *ListConcepts200ResponseResultsInnerIds) GetMagOk() (*string, bool)`
 
 GetMagOk returns a tuple with the Mag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMag
 
-`func (o *ListConcepts200ResponseResultsInnerIds) SetMag(v int32)`
+`func (o *ListConcepts200ResponseResultsInnerIds) SetMag(v string)`
 
 SetMag sets Mag field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Doi** | Pointer to **string** | The DOI for this work. | [optional] 
-**Mag** | Pointer to **int32** | The Microsoft Academic Graph ID for this work. | [optional] 
+**Mag** | Pointer to **string** | The Microsoft Academic Graph ID for this work. | [optional] 
 **Openalex** | Pointer to **string** | The OpenAlex ID for this work. | [optional] 
 **Pmcid** | Pointer to **string** | The PubMed Central ID for this work. | [optional] 
 **Pmid** | Pointer to **string** | The PubMed ID for this work. | [optional] 
@@ -56,20 +56,20 @@ HasDoi returns a boolean if a field has been set.
 
 ### GetMag
 
-`func (o *ListWorks200ResponseResultsInnerIds) GetMag() int32`
+`func (o *ListWorks200ResponseResultsInnerIds) GetMag() string`
 
 GetMag returns the Mag field if non-nil, zero value otherwise.
 
 ### GetMagOk
 
-`func (o *ListWorks200ResponseResultsInnerIds) GetMagOk() (*int32, bool)`
+`func (o *ListWorks200ResponseResultsInnerIds) GetMagOk() (*string, bool)`
 
 GetMagOk returns a tuple with the Mag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMag
 
-`func (o *ListWorks200ResponseResultsInnerIds) SetMag(v int32)`
+`func (o *ListWorks200ResponseResultsInnerIds) SetMag(v string)`
 
 SetMag sets Mag field to given value.
 

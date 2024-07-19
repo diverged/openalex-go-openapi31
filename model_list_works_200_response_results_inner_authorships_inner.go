@@ -21,9 +21,13 @@ var _ MappedNullable = &ListWorks200ResponseResultsInnerAuthorshipsInner{}
 
 // ListWorks200ResponseResultsInnerAuthorshipsInner struct for ListWorks200ResponseResultsInnerAuthorshipsInner
 type ListWorks200ResponseResultsInnerAuthorshipsInner struct {
+	// Each institutional affiliation that this author has claimed will be listed here: the raw affiliation string that we found, along with the OpenAlex Institution ID or IDs that we matched it to. This information will be redundant with institutions below, but is useful if you need to know about what we used to match institutions.
+	Affiliations []ListWorks200ResponseResultsInnerAuthorshipsInnerAffiliationsInner `json:"affiliations,omitempty"`
+	Author ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor `json:"author"`
 	// A summarized description of this author's position in the work's author list.
 	AuthorPosition string `json:"author_position"`
-	Author ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor `json:"author"`
+	// The country or countries for this author, determined using a combination of matched institutions and parsing of the raw affiliation strings.
+	Countries []string `json:"countries,omitempty"`
 	// The institutional affiliations this author claimed in the context of this work, as dehydrated Institution objects.
 	Institutions []ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution `json:"institutions"`
 	// If true, this is a corresponding author for this work.
@@ -32,8 +36,6 @@ type ListWorks200ResponseResultsInnerAuthorshipsInner struct {
 	RawAffiliationStrings []string `json:"raw_affiliation_strings"`
 	// This author's name as it originally came to us, as a raw unformatted string.
 	RawAuthorName string `json:"raw_author_name"`
-	// The country or countries for this author, determined using a combination of matched institutions and parsing of the raw affiliation strings.
-	Countries []string `json:"countries,omitempty"`
 }
 
 type _ListWorks200ResponseResultsInnerAuthorshipsInner ListWorks200ResponseResultsInnerAuthorshipsInner
@@ -42,10 +44,10 @@ type _ListWorks200ResponseResultsInnerAuthorshipsInner ListWorks200ResponseResul
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListWorks200ResponseResultsInnerAuthorshipsInner(authorPosition string, author ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor, institutions []ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution, rawAffiliationStrings []string, rawAuthorName string) *ListWorks200ResponseResultsInnerAuthorshipsInner {
+func NewListWorks200ResponseResultsInnerAuthorshipsInner(author ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor, authorPosition string, institutions []ListAuthors200ResponseResultsInnerAffiliationsInnerInstitution, rawAffiliationStrings []string, rawAuthorName string) *ListWorks200ResponseResultsInnerAuthorshipsInner {
 	this := ListWorks200ResponseResultsInnerAuthorshipsInner{}
-	this.AuthorPosition = authorPosition
 	this.Author = author
+	this.AuthorPosition = authorPosition
 	this.Institutions = institutions
 	this.RawAffiliationStrings = rawAffiliationStrings
 	this.RawAuthorName = rawAuthorName
@@ -58,6 +60,62 @@ func NewListWorks200ResponseResultsInnerAuthorshipsInner(authorPosition string, 
 func NewListWorks200ResponseResultsInnerAuthorshipsInnerWithDefaults() *ListWorks200ResponseResultsInnerAuthorshipsInner {
 	this := ListWorks200ResponseResultsInnerAuthorshipsInner{}
 	return &this
+}
+
+// GetAffiliations returns the Affiliations field value if set, zero value otherwise.
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) GetAffiliations() []ListWorks200ResponseResultsInnerAuthorshipsInnerAffiliationsInner {
+	if o == nil || IsNil(o.Affiliations) {
+		var ret []ListWorks200ResponseResultsInnerAuthorshipsInnerAffiliationsInner
+		return ret
+	}
+	return o.Affiliations
+}
+
+// GetAffiliationsOk returns a tuple with the Affiliations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) GetAffiliationsOk() ([]ListWorks200ResponseResultsInnerAuthorshipsInnerAffiliationsInner, bool) {
+	if o == nil || IsNil(o.Affiliations) {
+		return nil, false
+	}
+	return o.Affiliations, true
+}
+
+// HasAffiliations returns a boolean if a field has been set.
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) HasAffiliations() bool {
+	if o != nil && !IsNil(o.Affiliations) {
+		return true
+	}
+
+	return false
+}
+
+// SetAffiliations gets a reference to the given []ListWorks200ResponseResultsInnerAuthorshipsInnerAffiliationsInner and assigns it to the Affiliations field.
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) SetAffiliations(v []ListWorks200ResponseResultsInnerAuthorshipsInnerAffiliationsInner) {
+	o.Affiliations = v
+}
+
+// GetAuthor returns the Author field value
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) GetAuthor() ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor {
+	if o == nil {
+		var ret ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor
+		return ret
+	}
+
+	return o.Author
+}
+
+// GetAuthorOk returns a tuple with the Author field value
+// and a boolean to check if the value has been set.
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) GetAuthorOk() (*ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Author, true
+}
+
+// SetAuthor sets field value
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) SetAuthor(v ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor) {
+	o.Author = v
 }
 
 // GetAuthorPosition returns the AuthorPosition field value
@@ -84,28 +142,36 @@ func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) SetAuthorPosition(v s
 	o.AuthorPosition = v
 }
 
-// GetAuthor returns the Author field value
-func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) GetAuthor() ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor {
-	if o == nil {
-		var ret ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor
+// GetCountries returns the Countries field value if set, zero value otherwise.
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) GetCountries() []string {
+	if o == nil || IsNil(o.Countries) {
+		var ret []string
 		return ret
 	}
-
-	return o.Author
+	return o.Countries
 }
 
-// GetAuthorOk returns a tuple with the Author field value
+// GetCountriesOk returns a tuple with the Countries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) GetAuthorOk() (*ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor, bool) {
-	if o == nil {
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) GetCountriesOk() ([]string, bool) {
+	if o == nil || IsNil(o.Countries) {
 		return nil, false
 	}
-	return &o.Author, true
+	return o.Countries, true
 }
 
-// SetAuthor sets field value
-func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) SetAuthor(v ListWorks200ResponseResultsInnerAuthorshipsInnerAuthor) {
-	o.Author = v
+// HasCountries returns a boolean if a field has been set.
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) HasCountries() bool {
+	if o != nil && !IsNil(o.Countries) {
+		return true
+	}
+
+	return false
+}
+
+// SetCountries gets a reference to the given []string and assigns it to the Countries field.
+func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) SetCountries(v []string) {
+	o.Countries = v
 }
 
 // GetInstitutions returns the Institutions field value
@@ -212,38 +278,6 @@ func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) SetRawAuthorName(v st
 	o.RawAuthorName = v
 }
 
-// GetCountries returns the Countries field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) GetCountries() []string {
-	if o == nil || IsNil(o.Countries) {
-		var ret []string
-		return ret
-	}
-	return o.Countries
-}
-
-// GetCountriesOk returns a tuple with the Countries field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) GetCountriesOk() ([]string, bool) {
-	if o == nil || IsNil(o.Countries) {
-		return nil, false
-	}
-	return o.Countries, true
-}
-
-// HasCountries returns a boolean if a field has been set.
-func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) HasCountries() bool {
-	if o != nil && !IsNil(o.Countries) {
-		return true
-	}
-
-	return false
-}
-
-// SetCountries gets a reference to the given []string and assigns it to the Countries field.
-func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) SetCountries(v []string) {
-	o.Countries = v
-}
-
 func (o ListWorks200ResponseResultsInnerAuthorshipsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -254,17 +288,20 @@ func (o ListWorks200ResponseResultsInnerAuthorshipsInner) MarshalJSON() ([]byte,
 
 func (o ListWorks200ResponseResultsInnerAuthorshipsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["author_position"] = o.AuthorPosition
+	if !IsNil(o.Affiliations) {
+		toSerialize["affiliations"] = o.Affiliations
+	}
 	toSerialize["author"] = o.Author
+	toSerialize["author_position"] = o.AuthorPosition
+	if !IsNil(o.Countries) {
+		toSerialize["countries"] = o.Countries
+	}
 	toSerialize["institutions"] = o.Institutions
 	if !IsNil(o.IsCorresponding) {
 		toSerialize["is_corresponding"] = o.IsCorresponding
 	}
 	toSerialize["raw_affiliation_strings"] = o.RawAffiliationStrings
 	toSerialize["raw_author_name"] = o.RawAuthorName
-	if !IsNil(o.Countries) {
-		toSerialize["countries"] = o.Countries
-	}
 	return toSerialize, nil
 }
 
@@ -273,8 +310,8 @@ func (o *ListWorks200ResponseResultsInnerAuthorshipsInner) UnmarshalJSON(data []
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"author_position",
 		"author",
+		"author_position",
 		"institutions",
 		"raw_affiliation_strings",
 		"raw_author_name",

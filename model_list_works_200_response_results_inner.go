@@ -32,7 +32,7 @@ type ListWorks200ResponseResultsInner struct {
 	// The number of citations to this work.
 	CitedByCount *int32 `json:"cited_by_count,omitempty"`
 	// List of concepts (research topics) associated with the work. These are algorithmically inferred based on the work's content.
-	Concepts []ListConcepts200ResponseResultsInnerAncestorsInner `json:"concepts,omitempty"`
+	Concepts []map[string]interface{} `json:"concepts,omitempty"`
 	// OpenAlex IDs of any authors for which authorships.is_corresponding is true.
 	CorrespondingAuthorIds []string `json:"corresponding_author_ids,omitempty"`
 	// OpenAlex IDs of any institutions found within an authorship for which authorships.is_corresponding is true.
@@ -377,9 +377,9 @@ func (o *ListWorks200ResponseResultsInner) SetCitedByCount(v int32) {
 }
 
 // GetConcepts returns the Concepts field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInner) GetConcepts() []ListConcepts200ResponseResultsInnerAncestorsInner {
+func (o *ListWorks200ResponseResultsInner) GetConcepts() []map[string]interface{} {
 	if o == nil || IsNil(o.Concepts) {
-		var ret []ListConcepts200ResponseResultsInnerAncestorsInner
+		var ret []map[string]interface{}
 		return ret
 	}
 	return o.Concepts
@@ -387,7 +387,7 @@ func (o *ListWorks200ResponseResultsInner) GetConcepts() []ListConcepts200Respon
 
 // GetConceptsOk returns a tuple with the Concepts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInner) GetConceptsOk() ([]ListConcepts200ResponseResultsInnerAncestorsInner, bool) {
+func (o *ListWorks200ResponseResultsInner) GetConceptsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Concepts) {
 		return nil, false
 	}
@@ -403,8 +403,8 @@ func (o *ListWorks200ResponseResultsInner) HasConcepts() bool {
 	return false
 }
 
-// SetConcepts gets a reference to the given []ListConcepts200ResponseResultsInnerAncestorsInner and assigns it to the Concepts field.
-func (o *ListWorks200ResponseResultsInner) SetConcepts(v []ListConcepts200ResponseResultsInnerAncestorsInner) {
+// SetConcepts gets a reference to the given []map[string]interface{} and assigns it to the Concepts field.
+func (o *ListWorks200ResponseResultsInner) SetConcepts(v []map[string]interface{}) {
 	o.Concepts = v
 }
 

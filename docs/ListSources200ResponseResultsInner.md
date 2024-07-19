@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksApiUrl** | Pointer to **string** | A URL that will get you a list of all this source&#39;s Works. We express this as an API URL (instead of just listing the works themselves) because sometimes a source&#39;s publication list is too long to reasonably fit into a single Source object. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of Works this source hosts. | [optional] 
-**XConcepts** | Pointer to [**[]ListConcepts200ResponseResultsInnerAncestorsInner**](ListConcepts200ResponseResultsInnerAncestorsInner.md) | The Concepts most frequently applied to works hosted by this source. Each is represented as a dehydrated Concept object, with one additional attribute - score (Float) The strength of association between this source and the listed concept, from 0-100. | [optional] 
+**XConcepts** | Pointer to **[]map[string]interface{}** | The Concepts most frequently applied to works hosted by this source. | [optional] 
 
 ## Methods
 
@@ -703,20 +703,20 @@ HasWorksCount returns a boolean if a field has been set.
 
 ### GetXConcepts
 
-`func (o *ListSources200ResponseResultsInner) GetXConcepts() []ListConcepts200ResponseResultsInnerAncestorsInner`
+`func (o *ListSources200ResponseResultsInner) GetXConcepts() []map[string]interface{}`
 
 GetXConcepts returns the XConcepts field if non-nil, zero value otherwise.
 
 ### GetXConceptsOk
 
-`func (o *ListSources200ResponseResultsInner) GetXConceptsOk() (*[]ListConcepts200ResponseResultsInnerAncestorsInner, bool)`
+`func (o *ListSources200ResponseResultsInner) GetXConceptsOk() (*[]map[string]interface{}, bool)`
 
 GetXConceptsOk returns a tuple with the XConcepts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetXConcepts
 
-`func (o *ListSources200ResponseResultsInner) SetXConcepts(v []ListConcepts200ResponseResultsInnerAncestorsInner)`
+`func (o *ListSources200ResponseResultsInner) SetXConcepts(v []map[string]interface{})`
 
 SetXConcepts sets XConcepts field to given value.
 

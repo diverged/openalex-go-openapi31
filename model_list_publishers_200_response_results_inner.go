@@ -42,8 +42,7 @@ type ListPublishers200ResponseResultsInner struct {
 	ImageUrl *string `json:"image_url,omitempty"`
 	// OpenAlex IDs of publishers, including this publisher's ID and any parent publishers.
 	Lineage []string `json:"lineage,omitempty"`
-	// An OpenAlex ID linking to the direct parent of the publisher. This will be null if the publisher's hierarchy_level is 0.
-	ParentPublisher *string `json:"parent_publisher,omitempty"`
+	ParentPublisher NullableListPublishers200ResponseResultsInnerParentPublisher `json:"parent_publisher,omitempty"`
 	// List of role objects, which include the role, the id, and the works_count.
 	Roles []ListFunders200ResponseResultsInnerRolesInner `json:"roles,omitempty"`
 	// An URL that will get you a list of all the sources published by this publisher.
@@ -456,36 +455,46 @@ func (o *ListPublishers200ResponseResultsInner) SetLineage(v []string) {
 	o.Lineage = v
 }
 
-// GetParentPublisher returns the ParentPublisher field value if set, zero value otherwise.
-func (o *ListPublishers200ResponseResultsInner) GetParentPublisher() string {
-	if o == nil || IsNil(o.ParentPublisher) {
-		var ret string
+// GetParentPublisher returns the ParentPublisher field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ListPublishers200ResponseResultsInner) GetParentPublisher() ListPublishers200ResponseResultsInnerParentPublisher {
+	if o == nil || IsNil(o.ParentPublisher.Get()) {
+		var ret ListPublishers200ResponseResultsInnerParentPublisher
 		return ret
 	}
-	return *o.ParentPublisher
+	return *o.ParentPublisher.Get()
 }
 
 // GetParentPublisherOk returns a tuple with the ParentPublisher field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListPublishers200ResponseResultsInner) GetParentPublisherOk() (*string, bool) {
-	if o == nil || IsNil(o.ParentPublisher) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ListPublishers200ResponseResultsInner) GetParentPublisherOk() (*ListPublishers200ResponseResultsInnerParentPublisher, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.ParentPublisher, true
+	return o.ParentPublisher.Get(), o.ParentPublisher.IsSet()
 }
 
 // HasParentPublisher returns a boolean if a field has been set.
 func (o *ListPublishers200ResponseResultsInner) HasParentPublisher() bool {
-	if o != nil && !IsNil(o.ParentPublisher) {
+	if o != nil && o.ParentPublisher.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetParentPublisher gets a reference to the given string and assigns it to the ParentPublisher field.
-func (o *ListPublishers200ResponseResultsInner) SetParentPublisher(v string) {
-	o.ParentPublisher = &v
+// SetParentPublisher gets a reference to the given NullableListPublishers200ResponseResultsInnerParentPublisher and assigns it to the ParentPublisher field.
+func (o *ListPublishers200ResponseResultsInner) SetParentPublisher(v ListPublishers200ResponseResultsInnerParentPublisher) {
+	o.ParentPublisher.Set(&v)
+}
+// SetParentPublisherNil sets the value for ParentPublisher to be an explicit nil
+func (o *ListPublishers200ResponseResultsInner) SetParentPublisherNil() {
+	o.ParentPublisher.Set(nil)
+}
+
+// UnsetParentPublisher ensures that no value is present for ParentPublisher, not even an explicit nil
+func (o *ListPublishers200ResponseResultsInner) UnsetParentPublisher() {
+	o.ParentPublisher.Unset()
 }
 
 // GetRoles returns the Roles field value if set, zero value otherwise.
@@ -694,8 +703,8 @@ func (o ListPublishers200ResponseResultsInner) ToMap() (map[string]interface{}, 
 	if !IsNil(o.Lineage) {
 		toSerialize["lineage"] = o.Lineage
 	}
-	if !IsNil(o.ParentPublisher) {
-		toSerialize["parent_publisher"] = o.ParentPublisher
+	if o.ParentPublisher.IsSet() {
+		toSerialize["parent_publisher"] = o.ParentPublisher.Get()
 	}
 	if !IsNil(o.Roles) {
 		toSerialize["roles"] = o.Roles

@@ -20,7 +20,7 @@ var _ MappedNullable = &ListTopics200ResponseResultsInnerDomain{}
 // ListTopics200ResponseResultsInnerDomain struct for ListTopics200ResponseResultsInnerDomain
 type ListTopics200ResponseResultsInnerDomain struct {
 	// The ID of the domain.
-	Id *int32 `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	// The name of the domain.
 	DisplayName *string `json:"display_name,omitempty"`
 }
@@ -43,9 +43,9 @@ func NewListTopics200ResponseResultsInnerDomainWithDefaults() *ListTopics200Resp
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ListTopics200ResponseResultsInnerDomain) GetId() int32 {
+func (o *ListTopics200ResponseResultsInnerDomain) GetId() string {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Id
@@ -53,7 +53,7 @@ func (o *ListTopics200ResponseResultsInnerDomain) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListTopics200ResponseResultsInnerDomain) GetIdOk() (*int32, bool) {
+func (o *ListTopics200ResponseResultsInnerDomain) GetIdOk() (*string, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *ListTopics200ResponseResultsInnerDomain) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ListTopics200ResponseResultsInnerDomain) SetId(v int32) {
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *ListTopics200ResponseResultsInnerDomain) SetId(v string) {
 	o.Id = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | The ID of the domain. | [optional] 
+**Id** | Pointer to **string** | The ID of the domain. | [optional] 
 **DisplayName** | Pointer to **string** | The name of the domain. | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ListTopics200ResponseResultsInnerDomain) GetId() int32`
+`func (o *ListTopics200ResponseResultsInnerDomain) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ListTopics200ResponseResultsInnerDomain) GetIdOk() (*int32, bool)`
+`func (o *ListTopics200ResponseResultsInnerDomain) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ListTopics200ResponseResultsInnerDomain) SetId(v int32)`
+`func (o *ListTopics200ResponseResultsInnerDomain) SetId(v string)`
 
 SetId sets Id field to given value.
 

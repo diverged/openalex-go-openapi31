@@ -24,13 +24,11 @@ type ListConcepts200ResponseResultsInnerAncestorsInner struct {
 	// The OpenAlex ID for this concept.
 	Id string `json:"id"`
 	// The Wikidata ID for this concept.
-	Wikidata *string `json:"wikidata,omitempty"`
+	Wikidata string `json:"wikidata"`
 	// The human-readable name of the concept.
 	DisplayName string `json:"display_name"`
 	// The hierarchical level of the concept. Level 0 is the most general, and level 5 is the most specific.
 	Level int32 `json:"level"`
-	// The relevance score of this concept to the work. Higher scores indicate greater relevance.
-	Score float32 `json:"score"`
 }
 
 type _ListConcepts200ResponseResultsInnerAncestorsInner ListConcepts200ResponseResultsInnerAncestorsInner
@@ -39,12 +37,12 @@ type _ListConcepts200ResponseResultsInnerAncestorsInner ListConcepts200ResponseR
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListConcepts200ResponseResultsInnerAncestorsInner(id string, displayName string, level int32, score float32) *ListConcepts200ResponseResultsInnerAncestorsInner {
+func NewListConcepts200ResponseResultsInnerAncestorsInner(id string, wikidata string, displayName string, level int32) *ListConcepts200ResponseResultsInnerAncestorsInner {
 	this := ListConcepts200ResponseResultsInnerAncestorsInner{}
 	this.Id = id
+	this.Wikidata = wikidata
 	this.DisplayName = displayName
 	this.Level = level
-	this.Score = score
 	return &this
 }
 
@@ -80,36 +78,28 @@ func (o *ListConcepts200ResponseResultsInnerAncestorsInner) SetId(v string) {
 	o.Id = v
 }
 
-// GetWikidata returns the Wikidata field value if set, zero value otherwise.
+// GetWikidata returns the Wikidata field value
 func (o *ListConcepts200ResponseResultsInnerAncestorsInner) GetWikidata() string {
-	if o == nil || IsNil(o.Wikidata) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Wikidata
+
+	return o.Wikidata
 }
 
-// GetWikidataOk returns a tuple with the Wikidata field value if set, nil otherwise
+// GetWikidataOk returns a tuple with the Wikidata field value
 // and a boolean to check if the value has been set.
 func (o *ListConcepts200ResponseResultsInnerAncestorsInner) GetWikidataOk() (*string, bool) {
-	if o == nil || IsNil(o.Wikidata) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Wikidata, true
+	return &o.Wikidata, true
 }
 
-// HasWikidata returns a boolean if a field has been set.
-func (o *ListConcepts200ResponseResultsInnerAncestorsInner) HasWikidata() bool {
-	if o != nil && !IsNil(o.Wikidata) {
-		return true
-	}
-
-	return false
-}
-
-// SetWikidata gets a reference to the given string and assigns it to the Wikidata field.
+// SetWikidata sets field value
 func (o *ListConcepts200ResponseResultsInnerAncestorsInner) SetWikidata(v string) {
-	o.Wikidata = &v
+	o.Wikidata = v
 }
 
 // GetDisplayName returns the DisplayName field value
@@ -160,30 +150,6 @@ func (o *ListConcepts200ResponseResultsInnerAncestorsInner) SetLevel(v int32) {
 	o.Level = v
 }
 
-// GetScore returns the Score field value
-func (o *ListConcepts200ResponseResultsInnerAncestorsInner) GetScore() float32 {
-	if o == nil {
-		var ret float32
-		return ret
-	}
-
-	return o.Score
-}
-
-// GetScoreOk returns a tuple with the Score field value
-// and a boolean to check if the value has been set.
-func (o *ListConcepts200ResponseResultsInnerAncestorsInner) GetScoreOk() (*float32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Score, true
-}
-
-// SetScore sets field value
-func (o *ListConcepts200ResponseResultsInnerAncestorsInner) SetScore(v float32) {
-	o.Score = v
-}
-
 func (o ListConcepts200ResponseResultsInnerAncestorsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -195,12 +161,9 @@ func (o ListConcepts200ResponseResultsInnerAncestorsInner) MarshalJSON() ([]byte
 func (o ListConcepts200ResponseResultsInnerAncestorsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
-	if !IsNil(o.Wikidata) {
-		toSerialize["wikidata"] = o.Wikidata
-	}
+	toSerialize["wikidata"] = o.Wikidata
 	toSerialize["display_name"] = o.DisplayName
 	toSerialize["level"] = o.Level
-	toSerialize["score"] = o.Score
 	return toSerialize, nil
 }
 
@@ -210,9 +173,9 @@ func (o *ListConcepts200ResponseResultsInnerAncestorsInner) UnmarshalJSON(data [
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"id",
+		"wikidata",
 		"display_name",
 		"level",
-		"score",
 	}
 
 	allProperties := make(map[string]interface{})

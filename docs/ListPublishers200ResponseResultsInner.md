@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **ImageThumbnailUrl** | Pointer to **string** | URL for a smaller version of the image representing this publisher. | [optional] 
 **ImageUrl** | Pointer to **string** | URL where you can get an image representing this publisher. | [optional] 
 **Lineage** | Pointer to **[]string** | OpenAlex IDs of publishers, including this publisher&#39;s ID and any parent publishers. | [optional] 
-**ParentPublisher** | Pointer to **string** | An OpenAlex ID linking to the direct parent of the publisher. This will be null if the publisher&#39;s hierarchy_level is 0. | [optional] 
+**ParentPublisher** | Pointer to [**NullableListPublishers200ResponseResultsInnerParentPublisher**](ListPublishers200ResponseResultsInnerParentPublisher.md) |  | [optional] 
 **Roles** | Pointer to [**[]ListFunders200ResponseResultsInnerRolesInner**](ListFunders200ResponseResultsInnerRolesInner.md) | List of role objects, which include the role, the id, and the works_count. | [optional] 
 **SourcesApiUrl** | Pointer to **string** | An URL that will get you a list of all the sources published by this publisher. | [optional] 
 **SummaryStats** | Pointer to [**ListPublishers200ResponseResultsInnerSummaryStats**](ListPublishers200ResponseResultsInnerSummaryStats.md) |  | [optional] 
@@ -344,20 +344,20 @@ HasLineage returns a boolean if a field has been set.
 
 ### GetParentPublisher
 
-`func (o *ListPublishers200ResponseResultsInner) GetParentPublisher() string`
+`func (o *ListPublishers200ResponseResultsInner) GetParentPublisher() ListPublishers200ResponseResultsInnerParentPublisher`
 
 GetParentPublisher returns the ParentPublisher field if non-nil, zero value otherwise.
 
 ### GetParentPublisherOk
 
-`func (o *ListPublishers200ResponseResultsInner) GetParentPublisherOk() (*string, bool)`
+`func (o *ListPublishers200ResponseResultsInner) GetParentPublisherOk() (*ListPublishers200ResponseResultsInnerParentPublisher, bool)`
 
 GetParentPublisherOk returns a tuple with the ParentPublisher field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParentPublisher
 
-`func (o *ListPublishers200ResponseResultsInner) SetParentPublisher(v string)`
+`func (o *ListPublishers200ResponseResultsInner) SetParentPublisher(v ListPublishers200ResponseResultsInnerParentPublisher)`
 
 SetParentPublisher sets ParentPublisher field to given value.
 
@@ -367,6 +367,16 @@ SetParentPublisher sets ParentPublisher field to given value.
 
 HasParentPublisher returns a boolean if a field has been set.
 
+### SetParentPublisherNil
+
+`func (o *ListPublishers200ResponseResultsInner) SetParentPublisherNil(b bool)`
+
+ SetParentPublisherNil sets the value for ParentPublisher to be an explicit nil
+
+### UnsetParentPublisher
+`func (o *ListPublishers200ResponseResultsInner) UnsetParentPublisher()`
+
+UnsetParentPublisher ensures that no value is present for ParentPublisher, not even an explicit nil
 ### GetRoles
 
 `func (o *ListPublishers200ResponseResultsInner) GetRoles() []ListFunders200ResponseResultsInnerRolesInner`

@@ -17,17 +17,17 @@ import (
 // checks if the ListWorks200ResponseResultsInnerTopicsInner type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ListWorks200ResponseResultsInnerTopicsInner{}
 
-// ListWorks200ResponseResultsInnerTopicsInner struct for ListWorks200ResponseResultsInnerTopicsInner
+// ListWorks200ResponseResultsInnerTopicsInner A simplified representation of a topic, used when a topic is referenced by another entity.
 type ListWorks200ResponseResultsInnerTopicsInner struct {
 	// The name of the topic.
 	DisplayName *string `json:"display_name,omitempty"`
-	Domain *ListWorks200ResponseResultsInnerTopicsInnerDomain `json:"domain,omitempty"`
-	Field *ListWorks200ResponseResultsInnerTopicsInnerDomain `json:"field,omitempty"`
+	Domain *ListWorks200ResponseResultsInnerPrimaryTopicDomain `json:"domain,omitempty"`
+	Field *ListWorks200ResponseResultsInnerPrimaryTopicDomain `json:"field,omitempty"`
 	// The OpenAlex ID for this topic.
 	Id *string `json:"id,omitempty"`
 	// The strength of the connection between the work and this topic.
 	Score *float32 `json:"score,omitempty"`
-	Subfield *ListWorks200ResponseResultsInnerTopicsInnerDomain `json:"subfield,omitempty"`
+	Subfield *ListWorks200ResponseResultsInnerPrimaryTopicDomain `json:"subfield,omitempty"`
 }
 
 // NewListWorks200ResponseResultsInnerTopicsInner instantiates a new ListWorks200ResponseResultsInnerTopicsInner object
@@ -80,9 +80,9 @@ func (o *ListWorks200ResponseResultsInnerTopicsInner) SetDisplayName(v string) {
 }
 
 // GetDomain returns the Domain field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerTopicsInner) GetDomain() ListWorks200ResponseResultsInnerTopicsInnerDomain {
+func (o *ListWorks200ResponseResultsInnerTopicsInner) GetDomain() ListWorks200ResponseResultsInnerPrimaryTopicDomain {
 	if o == nil || IsNil(o.Domain) {
-		var ret ListWorks200ResponseResultsInnerTopicsInnerDomain
+		var ret ListWorks200ResponseResultsInnerPrimaryTopicDomain
 		return ret
 	}
 	return *o.Domain
@@ -90,7 +90,7 @@ func (o *ListWorks200ResponseResultsInnerTopicsInner) GetDomain() ListWorks200Re
 
 // GetDomainOk returns a tuple with the Domain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerTopicsInner) GetDomainOk() (*ListWorks200ResponseResultsInnerTopicsInnerDomain, bool) {
+func (o *ListWorks200ResponseResultsInnerTopicsInner) GetDomainOk() (*ListWorks200ResponseResultsInnerPrimaryTopicDomain, bool) {
 	if o == nil || IsNil(o.Domain) {
 		return nil, false
 	}
@@ -106,15 +106,15 @@ func (o *ListWorks200ResponseResultsInnerTopicsInner) HasDomain() bool {
 	return false
 }
 
-// SetDomain gets a reference to the given ListWorks200ResponseResultsInnerTopicsInnerDomain and assigns it to the Domain field.
-func (o *ListWorks200ResponseResultsInnerTopicsInner) SetDomain(v ListWorks200ResponseResultsInnerTopicsInnerDomain) {
+// SetDomain gets a reference to the given ListWorks200ResponseResultsInnerPrimaryTopicDomain and assigns it to the Domain field.
+func (o *ListWorks200ResponseResultsInnerTopicsInner) SetDomain(v ListWorks200ResponseResultsInnerPrimaryTopicDomain) {
 	o.Domain = &v
 }
 
 // GetField returns the Field field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerTopicsInner) GetField() ListWorks200ResponseResultsInnerTopicsInnerDomain {
+func (o *ListWorks200ResponseResultsInnerTopicsInner) GetField() ListWorks200ResponseResultsInnerPrimaryTopicDomain {
 	if o == nil || IsNil(o.Field) {
-		var ret ListWorks200ResponseResultsInnerTopicsInnerDomain
+		var ret ListWorks200ResponseResultsInnerPrimaryTopicDomain
 		return ret
 	}
 	return *o.Field
@@ -122,7 +122,7 @@ func (o *ListWorks200ResponseResultsInnerTopicsInner) GetField() ListWorks200Res
 
 // GetFieldOk returns a tuple with the Field field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerTopicsInner) GetFieldOk() (*ListWorks200ResponseResultsInnerTopicsInnerDomain, bool) {
+func (o *ListWorks200ResponseResultsInnerTopicsInner) GetFieldOk() (*ListWorks200ResponseResultsInnerPrimaryTopicDomain, bool) {
 	if o == nil || IsNil(o.Field) {
 		return nil, false
 	}
@@ -138,8 +138,8 @@ func (o *ListWorks200ResponseResultsInnerTopicsInner) HasField() bool {
 	return false
 }
 
-// SetField gets a reference to the given ListWorks200ResponseResultsInnerTopicsInnerDomain and assigns it to the Field field.
-func (o *ListWorks200ResponseResultsInnerTopicsInner) SetField(v ListWorks200ResponseResultsInnerTopicsInnerDomain) {
+// SetField gets a reference to the given ListWorks200ResponseResultsInnerPrimaryTopicDomain and assigns it to the Field field.
+func (o *ListWorks200ResponseResultsInnerTopicsInner) SetField(v ListWorks200ResponseResultsInnerPrimaryTopicDomain) {
 	o.Field = &v
 }
 
@@ -208,9 +208,9 @@ func (o *ListWorks200ResponseResultsInnerTopicsInner) SetScore(v float32) {
 }
 
 // GetSubfield returns the Subfield field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerTopicsInner) GetSubfield() ListWorks200ResponseResultsInnerTopicsInnerDomain {
+func (o *ListWorks200ResponseResultsInnerTopicsInner) GetSubfield() ListWorks200ResponseResultsInnerPrimaryTopicDomain {
 	if o == nil || IsNil(o.Subfield) {
-		var ret ListWorks200ResponseResultsInnerTopicsInnerDomain
+		var ret ListWorks200ResponseResultsInnerPrimaryTopicDomain
 		return ret
 	}
 	return *o.Subfield
@@ -218,7 +218,7 @@ func (o *ListWorks200ResponseResultsInnerTopicsInner) GetSubfield() ListWorks200
 
 // GetSubfieldOk returns a tuple with the Subfield field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerTopicsInner) GetSubfieldOk() (*ListWorks200ResponseResultsInnerTopicsInnerDomain, bool) {
+func (o *ListWorks200ResponseResultsInnerTopicsInner) GetSubfieldOk() (*ListWorks200ResponseResultsInnerPrimaryTopicDomain, bool) {
 	if o == nil || IsNil(o.Subfield) {
 		return nil, false
 	}
@@ -234,8 +234,8 @@ func (o *ListWorks200ResponseResultsInnerTopicsInner) HasSubfield() bool {
 	return false
 }
 
-// SetSubfield gets a reference to the given ListWorks200ResponseResultsInnerTopicsInnerDomain and assigns it to the Subfield field.
-func (o *ListWorks200ResponseResultsInnerTopicsInner) SetSubfield(v ListWorks200ResponseResultsInnerTopicsInnerDomain) {
+// SetSubfield gets a reference to the given ListWorks200ResponseResultsInnerPrimaryTopicDomain and assigns it to the Subfield field.
+func (o *ListWorks200ResponseResultsInnerTopicsInner) SetSubfield(v ListWorks200ResponseResultsInnerPrimaryTopicDomain) {
 	o.Subfield = &v
 }
 

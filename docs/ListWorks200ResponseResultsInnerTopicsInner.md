@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DisplayName** | Pointer to **string** | The name of the topic. | [optional] 
-**Domain** | Pointer to [**ListWorks200ResponseResultsInnerTopicsInnerDomain**](ListWorks200ResponseResultsInnerTopicsInnerDomain.md) |  | [optional] 
-**Field** | Pointer to [**ListWorks200ResponseResultsInnerTopicsInnerDomain**](ListWorks200ResponseResultsInnerTopicsInnerDomain.md) |  | [optional] 
+**Domain** | Pointer to [**ListWorks200ResponseResultsInnerPrimaryTopicDomain**](ListWorks200ResponseResultsInnerPrimaryTopicDomain.md) |  | [optional] 
+**Field** | Pointer to [**ListWorks200ResponseResultsInnerPrimaryTopicDomain**](ListWorks200ResponseResultsInnerPrimaryTopicDomain.md) |  | [optional] 
 **Id** | Pointer to **string** | The OpenAlex ID for this topic. | [optional] 
 **Score** | Pointer to **float32** | The strength of the connection between the work and this topic. | [optional] 
-**Subfield** | Pointer to [**ListWorks200ResponseResultsInnerTopicsInnerDomain**](ListWorks200ResponseResultsInnerTopicsInnerDomain.md) |  | [optional] 
+**Subfield** | Pointer to [**ListWorks200ResponseResultsInnerPrimaryTopicDomain**](ListWorks200ResponseResultsInnerPrimaryTopicDomain.md) |  | [optional] 
 
 ## Methods
 
@@ -57,20 +57,20 @@ HasDisplayName returns a boolean if a field has been set.
 
 ### GetDomain
 
-`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetDomain() ListWorks200ResponseResultsInnerTopicsInnerDomain`
+`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetDomain() ListWorks200ResponseResultsInnerPrimaryTopicDomain`
 
 GetDomain returns the Domain field if non-nil, zero value otherwise.
 
 ### GetDomainOk
 
-`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetDomainOk() (*ListWorks200ResponseResultsInnerTopicsInnerDomain, bool)`
+`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetDomainOk() (*ListWorks200ResponseResultsInnerPrimaryTopicDomain, bool)`
 
 GetDomainOk returns a tuple with the Domain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDomain
 
-`func (o *ListWorks200ResponseResultsInnerTopicsInner) SetDomain(v ListWorks200ResponseResultsInnerTopicsInnerDomain)`
+`func (o *ListWorks200ResponseResultsInnerTopicsInner) SetDomain(v ListWorks200ResponseResultsInnerPrimaryTopicDomain)`
 
 SetDomain sets Domain field to given value.
 
@@ -82,20 +82,20 @@ HasDomain returns a boolean if a field has been set.
 
 ### GetField
 
-`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetField() ListWorks200ResponseResultsInnerTopicsInnerDomain`
+`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetField() ListWorks200ResponseResultsInnerPrimaryTopicDomain`
 
 GetField returns the Field field if non-nil, zero value otherwise.
 
 ### GetFieldOk
 
-`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetFieldOk() (*ListWorks200ResponseResultsInnerTopicsInnerDomain, bool)`
+`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetFieldOk() (*ListWorks200ResponseResultsInnerPrimaryTopicDomain, bool)`
 
 GetFieldOk returns a tuple with the Field field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetField
 
-`func (o *ListWorks200ResponseResultsInnerTopicsInner) SetField(v ListWorks200ResponseResultsInnerTopicsInnerDomain)`
+`func (o *ListWorks200ResponseResultsInnerTopicsInner) SetField(v ListWorks200ResponseResultsInnerPrimaryTopicDomain)`
 
 SetField sets Field field to given value.
 
@@ -157,20 +157,20 @@ HasScore returns a boolean if a field has been set.
 
 ### GetSubfield
 
-`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetSubfield() ListWorks200ResponseResultsInnerTopicsInnerDomain`
+`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetSubfield() ListWorks200ResponseResultsInnerPrimaryTopicDomain`
 
 GetSubfield returns the Subfield field if non-nil, zero value otherwise.
 
 ### GetSubfieldOk
 
-`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetSubfieldOk() (*ListWorks200ResponseResultsInnerTopicsInnerDomain, bool)`
+`func (o *ListWorks200ResponseResultsInnerTopicsInner) GetSubfieldOk() (*ListWorks200ResponseResultsInnerPrimaryTopicDomain, bool)`
 
 GetSubfieldOk returns a tuple with the Subfield field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubfield
 
-`func (o *ListWorks200ResponseResultsInnerTopicsInner) SetSubfield(v ListWorks200ResponseResultsInnerTopicsInnerDomain)`
+`func (o *ListWorks200ResponseResultsInnerTopicsInner) SetSubfield(v ListWorks200ResponseResultsInnerPrimaryTopicDomain)`
 
 SetSubfield sets Subfield field to given value.
 

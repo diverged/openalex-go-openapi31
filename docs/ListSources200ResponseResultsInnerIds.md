@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Openalex** | Pointer to **string** |  | [optional] 
 **IssnL** | Pointer to **string** |  | [optional] 
 **Issn** | Pointer to **[]string** |  | [optional] 
-**Mag** | Pointer to **int32** |  | [optional] 
+**Mag** | Pointer to **string** |  | [optional] 
 **Fatcat** | Pointer to **string** |  | [optional] 
 **Wikidata** | Pointer to **string** |  | [optional] 
 
@@ -107,20 +107,20 @@ HasIssn returns a boolean if a field has been set.
 
 ### GetMag
 
-`func (o *ListSources200ResponseResultsInnerIds) GetMag() int32`
+`func (o *ListSources200ResponseResultsInnerIds) GetMag() string`
 
 GetMag returns the Mag field if non-nil, zero value otherwise.
 
 ### GetMagOk
 
-`func (o *ListSources200ResponseResultsInnerIds) GetMagOk() (*int32, bool)`
+`func (o *ListSources200ResponseResultsInnerIds) GetMagOk() (*string, bool)`
 
 GetMagOk returns a tuple with the Mag field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMag
 
-`func (o *ListSources200ResponseResultsInnerIds) SetMag(v int32)`
+`func (o *ListSources200ResponseResultsInnerIds) SetMag(v string)`
 
 SetMag sets Mag field to given value.
 

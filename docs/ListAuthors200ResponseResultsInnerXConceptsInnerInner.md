@@ -1,4 +1,4 @@
-# ListConcepts200ResponseResultsInnerRelatedConceptsInner
+# ListAuthors200ResponseResultsInnerXConceptsInnerInner
 
 ## Properties
 
@@ -8,140 +8,140 @@ Name | Type | Description | Notes
 **Wikidata** | **string** | The Wikidata ID for this concept. | 
 **DisplayName** | **string** | The human-readable name of the concept. | 
 **Level** | **int32** | The hierarchical level of the concept. Level 0 is the most general, and level 5 is the most specific. | 
-**Score** | Pointer to **NullableFloat32** | The strength of association between this concept and the listed concept, on a scale of 0-100. | [optional] 
+**Score** | Pointer to **NullableFloat32** | The strength of association between this source and the listed concept, from 0-100. | [optional] 
 
 ## Methods
 
-### NewListConcepts200ResponseResultsInnerRelatedConceptsInner
+### NewListAuthors200ResponseResultsInnerXConceptsInnerInner
 
-`func NewListConcepts200ResponseResultsInnerRelatedConceptsInner(id string, wikidata string, displayName string, level int32, ) *ListConcepts200ResponseResultsInnerRelatedConceptsInner`
+`func NewListAuthors200ResponseResultsInnerXConceptsInnerInner(id string, wikidata string, displayName string, level int32, ) *ListAuthors200ResponseResultsInnerXConceptsInnerInner`
 
-NewListConcepts200ResponseResultsInnerRelatedConceptsInner instantiates a new ListConcepts200ResponseResultsInnerRelatedConceptsInner object
+NewListAuthors200ResponseResultsInnerXConceptsInnerInner instantiates a new ListAuthors200ResponseResultsInnerXConceptsInnerInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListConcepts200ResponseResultsInnerRelatedConceptsInnerWithDefaults
+### NewListAuthors200ResponseResultsInnerXConceptsInnerInnerWithDefaults
 
-`func NewListConcepts200ResponseResultsInnerRelatedConceptsInnerWithDefaults() *ListConcepts200ResponseResultsInnerRelatedConceptsInner`
+`func NewListAuthors200ResponseResultsInnerXConceptsInnerInnerWithDefaults() *ListAuthors200ResponseResultsInnerXConceptsInnerInner`
 
-NewListConcepts200ResponseResultsInnerRelatedConceptsInnerWithDefaults instantiates a new ListConcepts200ResponseResultsInnerRelatedConceptsInner object
+NewListAuthors200ResponseResultsInnerXConceptsInnerInnerWithDefaults instantiates a new ListAuthors200ResponseResultsInnerXConceptsInnerInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetId() string`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetIdOk() (*string, bool)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetId(v string)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetId(v string)`
 
 SetId sets Id field to given value.
 
 
 ### GetWikidata
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetWikidata() string`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetWikidata() string`
 
 GetWikidata returns the Wikidata field if non-nil, zero value otherwise.
 
 ### GetWikidataOk
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetWikidataOk() (*string, bool)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetWikidataOk() (*string, bool)`
 
 GetWikidataOk returns a tuple with the Wikidata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWikidata
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetWikidata(v string)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetWikidata(v string)`
 
 SetWikidata sets Wikidata field to given value.
 
 
 ### GetDisplayName
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetDisplayName() string`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetDisplayName() string`
 
 GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
 
 ### GetDisplayNameOk
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetDisplayNameOk() (*string, bool)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetDisplayNameOk() (*string, bool)`
 
 GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisplayName
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetDisplayName(v string)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetDisplayName(v string)`
 
 SetDisplayName sets DisplayName field to given value.
 
 
 ### GetLevel
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetLevel() int32`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetLevel() int32`
 
 GetLevel returns the Level field if non-nil, zero value otherwise.
 
 ### GetLevelOk
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetLevelOk() (*int32, bool)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetLevelOk() (*int32, bool)`
 
 GetLevelOk returns a tuple with the Level field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLevel
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetLevel(v int32)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetLevel(v int32)`
 
 SetLevel sets Level field to given value.
 
 
 ### GetScore
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetScore() float32`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetScore() float32`
 
 GetScore returns the Score field if non-nil, zero value otherwise.
 
 ### GetScoreOk
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetScoreOk() (*float32, bool)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetScoreOk() (*float32, bool)`
 
 GetScoreOk returns a tuple with the Score field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScore
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetScore(v float32)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetScore(v float32)`
 
 SetScore sets Score field to given value.
 
 ### HasScore
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) HasScore() bool`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) HasScore() bool`
 
 HasScore returns a boolean if a field has been set.
 
 ### SetScoreNil
 
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetScoreNil(b bool)`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetScoreNil(b bool)`
 
  SetScoreNil sets the value for Score to be an explicit nil
 
 ### UnsetScore
-`func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) UnsetScore()`
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) UnsetScore()`
 
 UnsetScore ensures that no value is present for Score, not even an explicit nil
 

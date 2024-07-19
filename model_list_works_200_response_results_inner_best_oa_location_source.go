@@ -29,8 +29,12 @@ type ListWorks200ResponseResultsInnerBestOaLocationSource struct {
 	HostOrganization *string `json:"host_organization,omitempty"`
 	// OpenAlex IDs of the host organization's lineage, from most specific to most general.
 	HostOrganizationLineage []string `json:"host_organization_lineage,omitempty"`
+	// The display names of the host organization's lineage, from most specific to most general.
+	HostOrganizationLineageNames []string `json:"host_organization_lineage_names,omitempty"`
 	// The display_name of the host organization, shown for convenience.
 	HostOrganizationName *string `json:"host_organization_name,omitempty"`
+	// Whether this source is identified as a \"core source\" by [CWTS](https://www.cwts.nl/), used in the [Open Leiden Ranking](https://open.leidenranking.com/) of universities around the world. The list of core sources can be found [here](https://zenodo.org/records/10949671).
+	IsCore *bool `json:"is_core,omitempty"`
 	// Whether this source is listed in the Directory of Open Access Journals (DOAJ).
 	IsInDoaj *bool `json:"is_in_doaj,omitempty"`
 	// Whether this is currently a fully open-access source.
@@ -177,6 +181,38 @@ func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) SetHostOrganizati
 	o.HostOrganizationLineage = v
 }
 
+// GetHostOrganizationLineageNames returns the HostOrganizationLineageNames field value if set, zero value otherwise.
+func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) GetHostOrganizationLineageNames() []string {
+	if o == nil || IsNil(o.HostOrganizationLineageNames) {
+		var ret []string
+		return ret
+	}
+	return o.HostOrganizationLineageNames
+}
+
+// GetHostOrganizationLineageNamesOk returns a tuple with the HostOrganizationLineageNames field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) GetHostOrganizationLineageNamesOk() ([]string, bool) {
+	if o == nil || IsNil(o.HostOrganizationLineageNames) {
+		return nil, false
+	}
+	return o.HostOrganizationLineageNames, true
+}
+
+// HasHostOrganizationLineageNames returns a boolean if a field has been set.
+func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) HasHostOrganizationLineageNames() bool {
+	if o != nil && !IsNil(o.HostOrganizationLineageNames) {
+		return true
+	}
+
+	return false
+}
+
+// SetHostOrganizationLineageNames gets a reference to the given []string and assigns it to the HostOrganizationLineageNames field.
+func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) SetHostOrganizationLineageNames(v []string) {
+	o.HostOrganizationLineageNames = v
+}
+
 // GetHostOrganizationName returns the HostOrganizationName field value if set, zero value otherwise.
 func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) GetHostOrganizationName() string {
 	if o == nil || IsNil(o.HostOrganizationName) {
@@ -207,6 +243,38 @@ func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) HasHostOrganizati
 // SetHostOrganizationName gets a reference to the given string and assigns it to the HostOrganizationName field.
 func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) SetHostOrganizationName(v string) {
 	o.HostOrganizationName = &v
+}
+
+// GetIsCore returns the IsCore field value if set, zero value otherwise.
+func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) GetIsCore() bool {
+	if o == nil || IsNil(o.IsCore) {
+		var ret bool
+		return ret
+	}
+	return *o.IsCore
+}
+
+// GetIsCoreOk returns a tuple with the IsCore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) GetIsCoreOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsCore) {
+		return nil, false
+	}
+	return o.IsCore, true
+}
+
+// HasIsCore returns a boolean if a field has been set.
+func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) HasIsCore() bool {
+	if o != nil && !IsNil(o.IsCore) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCore gets a reference to the given bool and assigns it to the IsCore field.
+func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) SetIsCore(v bool) {
+	o.IsCore = &v
 }
 
 // GetIsInDoaj returns the IsInDoaj field value if set, zero value otherwise.
@@ -379,8 +447,14 @@ func (o ListWorks200ResponseResultsInnerBestOaLocationSource) ToMap() (map[strin
 	if !IsNil(o.HostOrganizationLineage) {
 		toSerialize["host_organization_lineage"] = o.HostOrganizationLineage
 	}
+	if !IsNil(o.HostOrganizationLineageNames) {
+		toSerialize["host_organization_lineage_names"] = o.HostOrganizationLineageNames
+	}
 	if !IsNil(o.HostOrganizationName) {
 		toSerialize["host_organization_name"] = o.HostOrganizationName
+	}
+	if !IsNil(o.IsCore) {
+		toSerialize["is_core"] = o.IsCore
 	}
 	if !IsNil(o.IsInDoaj) {
 		toSerialize["is_in_doaj"] = o.IsInDoaj

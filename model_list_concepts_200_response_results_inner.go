@@ -41,8 +41,7 @@ type ListConcepts200ResponseResultsInner struct {
 	International *ListConcepts200ResponseResultsInnerInternational `json:"international,omitempty"`
 	// List of concepts that this concept descends from, as dehydrated Concept objects.
 	Ancestors []ListConcepts200ResponseResultsInnerAncestorsInner `json:"ancestors,omitempty"`
-	// Concepts that are similar to this one.
-	RelatedConcepts []ListConcepts200ResponseResultsInnerRelatedConceptsInner `json:"related_concepts,omitempty"`
+	RelatedConcepts []map[string]interface{} `json:"related_concepts,omitempty"`
 	// The values of works_count and cited_by_count for each of the last ten years, binned by year.
 	CountsByYear []ListAuthors200ResponseResultsInnerCountsByYearInner `json:"counts_by_year,omitempty"`
 	// An URL that will get you a list of all the works tagged with this concept.
@@ -456,9 +455,9 @@ func (o *ListConcepts200ResponseResultsInner) SetAncestors(v []ListConcepts200Re
 }
 
 // GetRelatedConcepts returns the RelatedConcepts field value if set, zero value otherwise.
-func (o *ListConcepts200ResponseResultsInner) GetRelatedConcepts() []ListConcepts200ResponseResultsInnerRelatedConceptsInner {
+func (o *ListConcepts200ResponseResultsInner) GetRelatedConcepts() []map[string]interface{} {
 	if o == nil || IsNil(o.RelatedConcepts) {
-		var ret []ListConcepts200ResponseResultsInnerRelatedConceptsInner
+		var ret []map[string]interface{}
 		return ret
 	}
 	return o.RelatedConcepts
@@ -466,7 +465,7 @@ func (o *ListConcepts200ResponseResultsInner) GetRelatedConcepts() []ListConcept
 
 // GetRelatedConceptsOk returns a tuple with the RelatedConcepts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListConcepts200ResponseResultsInner) GetRelatedConceptsOk() ([]ListConcepts200ResponseResultsInnerRelatedConceptsInner, bool) {
+func (o *ListConcepts200ResponseResultsInner) GetRelatedConceptsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.RelatedConcepts) {
 		return nil, false
 	}
@@ -482,8 +481,8 @@ func (o *ListConcepts200ResponseResultsInner) HasRelatedConcepts() bool {
 	return false
 }
 
-// SetRelatedConcepts gets a reference to the given []ListConcepts200ResponseResultsInnerRelatedConceptsInner and assigns it to the RelatedConcepts field.
-func (o *ListConcepts200ResponseResultsInner) SetRelatedConcepts(v []ListConcepts200ResponseResultsInnerRelatedConceptsInner) {
+// SetRelatedConcepts gets a reference to the given []map[string]interface{} and assigns it to the RelatedConcepts field.
+func (o *ListConcepts200ResponseResultsInner) SetRelatedConcepts(v []map[string]interface{}) {
 	o.RelatedConcepts = v
 }
 

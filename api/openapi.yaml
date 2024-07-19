@@ -2166,48 +2166,6 @@ components:
           type: integer
         i10_index:
           type: integer
-    listAuthors_200_response_results_inner_x_concepts_inner:
-      allOf:
-      - description: "A simplified representation of a concept, used when a concept\
-          \ is referenced by another entity."
-        properties:
-          id:
-            description: The OpenAlex ID for this concept.
-            example: https://openalex.org/C41008148
-            type: string
-          wikidata:
-            description: The Wikidata ID for this concept.
-            example: https://www.wikidata.org/wiki/Q5
-            type: string
-          display_name:
-            description: The human-readable name of the concept.
-            example: Human
-            type: string
-          level:
-            description: "The hierarchical level of the concept. Level 0 is the most\
-              \ general, and level 5 is the most specific."
-            example: 1
-            type: integer
-          score:
-            description: The relevance score of this concept to the work. Higher scores
-              indicate greater relevance.
-            example: 0.8534
-            type: number
-        required:
-        - display_name
-        - id
-        - level
-        - score
-      - properties:
-          score:
-            format: float
-            type: number
-      example:
-        score: 6.0274563
-        level: 1
-        id: https://openalex.org/C41008148
-        display_name: Human
-        wikidata: https://www.wikidata.org/wiki/Q5
     listAuthors_200_response_results_inner:
       example:
         x_concepts:
@@ -2406,7 +2364,39 @@ components:
             level: 0
             score: 78.9
           items:
-            $ref: '#/components/schemas/listAuthors_200_response_results_inner_x_concepts_inner'
+            description: "The Concepts most frequently applied to this entity. Each\
+              \ is represented as a dehydrated Concept object, with one additional\
+              \ attribute - `score` (Float)"
+            items:
+              allOf:
+              - description: "A simplified representation of a concept, used when\
+                  \ a concept is referenced by another entity."
+                properties:
+                  id:
+                    description: The OpenAlex ID for this concept.
+                    example: https://openalex.org/C41008148
+                  wikidata:
+                    description: The Wikidata ID for this concept.
+                    example: https://www.wikidata.org/wiki/Q5
+                  display_name:
+                    description: The human-readable name of the concept.
+                    example: Human
+                  level:
+                    description: "The hierarchical level of the concept. Level 0 is\
+                      \ the most general, and level 5 is the most specific."
+                    example: 1
+                required:
+                - display_name
+                - id
+                - level
+                - wikidata
+              - properties:
+                  score:
+                    description: "The strength of association between this source\
+                      \ and the listed concept, from 0-100."
+                    example: 4.56749
+                    format: float
+            type: object
           type: array
     listAuthors_200_response_group_by_inner:
       description: A group of entities and their count
@@ -2638,7 +2628,7 @@ components:
           type: string
         mag:
           description: This concept's Microsoft Academic Graph (MAG) ID.
-          type: integer
+          type: string
     listConcepts_200_response_results_inner_international:
       description: "This concept's display name in many languages, derived from article\
         \ titles on each language's wikipedia."
@@ -2653,7 +2643,6 @@ components:
       description: "A simplified representation of a concept, used when a concept\
         \ is referenced by another entity."
       example:
-        score: 0.8534
         level: 1
         id: https://openalex.org/C41008148
         display_name: Human
@@ -2676,59 +2665,11 @@ components:
             \ general, and level 5 is the most specific."
           example: 1
           type: integer
-        score:
-          description: The relevance score of this concept to the work. Higher scores
-            indicate greater relevance.
-          example: 0.8534
-          type: number
       required:
       - display_name
       - id
       - level
-      - score
-    listConcepts_200_response_results_inner_related_concepts_inner:
-      allOf:
-      - description: "A simplified representation of a concept, used when a concept\
-          \ is referenced by another entity."
-        properties:
-          id:
-            description: The OpenAlex ID for this concept.
-            example: https://openalex.org/C41008148
-            type: string
-          wikidata:
-            description: The Wikidata ID for this concept.
-            example: https://www.wikidata.org/wiki/Q5
-            type: string
-          display_name:
-            description: The human-readable name of the concept.
-            example: Human
-            type: string
-          level:
-            description: "The hierarchical level of the concept. Level 0 is the most\
-              \ general, and level 5 is the most specific."
-            example: 1
-            type: integer
-          score:
-            description: The relevance score of this concept to the work. Higher scores
-              indicate greater relevance.
-            example: 0.8534
-            type: number
-        required:
-        - display_name
-        - id
-        - level
-        - score
-      - properties:
-          score:
-            description: "The strength of association between this concept and the\
-              \ listed concept, on a scale of 0-100."
-            type: number
-      example:
-        score: 0.8008281904610115
-        level: 1
-        id: https://openalex.org/C41008148
-        display_name: Human
-        wikidata: https://www.wikidata.org/wiki/Q5
+      - wikidata
     listConcepts_200_response_results_inner_summary_stats:
       description: Citation metrics for this concept
       example:
@@ -2762,16 +2703,8 @@ components:
         description: study of alternative metrics for analyzing and informing scholarship
         display_name: Altmetrics
         related_concepts:
-        - score: 0.8008281904610115
-          level: 1
-          id: https://openalex.org/C41008148
-          display_name: Human
-          wikidata: https://www.wikidata.org/wiki/Q5
-        - score: 0.8008281904610115
-          level: 1
-          id: https://openalex.org/C41008148
-          display_name: Human
-          wikidata: https://www.wikidata.org/wiki/Q5
+        - "{}"
+        - "{}"
         works_api_url: https://api.openalex.org/works?filter=concept.id:C2778407487
         summary_stats:
           "2yr_mean_citedness": 1.5295340589458237
@@ -2790,13 +2723,11 @@ components:
           display_name:
             ca: Altmetrics
         ancestors:
-        - score: 0.8534
-          level: 1
+        - level: 1
           id: https://openalex.org/C41008148
           display_name: Human
           wikidata: https://www.wikidata.org/wiki/Q5
-        - score: 0.8534
-          level: 1
+        - level: 1
           id: https://openalex.org/C41008148
           display_name: Human
           wikidata: https://www.wikidata.org/wiki/Q5
@@ -2853,9 +2784,40 @@ components:
             $ref: '#/components/schemas/listConcepts_200_response_results_inner_ancestors_inner'
           type: array
         related_concepts:
-          description: Concepts that are similar to this one.
           items:
-            $ref: '#/components/schemas/listConcepts_200_response_results_inner_related_concepts_inner'
+            description: "The Concepts most frequently applied to this entity. Each\
+              \ is represented as a dehydrated Concept object, with one additional\
+              \ attribute - `score` (Float)"
+            items:
+              allOf:
+              - description: "A simplified representation of a concept, used when\
+                  \ a concept is referenced by another entity."
+                properties:
+                  id:
+                    description: The OpenAlex ID for this concept.
+                    example: https://openalex.org/C41008148
+                  wikidata:
+                    description: The Wikidata ID for this concept.
+                    example: https://www.wikidata.org/wiki/Q5
+                  display_name:
+                    description: The human-readable name of the concept.
+                    example: Human
+                  level:
+                    description: "The hierarchical level of the concept. Level 0 is\
+                      \ the most general, and level 5 is the most specific."
+                    example: 1
+                required:
+                - display_name
+                - id
+                - level
+                - wikidata
+              - properties:
+                  score:
+                    description: "The strength of association between this source\
+                      \ and the listed concept, from 0-100."
+                    example: 4.56749
+                    format: float
+            type: object
           type: array
         counts_by_year:
           description: "The values of works_count and cited_by_count for each of the\
@@ -2919,16 +2881,8 @@ components:
           description: study of alternative metrics for analyzing and informing scholarship
           display_name: Altmetrics
           related_concepts:
-          - score: 0.8008281904610115
-            level: 1
-            id: https://openalex.org/C41008148
-            display_name: Human
-            wikidata: https://www.wikidata.org/wiki/Q5
-          - score: 0.8008281904610115
-            level: 1
-            id: https://openalex.org/C41008148
-            display_name: Human
-            wikidata: https://www.wikidata.org/wiki/Q5
+          - "{}"
+          - "{}"
           works_api_url: https://api.openalex.org/works?filter=concept.id:C2778407487
           summary_stats:
             "2yr_mean_citedness": 1.5295340589458237
@@ -2947,13 +2901,11 @@ components:
             display_name:
               ca: Altmetrics
           ancestors:
-          - score: 0.8534
-            level: 1
+          - level: 1
             id: https://openalex.org/C41008148
             display_name: Human
             wikidata: https://www.wikidata.org/wiki/Q5
-          - score: 0.8534
-            level: 1
+          - level: 1
             id: https://openalex.org/C41008148
             display_name: Human
             wikidata: https://www.wikidata.org/wiki/Q5
@@ -2972,16 +2924,8 @@ components:
           description: study of alternative metrics for analyzing and informing scholarship
           display_name: Altmetrics
           related_concepts:
-          - score: 0.8008281904610115
-            level: 1
-            id: https://openalex.org/C41008148
-            display_name: Human
-            wikidata: https://www.wikidata.org/wiki/Q5
-          - score: 0.8008281904610115
-            level: 1
-            id: https://openalex.org/C41008148
-            display_name: Human
-            wikidata: https://www.wikidata.org/wiki/Q5
+          - "{}"
+          - "{}"
           works_api_url: https://api.openalex.org/works?filter=concept.id:C2778407487
           summary_stats:
             "2yr_mean_citedness": 1.5295340589458237
@@ -3000,13 +2944,11 @@ components:
             display_name:
               ca: Altmetrics
           ancestors:
-          - score: 0.8534
-            level: 1
+          - level: 1
             id: https://openalex.org/C41008148
             display_name: Human
             wikidata: https://www.wikidata.org/wiki/Q5
-          - score: 0.8534
-            level: 1
+          - level: 1
             id: https://openalex.org/C41008148
             display_name: Human
             wikidata: https://www.wikidata.org/wiki/Q5
@@ -3546,16 +3488,8 @@ components:
           display_name:
             key: display_name
         x_concepts:
-        - score: 6.0274563
-          level: 1
-          id: https://openalex.org/C41008148
-          display_name: Human
-          wikidata: https://www.wikidata.org/wiki/Q5
-        - score: 6.0274563
-          level: 1
-          id: https://openalex.org/C41008148
-          display_name: Human
-          wikidata: https://www.wikidata.org/wiki/Q5
+        - "{}"
+        - "{}"
         cited_by_count: 21199844
         display_name_alternatives:
         - UNC-Chapel Hill
@@ -3713,7 +3647,39 @@ components:
           description: The Concepts most frequently applied to works affiliated with
             this institution.
           items:
-            $ref: '#/components/schemas/listAuthors_200_response_results_inner_x_concepts_inner'
+            description: "The Concepts most frequently applied to this entity. Each\
+              \ is represented as a dehydrated Concept object, with one additional\
+              \ attribute - `score` (Float)"
+            items:
+              allOf:
+              - description: "A simplified representation of a concept, used when\
+                  \ a concept is referenced by another entity."
+                properties:
+                  id:
+                    description: The OpenAlex ID for this concept.
+                    example: https://openalex.org/C41008148
+                  wikidata:
+                    description: The Wikidata ID for this concept.
+                    example: https://www.wikidata.org/wiki/Q5
+                  display_name:
+                    description: The human-readable name of the concept.
+                    example: Human
+                  level:
+                    description: "The hierarchical level of the concept. Level 0 is\
+                      \ the most general, and level 5 is the most specific."
+                    example: 1
+                required:
+                - display_name
+                - id
+                - level
+                - wikidata
+              - properties:
+                  score:
+                    description: "The strength of association between this source\
+                      \ and the listed concept, from 0-100."
+                    example: 4.56749
+                    format: float
+            type: object
           type: array
     listInstitutions_200_response:
       example:
@@ -3792,16 +3758,8 @@ components:
             display_name:
               key: display_name
           x_concepts:
-          - score: 6.0274563
-            level: 1
-            id: https://openalex.org/C41008148
-            display_name: Human
-            wikidata: https://www.wikidata.org/wiki/Q5
-          - score: 6.0274563
-            level: 1
-            id: https://openalex.org/C41008148
-            display_name: Human
-            wikidata: https://www.wikidata.org/wiki/Q5
+          - "{}"
+          - "{}"
           cited_by_count: 21199844
           display_name_alternatives:
           - UNC-Chapel Hill
@@ -3881,16 +3839,8 @@ components:
             display_name:
               key: display_name
           x_concepts:
-          - score: 6.0274563
-            level: 1
-            id: https://openalex.org/C41008148
-            display_name: Human
-            wikidata: https://www.wikidata.org/wiki/Q5
-          - score: 6.0274563
-            level: 1
-            id: https://openalex.org/C41008148
-            display_name: Human
-            wikidata: https://www.wikidata.org/wiki/Q5
+          - "{}"
+          - "{}"
           cited_by_count: 21199844
           display_name_alternatives:
           - UNC-Chapel Hill
@@ -4007,6 +3957,21 @@ components:
         wikidata:
           description: This publisher's Wikidata ID
           type: string
+    listPublishers_200_response_results_inner_parent_publisher:
+      example:
+        id: id
+        display_name: display_name
+      nullable: true
+      properties:
+        id:
+          description: The OpenAlex ID for the parent publisher.
+          type: string
+        display_name:
+          description: The display name of the parent publisher.
+          type: string
+      required:
+      - display_name
+      - id
     listPublishers_200_response_results_inner_summary_stats:
       description: Citation metrics for this publisher
       example:
@@ -4029,7 +3994,9 @@ components:
         - https://openalex.org/P4310321285
         - https://openalex.org/P4310319900
         - https://openalex.org/P4310319965
-        parent_publisher: https://openalex.org/P4310311775
+        parent_publisher:
+          id: id
+          display_name: display_name
         cited_by_count: 407508754
         sources_api_url: https://api.openalex.org/sources?filter=host_organization.id:P4310319965
         image_thumbnail_url: https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/MIT%20Press%20logo.svg&width=300
@@ -4159,10 +4126,7 @@ components:
             type: string
           type: array
         parent_publisher:
-          description: An OpenAlex ID linking to the direct parent of the publisher.
-            This will be null if the publisher's hierarchy_level is 0.
-          example: https://openalex.org/P4310311775
-          type: string
+          $ref: '#/components/schemas/listPublishers_200_response_results_inner_parent_publisher'
         roles:
           description: "List of role objects, which include the role, the id, and\
             \ the works_count."
@@ -4216,7 +4180,9 @@ components:
           - https://openalex.org/P4310321285
           - https://openalex.org/P4310319900
           - https://openalex.org/P4310319965
-          parent_publisher: https://openalex.org/P4310311775
+          parent_publisher:
+            id: id
+            display_name: display_name
           cited_by_count: 407508754
           sources_api_url: https://api.openalex.org/sources?filter=host_organization.id:P4310319965
           image_thumbnail_url: https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/MIT%20Press%20logo.svg&width=300
@@ -4268,7 +4234,9 @@ components:
           - https://openalex.org/P4310321285
           - https://openalex.org/P4310319900
           - https://openalex.org/P4310319965
-          parent_publisher: https://openalex.org/P4310311775
+          parent_publisher:
+            id: id
+            display_name: display_name
           cited_by_count: 407508754
           sources_api_url: https://api.openalex.org/sources?filter=host_organization.id:P4310319965
           image_thumbnail_url: https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/MIT%20Press%20logo.svg&width=300
@@ -4354,7 +4322,7 @@ components:
             type: string
           type: array
         mag:
-          type: integer
+          type: string
         fatcat:
           type: string
         wikidata:
@@ -4416,11 +4384,16 @@ components:
         host_organization: https://openalex.org/P4310320595
         apc_usd: 5200
         x_concepts:
+        - id: https://openalex.org/C121332964
+          wikidata: https://www.wikidata.org/wiki/Q413
+          display_name: Physics
+          level: 0
+          score: 68
         - id: https://openalex.org/C86803240
-          wikidata: null
+          wikidata: https://www.wikidata.org/wiki/Q420
           display_name: Biology
           level: 0
-          score: 86.7
+          score: 65.9
         cited_by_count: 133702
         display_name: PeerJ
         host_organization_name: Elsevier BV
@@ -4615,18 +4588,53 @@ components:
           example: 20184
           type: integer
         x_concepts:
-          description: "The Concepts most frequently applied to works hosted by this\
-            \ source. Each is represented as a dehydrated Concept object, with one\
-            \ additional attribute - score (Float) The strength of association between\
-            \ this source and the listed concept, from 0-100."
+          description: The Concepts most frequently applied to works hosted by this
+            source.
           example:
+          - id: https://openalex.org/C121332964
+            wikidata: https://www.wikidata.org/wiki/Q413
+            display_name: Physics
+            level: 0
+            score: 68
           - id: https://openalex.org/C86803240
-            wikidata: null
+            wikidata: https://www.wikidata.org/wiki/Q420
             display_name: Biology
             level: 0
-            score: 86.7
+            score: 65.9
           items:
-            $ref: '#/components/schemas/listConcepts_200_response_results_inner_ancestors_inner'
+            description: "The Concepts most frequently applied to this entity. Each\
+              \ is represented as a dehydrated Concept object, with one additional\
+              \ attribute - `score` (Float)"
+            items:
+              allOf:
+              - description: "A simplified representation of a concept, used when\
+                  \ a concept is referenced by another entity."
+                properties:
+                  id:
+                    description: The OpenAlex ID for this concept.
+                    example: https://openalex.org/C41008148
+                  wikidata:
+                    description: The Wikidata ID for this concept.
+                    example: https://www.wikidata.org/wiki/Q5
+                  display_name:
+                    description: The human-readable name of the concept.
+                    example: Human
+                  level:
+                    description: "The hierarchical level of the concept. Level 0 is\
+                      \ the most general, and level 5 is the most specific."
+                    example: 1
+                required:
+                - display_name
+                - id
+                - level
+                - wikidata
+              - properties:
+                  score:
+                    description: "The strength of association between this source\
+                      \ and the listed concept, from 0-100."
+                    example: 4.56749
+                    format: float
+            type: object
           type: array
     listSources_200_response:
       example:
@@ -4674,11 +4682,16 @@ components:
           host_organization: https://openalex.org/P4310320595
           apc_usd: 5200
           x_concepts:
+          - id: https://openalex.org/C121332964
+            wikidata: https://www.wikidata.org/wiki/Q413
+            display_name: Physics
+            level: 0
+            score: 68
           - id: https://openalex.org/C86803240
-            wikidata: null
+            wikidata: https://www.wikidata.org/wiki/Q420
             display_name: Biology
             level: 0
-            score: 86.7
+            score: 65.9
           cited_by_count: 133702
           display_name: PeerJ
           host_organization_name: Elsevier BV
@@ -4729,11 +4742,16 @@ components:
           host_organization: https://openalex.org/P4310320595
           apc_usd: 5200
           x_concepts:
+          - id: https://openalex.org/C121332964
+            wikidata: https://www.wikidata.org/wiki/Q413
+            display_name: Physics
+            level: 0
+            score: 68
           - id: https://openalex.org/C86803240
-            wikidata: null
+            wikidata: https://www.wikidata.org/wiki/Q420
             display_name: Biology
             level: 0
-            score: 86.7
+            score: 65.9
           cited_by_count: 133702
           display_name: PeerJ
           host_organization_name: Elsevier BV
@@ -4767,42 +4785,42 @@ components:
           type: array
     listTopics_200_response_results_inner_subfield:
       example:
-        id: 2718
-        display_name: Health Informatics
+        id: https://openalex.org/subfields/2505
+        display_name: Materials Chemistry
       properties:
         id:
           description: The ID of the subfield.
-          example: 2718
-          type: integer
+          example: https://openalex.org/subfields/2505
+          type: string
         display_name:
           description: The name of the subfield.
-          example: Health Informatics
+          example: Materials Chemistry
           type: string
     listTopics_200_response_results_inner_field:
       example:
-        id: 27
-        display_name: Medicine
+        id: https://openalex.org/fields/25
+        display_name: Materials Science
       properties:
         id:
           description: The ID of the field.
-          example: 27
-          type: integer
+          example: https://openalex.org/fields/25
+          type: string
         display_name:
           description: The name of the field.
-          example: Medicine
+          example: Materials Science
           type: string
     listTopics_200_response_results_inner_domain:
       example:
-        id: 4
-        display_name: Health Sciences
+        id: https://openalex.org/domains/3
+        display_name: Physical Sciences
       properties:
         id:
           description: The ID of the domain.
-          example: 4
-          type: integer
+          example: https://openalex.org/domains/3
+          type: string
         display_name:
           description: The name of the domain.
-          example: Health Sciences
+          example: Physical Sciences
           type: string
     listTopics_200_response_results_inner_ids:
       description: All the external identifiers that we know about for this topic.
@@ -4819,8 +4837,26 @@ components:
           description: This topic's Wikipedia page URL.
           example: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
           type: string
+    listTopics_200_response_results_inner_siblings_inner:
+      example:
+        id: https://openalex.org/T11948
+        display_name: Accelerating Materials Innovation through Informatics
+      properties:
+        id:
+          description: The ID of the sibling topic.
+          example: https://openalex.org/T11948
+          type: string
+        display_name:
+          description: The name of the sibling topic.
+          example: Accelerating Materials Innovation through Informatics
+          type: string
     listTopics_200_response_results_inner:
       example:
+        siblings:
+        - id: https://openalex.org/T11948
+          display_name: Accelerating Materials Innovation through Informatics
+        - id: https://openalex.org/T11948
+          display_name: Accelerating Materials Innovation through Informatics
         cited_by_count: 382
         keywords:
         - Artificial Intelligence
@@ -4837,14 +4873,14 @@ components:
         display_name: Artificial Intelligence in Medicine
         score: 0.95
         subfield:
-          id: 2718
-          display_name: Health Informatics
+          id: https://openalex.org/subfields/2505
+          display_name: Materials Chemistry
         field:
-          id: 27
-          display_name: Medicine
+          id: https://openalex.org/fields/25
+          display_name: Materials Science
         domain:
-          id: 4
-          display_name: Health Sciences
+          id: https://openalex.org/domains/3
+          display_name: Physical Sciences
         works_api_url: https://api.openalex.org/works?filter=topics.id:T11636
         ids:
           openalex: https://openalex.org/T11636
@@ -4920,6 +4956,11 @@ components:
           example: 2022-01-01
           format: date
           type: string
+        siblings:
+          description: Topics that are closely related to this topic.
+          items:
+            $ref: '#/components/schemas/listTopics_200_response_results_inner_siblings_inner'
+          type: array
       required:
       - display_name
       - id
@@ -4939,7 +4980,12 @@ components:
           key_display_name: article
           count: 202814957
         results:
-        - cited_by_count: 382
+        - siblings:
+          - id: https://openalex.org/T11948
+            display_name: Accelerating Materials Innovation through Informatics
+          - id: https://openalex.org/T11948
+            display_name: Accelerating Materials Innovation through Informatics
+          cited_by_count: 382
           keywords:
           - Artificial Intelligence
           - Machine Learning
@@ -4955,14 +5001,14 @@ components:
           display_name: Artificial Intelligence in Medicine
           score: 0.95
           subfield:
-            id: 2718
-            display_name: Health Informatics
+            id: https://openalex.org/subfields/2505
+            display_name: Materials Chemistry
           field:
-            id: 27
-            display_name: Medicine
+            id: https://openalex.org/fields/25
+            display_name: Materials Science
           domain:
-            id: 4
-            display_name: Health Sciences
+            id: https://openalex.org/domains/3
+            display_name: Physical Sciences
           works_api_url: https://api.openalex.org/works?filter=topics.id:T11636
           ids:
             openalex: https://openalex.org/T11636
@@ -4971,7 +5017,12 @@ components:
           updated_date: 2024-07-13T06:17:17.932040
           created_date: 2022-01-01
           works_count: 21737
-        - cited_by_count: 382
+        - siblings:
+          - id: https://openalex.org/T11948
+            display_name: Accelerating Materials Innovation through Informatics
+          - id: https://openalex.org/T11948
+            display_name: Accelerating Materials Innovation through Informatics
+          cited_by_count: 382
           keywords:
           - Artificial Intelligence
           - Machine Learning
@@ -4987,14 +5038,14 @@ components:
           display_name: Artificial Intelligence in Medicine
           score: 0.95
           subfield:
-            id: 2718
-            display_name: Health Informatics
+            id: https://openalex.org/subfields/2505
+            display_name: Materials Chemistry
           field:
-            id: 27
-            display_name: Medicine
+            id: https://openalex.org/fields/25
+            display_name: Materials Science
           domain:
-            id: 4
-            display_name: Health Sciences
+            id: https://openalex.org/domains/3
+            display_name: Physical Sciences
           works_api_url: https://api.openalex.org/works?filter=topics.id:T11636
           ids:
             openalex: https://openalex.org/T11636
@@ -5083,11 +5134,19 @@ components:
         value_usd:
           description: The paid APC converted into USD.
           type: integer
+    listWorks_200_response_results_inner_authorships_inner_affiliations_inner:
+      properties:
+        raw_affiliation_string:
+          type: string
+        institution_ids:
+          items:
+            type: string
+          type: array
     listWorks_200_response_results_inner_authorships_inner_author:
       description: "An author of this work, as a dehydrated Author object."
       example:
-        id: https://openalex.org/A5085171399
         display_name: Juan Pablo Alperin
+        id: https://openalex.org/A5085171399
         orcid: https://orcid.org/0000-0002-9344-7439
       properties:
         id:
@@ -5108,25 +5167,48 @@ components:
     listWorks_200_response_results_inner_authorships_inner:
       example:
         institutions:
-        - id: https://openalex.org/I18014758
+        - country_code: CA
           display_name: Simon Fraser University
-          ror: https://ror.org/0213rcc28
-          country_code: CA
-          type: education
+          id: https://openalex.org/I18014758
           lineage:
           - https://openalex.org/I18014758
+          ror: https://ror.org/0213rcc28
+          type: education
         raw_affiliation_strings:
         - "Canadian Institute for Studies in Publishing, Simon Fraser University"
         author:
-          id: https://openalex.org/A5085171399
           display_name: Juan Pablo Alperin
+          id: https://openalex.org/A5085171399
           orcid: https://orcid.org/0000-0002-9344-7439
         is_corresponding: false
+        affiliations:
+        - raw_affiliation_string: |-
+            Space Science Engineering Center, University of
+            Wisconsin, Madison, WI, USA
+          institution_ids:
+          - https://openalex.org/I135310074
         raw_author_name: Juan Pablo Alperin
         countries:
         - CA
         author_position: first
       properties:
+        affiliations:
+          description: "Each institutional affiliation that this author has claimed\
+            \ will be listed here: the raw affiliation string that we found, along\
+            \ with the OpenAlex Institution ID or IDs that we matched it to. This\
+            \ information will be redundant with institutions below, but is useful\
+            \ if you need to know about what we used to match institutions."
+          example:
+          - raw_affiliation_string: |-
+              Space Science Engineering Center, University of
+              Wisconsin, Madison, WI, USA
+            institution_ids:
+            - https://openalex.org/I135310074
+          items:
+            $ref: '#/components/schemas/listWorks_200_response_results_inner_authorships_inner_affiliations_inner'
+          type: array
+        author:
+          $ref: '#/components/schemas/listWorks_200_response_results_inner_authorships_inner_author'
         author_position:
           description: A summarized description of this author's position in the work's
             author list.
@@ -5136,19 +5218,26 @@ components:
           - last
           example: first
           type: string
-        author:
-          $ref: '#/components/schemas/listWorks_200_response_results_inner_authorships_inner_author'
+        countries:
+          description: "The country or countries for this author, determined using\
+            \ a combination of matched institutions and parsing of the raw affiliation\
+            \ strings."
+          example:
+          - CA
+          items:
+            type: string
+          type: array
         institutions:
           description: "The institutional affiliations this author claimed in the\
             \ context of this work, as dehydrated Institution objects."
           example:
-          - id: https://openalex.org/I18014758
+          - country_code: CA
             display_name: Simon Fraser University
-            ror: https://ror.org/0213rcc28
-            country_code: CA
-            type: education
+            id: https://openalex.org/I18014758
             lineage:
             - https://openalex.org/I18014758
+            ror: https://ror.org/0213rcc28
+            type: education
           items:
             $ref: '#/components/schemas/listAuthors_200_response_results_inner_affiliations_inner_institution'
           type: array
@@ -5169,15 +5258,6 @@ components:
             \ string."
           example: Juan Pablo Alperin
           type: string
-        countries:
-          description: "The country or countries for this author, determined using\
-            \ a combination of matched institutions and parsing of the raw affiliation\
-            \ strings."
-          example:
-          - CA
-          items:
-            type: string
-          type: array
       required:
       - author
       - author_position
@@ -5188,10 +5268,15 @@ components:
       description: "Information about the source of this location, as a DehydratedSource\
         \ object."
       example:
+        is_core: true
         host_organization_lineage:
         - https://openalex.org/P4310321285
         - https://openalex.org/P4310319900
         - https://openalex.org/P4310319965
+        host_organization_lineage_names:
+        - Elsevier BV
+        - Elsevier
+        - Elsevier Group
         is_in_doaj: true
         issn:
         - 2167-8359
@@ -5225,10 +5310,27 @@ components:
           items:
             type: string
           type: array
+        host_organization_lineage_names:
+          description: "The display names of the host organization's lineage, from\
+            \ most specific to most general."
+          example:
+          - Elsevier BV
+          - Elsevier
+          - Elsevier Group
+          items:
+            type: string
+          type: array
         host_organization_name:
           description: "The display_name of the host organization, shown for convenience."
           example: PeerJ
           type: string
+        is_core:
+          description: "Whether this source is identified as a \"core source\" by\
+            \ [CWTS](https://www.cwts.nl/), used in the [Open Leiden Ranking](https://open.leidenranking.com/)\
+            \ of universities around the world. The list of core sources can be found\
+            \ [here](https://zenodo.org/records/10949671)."
+          example: true
+          type: boolean
         is_in_doaj:
           description: Whether this source is listed in the Directory of Open Access
             Journals (DOAJ).
@@ -5275,10 +5377,15 @@ components:
         is_oa: true
         pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
         source:
+          is_core: true
           host_organization_lineage:
           - https://openalex.org/P4310321285
           - https://openalex.org/P4310319900
           - https://openalex.org/P4310319965
+          host_organization_lineage_names:
+          - Elsevier BV
+          - Elsevier
+          - Elsevier Group
           is_in_doaj: true
           issn:
           - 2167-8359
@@ -5391,7 +5498,7 @@ components:
           type: string
         mag:
           description: The Microsoft Academic Graph ID for this work.
-          type: integer
+          type: string
         openalex:
           description: The OpenAlex ID for this work.
           type: string
@@ -5411,10 +5518,15 @@ components:
         is_oa: true
         pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
         source:
+          is_core: true
           host_organization_lineage:
           - https://openalex.org/P4310321285
           - https://openalex.org/P4310319900
           - https://openalex.org/P4310319965
+          host_organization_lineage_names:
+          - Elsevier BV
+          - Elsevier
+          - Elsevier Group
           is_in_doaj: true
           issn:
           - 2167-8359
@@ -5536,10 +5648,15 @@ components:
         is_oa: true
         pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
         source:
+          is_core: true
           host_organization_lineage:
           - https://openalex.org/P4310321285
           - https://openalex.org/P4310319900
           - https://openalex.org/P4310319965
+          host_organization_lineage_names:
+          - Elsevier BV
+          - Elsevier
+          - Elsevier Group
           is_in_doaj: true
           issn:
           - 2167-8359
@@ -5595,111 +5712,47 @@ components:
           - submittedVersion
           example: publishedVersion
           type: string
+    listWorks_200_response_results_inner_primary_topic_domain:
+      example:
+        id: id
+        display_name: display_name
+      properties:
+        display_name:
+          type: string
+        id:
+          type: string
     listWorks_200_response_results_inner_primary_topic:
       description: The top ranked Topic for this work.
       example:
-        cited_by_count: 382
-        keywords:
-        - Artificial Intelligence
-        - Machine Learning
-        - Healthcare
-        - Medical Imaging
-        - Clinical Decision Support
-        description: "This cluster of papers explores the intersection of artificial\
-          \ intelligence and medicine, focusing on applications in healthcare, medical\
-          \ imaging, clinical decision support, and the ethical challenges associated\
-          \ with AI implementation. It delves into topics such as machine learning,\
-          \ big data, precision medicine, and the potential impact of AI on health\
-          \ equity."
-        display_name: Artificial Intelligence in Medicine
-        score: 0.95
+        score: 9.301444
         subfield:
-          id: 2718
-          display_name: Health Informatics
+          id: id
+          display_name: display_name
         field:
-          id: 27
-          display_name: Medicine
+          id: id
+          display_name: display_name
         domain:
-          id: 4
-          display_name: Health Sciences
-        works_api_url: https://api.openalex.org/works?filter=topics.id:T11636
-        ids:
-          openalex: https://openalex.org/T11636
-          wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
-        id: https://openalex.org/T11636
-        updated_date: 2024-07-13T06:17:17.932040
-        created_date: 2022-01-01
-        works_count: 21737
+          id: id
+          display_name: display_name
+        id: id
+        display_name: display_name
       properties:
+        display_name:
+          description: The name of the topic.
+          type: string
+        domain:
+          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
+        field:
+          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
         id:
           description: The OpenAlex ID for this topic.
-          example: https://openalex.org/T11636
-          type: string
-        display_name:
-          description: The English-language label of the topic.
-          example: Artificial Intelligence in Medicine
-          type: string
-        description:
-          description: "A description of this topic, generated by AI."
-          example: "This cluster of papers explores the intersection of artificial\
-            \ intelligence and medicine, focusing on applications in healthcare, medical\
-            \ imaging, clinical decision support, and the ethical challenges associated\
-            \ with AI implementation. It delves into topics such as machine learning,\
-            \ big data, precision medicine, and the potential impact of AI on health\
-            \ equity."
           type: string
         score:
           description: The strength of the connection between the work and this topic.
-          example: 0.95
           format: float
           type: number
         subfield:
-          $ref: '#/components/schemas/listTopics_200_response_results_inner_subfield'
-        field:
-          $ref: '#/components/schemas/listTopics_200_response_results_inner_field'
-        domain:
-          $ref: '#/components/schemas/listTopics_200_response_results_inner_domain'
-        ids:
-          $ref: '#/components/schemas/listTopics_200_response_results_inner_ids'
-        keywords:
-          description: "Keywords consisting of one or several words each, meant to\
-            \ represent the content of the papers in the topic."
-          example:
-          - Artificial Intelligence
-          - Machine Learning
-          - Healthcare
-          - Medical Imaging
-          - Clinical Decision Support
-          items:
-            type: string
-          type: array
-        works_count:
-          description: The number of works tagged with this topic.
-          example: 21737
-          type: integer
-        updated_date:
-          description: The last time anything in this author object changed. Formatted
-            as ISO 8601 extended format without time zone designator.
-          example: 2024-07-13T06:17:17.932040
-          format: custom_date_time
-          type: string
-        cited_by_count:
-          description: The number of citations to works tagged with this topic.
-          example: 382
-          type: integer
-        works_api_url:
-          description: URL to retrieve works tagged with this topic.
-          example: https://api.openalex.org/works?filter=topics.id:T11636
-          type: string
-        created_date:
-          description: "The date this topic was created in the OpenAlex database,\
-            \ expressed as an ISO 8601 date string."
-          example: 2022-01-01
-          format: date
-          type: string
-      required:
-      - display_name
-      - id
+          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
     listWorks_200_response_results_inner_sustainable_development_goals_inner:
       properties:
         id:
@@ -5711,26 +5764,19 @@ components:
         score:
           description: The relevance score of this goal for the work.
           type: number
-    listWorks_200_response_results_inner_topics_inner_domain:
-      example:
-        id: 9
-        display_name: display_name
-      properties:
-        display_name:
-          type: string
-        id:
-          type: integer
     listWorks_200_response_results_inner_topics_inner:
+      description: "A simplified representation of a topic, used when a topic is referenced\
+        \ by another entity."
       example:
-        score: 3.616076749251911
+        score: 3.6160767
         subfield:
-          id: 9
+          id: id
           display_name: display_name
         field:
-          id: 9
+          id: id
           display_name: display_name
         domain:
-          id: 9
+          id: id
           display_name: display_name
         id: id
         display_name: display_name
@@ -5739,17 +5785,18 @@ components:
           description: The name of the topic.
           type: string
         domain:
-          $ref: '#/components/schemas/listWorks_200_response_results_inner_topics_inner_domain'
+          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
         field:
-          $ref: '#/components/schemas/listWorks_200_response_results_inner_topics_inner_domain'
+          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
         id:
           description: The OpenAlex ID for this topic.
           type: string
         score:
           description: The strength of the connection between the work and this topic.
+          format: float
           type: number
         subfield:
-          $ref: '#/components/schemas/listWorks_200_response_results_inner_topics_inner_domain'
+          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
     listWorks_200_response_results_inner:
       example:
         apc_list:
@@ -5792,10 +5839,15 @@ components:
           is_oa: true
           pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
           source:
+            is_core: true
             host_organization_lineage:
             - https://openalex.org/P4310321285
             - https://openalex.org/P4310319900
             - https://openalex.org/P4310319965
+            host_organization_lineage_names:
+            - Elsevier BV
+            - Elsevier
+            - Elsevier Group
             is_in_doaj: true
             issn:
             - 2167-8359
@@ -5809,38 +5861,18 @@ components:
           landing_page_url: https://doi.org/10.1590/s1678-77572010000100010
           version: publishedVersion
         primary_topic:
-          cited_by_count: 382
-          keywords:
-          - Artificial Intelligence
-          - Machine Learning
-          - Healthcare
-          - Medical Imaging
-          - Clinical Decision Support
-          description: "This cluster of papers explores the intersection of artificial\
-            \ intelligence and medicine, focusing on applications in healthcare, medical\
-            \ imaging, clinical decision support, and the ethical challenges associated\
-            \ with AI implementation. It delves into topics such as machine learning,\
-            \ big data, precision medicine, and the potential impact of AI on health\
-            \ equity."
-          display_name: Artificial Intelligence in Medicine
-          score: 0.95
+          score: 9.301444
           subfield:
-            id: 2718
-            display_name: Health Informatics
+            id: id
+            display_name: display_name
           field:
-            id: 27
-            display_name: Medicine
+            id: id
+            display_name: display_name
           domain:
-            id: 4
-            display_name: Health Sciences
-          works_api_url: https://api.openalex.org/works?filter=topics.id:T11636
-          ids:
-            openalex: https://openalex.org/T11636
-            wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
-          id: https://openalex.org/T11636
-          updated_date: 2024-07-13T06:17:17.932040
-          created_date: 2022-01-01
-          works_count: 21737
+            id: id
+            display_name: display_name
+          id: id
+          display_name: display_name
         language: en
         related_works:
         - related_works
@@ -5854,39 +5886,51 @@ components:
         publication_date: 2018-02-13
         authorships:
         - institutions:
-          - id: https://openalex.org/I18014758
+          - country_code: CA
             display_name: Simon Fraser University
-            ror: https://ror.org/0213rcc28
-            country_code: CA
-            type: education
+            id: https://openalex.org/I18014758
             lineage:
             - https://openalex.org/I18014758
+            ror: https://ror.org/0213rcc28
+            type: education
           raw_affiliation_strings:
           - "Canadian Institute for Studies in Publishing, Simon Fraser University"
           author:
-            id: https://openalex.org/A5085171399
             display_name: Juan Pablo Alperin
+            id: https://openalex.org/A5085171399
             orcid: https://orcid.org/0000-0002-9344-7439
           is_corresponding: false
+          affiliations:
+          - raw_affiliation_string: |-
+              Space Science Engineering Center, University of
+              Wisconsin, Madison, WI, USA
+            institution_ids:
+            - https://openalex.org/I135310074
           raw_author_name: Juan Pablo Alperin
           countries:
           - CA
           author_position: first
         - institutions:
-          - id: https://openalex.org/I18014758
+          - country_code: CA
             display_name: Simon Fraser University
-            ror: https://ror.org/0213rcc28
-            country_code: CA
-            type: education
+            id: https://openalex.org/I18014758
             lineage:
             - https://openalex.org/I18014758
+            ror: https://ror.org/0213rcc28
+            type: education
           raw_affiliation_strings:
           - "Canadian Institute for Studies in Publishing, Simon Fraser University"
           author:
-            id: https://openalex.org/A5085171399
             display_name: Juan Pablo Alperin
+            id: https://openalex.org/A5085171399
             orcid: https://orcid.org/0000-0002-9344-7439
           is_corresponding: false
+          affiliations:
+          - raw_affiliation_string: |-
+              Space Science Engineering Center, University of
+              Wisconsin, Madison, WI, USA
+            institution_ids:
+            - https://openalex.org/I135310074
           raw_author_name: Juan Pablo Alperin
           countries:
           - CA
@@ -5967,10 +6011,15 @@ components:
           is_oa: true
           pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
           source:
+            is_core: true
             host_organization_lineage:
             - https://openalex.org/P4310321285
             - https://openalex.org/P4310319900
             - https://openalex.org/P4310319965
+            host_organization_lineage_names:
+            - Elsevier BV
+            - Elsevier
+            - Elsevier Group
             is_in_doaj: true
             issn:
             - 2167-8359
@@ -5990,27 +6039,27 @@ components:
         - crossref
         - pubmed
         topics:
-        - score: 3.616076749251911
+        - score: 3.6160767
           subfield:
-            id: 9
+            id: id
             display_name: display_name
           field:
-            id: 9
+            id: id
             display_name: display_name
           domain:
-            id: 9
+            id: id
             display_name: display_name
           id: id
           display_name: display_name
-        - score: 3.616076749251911
+        - score: 3.6160767
           subfield:
-            id: 9
+            id: id
             display_name: display_name
           field:
-            id: 9
+            id: id
             display_name: display_name
           domain:
-            id: 9
+            id: id
             display_name: display_name
           id: id
           display_name: display_name
@@ -6046,10 +6095,15 @@ components:
           is_oa: true
           pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
           source:
+            is_core: true
             host_organization_lineage:
             - https://openalex.org/P4310321285
             - https://openalex.org/P4310319900
             - https://openalex.org/P4310319965
+            host_organization_lineage_names:
+            - Elsevier BV
+            - Elsevier
+            - Elsevier Group
             is_in_doaj: true
             issn:
             - 2167-8359
@@ -6068,10 +6122,15 @@ components:
           is_oa: true
           pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
           source:
+            is_core: true
             host_organization_lineage:
             - https://openalex.org/P4310321285
             - https://openalex.org/P4310319900
             - https://openalex.org/P4310319965
+            host_organization_lineage_names:
+            - Elsevier BV
+            - Elsevier
+            - Elsevier Group
             is_in_doaj: true
             issn:
             - 2167-8359
@@ -6175,7 +6234,39 @@ components:
             level: 0
             score: 0.7981
           items:
-            $ref: '#/components/schemas/listConcepts_200_response_results_inner_ancestors_inner'
+            description: "The Concepts most frequently applied to this entity. Each\
+              \ is represented as a dehydrated Concept object, with one additional\
+              \ attribute - `score` (Float)"
+            items:
+              allOf:
+              - description: "A simplified representation of a concept, used when\
+                  \ a concept is referenced by another entity."
+                properties:
+                  id:
+                    description: The OpenAlex ID for this concept.
+                    example: https://openalex.org/C41008148
+                  wikidata:
+                    description: The Wikidata ID for this concept.
+                    example: https://www.wikidata.org/wiki/Q5
+                  display_name:
+                    description: The human-readable name of the concept.
+                    example: Human
+                  level:
+                    description: "The hierarchical level of the concept. Level 0 is\
+                      \ the most general, and level 5 is the most specific."
+                    example: 1
+                required:
+                - display_name
+                - id
+                - level
+                - wikidata
+              - properties:
+                  score:
+                    description: "The strength of association between this source\
+                      \ and the listed concept, from 0-100."
+                    example: 4.56749
+                    format: float
+            type: object
           type: array
         corresponding_author_ids:
           description: OpenAlex IDs of any authors for which authorships.is_corresponding
@@ -6443,10 +6534,15 @@ components:
             is_oa: true
             pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
             source:
+              is_core: true
               host_organization_lineage:
               - https://openalex.org/P4310321285
               - https://openalex.org/P4310319900
               - https://openalex.org/P4310319965
+              host_organization_lineage_names:
+              - Elsevier BV
+              - Elsevier
+              - Elsevier Group
               is_in_doaj: true
               issn:
               - 2167-8359
@@ -6460,38 +6556,18 @@ components:
             landing_page_url: https://doi.org/10.1590/s1678-77572010000100010
             version: publishedVersion
           primary_topic:
-            cited_by_count: 382
-            keywords:
-            - Artificial Intelligence
-            - Machine Learning
-            - Healthcare
-            - Medical Imaging
-            - Clinical Decision Support
-            description: "This cluster of papers explores the intersection of artificial\
-              \ intelligence and medicine, focusing on applications in healthcare,\
-              \ medical imaging, clinical decision support, and the ethical challenges\
-              \ associated with AI implementation. It delves into topics such as machine\
-              \ learning, big data, precision medicine, and the potential impact of\
-              \ AI on health equity."
-            display_name: Artificial Intelligence in Medicine
-            score: 0.95
+            score: 9.301444
             subfield:
-              id: 2718
-              display_name: Health Informatics
+              id: id
+              display_name: display_name
             field:
-              id: 27
-              display_name: Medicine
+              id: id
+              display_name: display_name
             domain:
-              id: 4
-              display_name: Health Sciences
-            works_api_url: https://api.openalex.org/works?filter=topics.id:T11636
-            ids:
-              openalex: https://openalex.org/T11636
-              wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
-            id: https://openalex.org/T11636
-            updated_date: 2024-07-13T06:17:17.932040
-            created_date: 2022-01-01
-            works_count: 21737
+              id: id
+              display_name: display_name
+            id: id
+            display_name: display_name
           language: en
           related_works:
           - related_works
@@ -6505,39 +6581,51 @@ components:
           publication_date: 2018-02-13
           authorships:
           - institutions:
-            - id: https://openalex.org/I18014758
+            - country_code: CA
               display_name: Simon Fraser University
-              ror: https://ror.org/0213rcc28
-              country_code: CA
-              type: education
+              id: https://openalex.org/I18014758
               lineage:
               - https://openalex.org/I18014758
+              ror: https://ror.org/0213rcc28
+              type: education
             raw_affiliation_strings:
             - "Canadian Institute for Studies in Publishing, Simon Fraser University"
             author:
-              id: https://openalex.org/A5085171399
               display_name: Juan Pablo Alperin
+              id: https://openalex.org/A5085171399
               orcid: https://orcid.org/0000-0002-9344-7439
             is_corresponding: false
+            affiliations:
+            - raw_affiliation_string: |-
+                Space Science Engineering Center, University of
+                Wisconsin, Madison, WI, USA
+              institution_ids:
+              - https://openalex.org/I135310074
             raw_author_name: Juan Pablo Alperin
             countries:
             - CA
             author_position: first
           - institutions:
-            - id: https://openalex.org/I18014758
+            - country_code: CA
               display_name: Simon Fraser University
-              ror: https://ror.org/0213rcc28
-              country_code: CA
-              type: education
+              id: https://openalex.org/I18014758
               lineage:
               - https://openalex.org/I18014758
+              ror: https://ror.org/0213rcc28
+              type: education
             raw_affiliation_strings:
             - "Canadian Institute for Studies in Publishing, Simon Fraser University"
             author:
-              id: https://openalex.org/A5085171399
               display_name: Juan Pablo Alperin
+              id: https://openalex.org/A5085171399
               orcid: https://orcid.org/0000-0002-9344-7439
             is_corresponding: false
+            affiliations:
+            - raw_affiliation_string: |-
+                Space Science Engineering Center, University of
+                Wisconsin, Madison, WI, USA
+              institution_ids:
+              - https://openalex.org/I135310074
             raw_author_name: Juan Pablo Alperin
             countries:
             - CA
@@ -6618,10 +6706,15 @@ components:
             is_oa: true
             pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
             source:
+              is_core: true
               host_organization_lineage:
               - https://openalex.org/P4310321285
               - https://openalex.org/P4310319900
               - https://openalex.org/P4310319965
+              host_organization_lineage_names:
+              - Elsevier BV
+              - Elsevier
+              - Elsevier Group
               is_in_doaj: true
               issn:
               - 2167-8359
@@ -6641,27 +6734,27 @@ components:
           - crossref
           - pubmed
           topics:
-          - score: 3.616076749251911
+          - score: 3.6160767
             subfield:
-              id: 9
+              id: id
               display_name: display_name
             field:
-              id: 9
+              id: id
               display_name: display_name
             domain:
-              id: 9
+              id: id
               display_name: display_name
             id: id
             display_name: display_name
-          - score: 3.616076749251911
+          - score: 3.6160767
             subfield:
-              id: 9
+              id: id
               display_name: display_name
             field:
-              id: 9
+              id: id
               display_name: display_name
             domain:
-              id: 9
+              id: id
               display_name: display_name
             id: id
             display_name: display_name
@@ -6697,10 +6790,15 @@ components:
             is_oa: true
             pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
             source:
+              is_core: true
               host_organization_lineage:
               - https://openalex.org/P4310321285
               - https://openalex.org/P4310319900
               - https://openalex.org/P4310319965
+              host_organization_lineage_names:
+              - Elsevier BV
+              - Elsevier
+              - Elsevier Group
               is_in_doaj: true
               issn:
               - 2167-8359
@@ -6719,10 +6817,15 @@ components:
             is_oa: true
             pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
             source:
+              is_core: true
               host_organization_lineage:
               - https://openalex.org/P4310321285
               - https://openalex.org/P4310319900
               - https://openalex.org/P4310319965
+              host_organization_lineage_names:
+              - Elsevier BV
+              - Elsevier
+              - Elsevier Group
               is_in_doaj: true
               issn:
               - 2167-8359
@@ -6787,10 +6890,15 @@ components:
             is_oa: true
             pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
             source:
+              is_core: true
               host_organization_lineage:
               - https://openalex.org/P4310321285
               - https://openalex.org/P4310319900
               - https://openalex.org/P4310319965
+              host_organization_lineage_names:
+              - Elsevier BV
+              - Elsevier
+              - Elsevier Group
               is_in_doaj: true
               issn:
               - 2167-8359
@@ -6804,38 +6912,18 @@ components:
             landing_page_url: https://doi.org/10.1590/s1678-77572010000100010
             version: publishedVersion
           primary_topic:
-            cited_by_count: 382
-            keywords:
-            - Artificial Intelligence
-            - Machine Learning
-            - Healthcare
-            - Medical Imaging
-            - Clinical Decision Support
-            description: "This cluster of papers explores the intersection of artificial\
-              \ intelligence and medicine, focusing on applications in healthcare,\
-              \ medical imaging, clinical decision support, and the ethical challenges\
-              \ associated with AI implementation. It delves into topics such as machine\
-              \ learning, big data, precision medicine, and the potential impact of\
-              \ AI on health equity."
-            display_name: Artificial Intelligence in Medicine
-            score: 0.95
+            score: 9.301444
             subfield:
-              id: 2718
-              display_name: Health Informatics
+              id: id
+              display_name: display_name
             field:
-              id: 27
-              display_name: Medicine
+              id: id
+              display_name: display_name
             domain:
-              id: 4
-              display_name: Health Sciences
-            works_api_url: https://api.openalex.org/works?filter=topics.id:T11636
-            ids:
-              openalex: https://openalex.org/T11636
-              wikipedia: https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare
-            id: https://openalex.org/T11636
-            updated_date: 2024-07-13T06:17:17.932040
-            created_date: 2022-01-01
-            works_count: 21737
+              id: id
+              display_name: display_name
+            id: id
+            display_name: display_name
           language: en
           related_works:
           - related_works
@@ -6849,39 +6937,51 @@ components:
           publication_date: 2018-02-13
           authorships:
           - institutions:
-            - id: https://openalex.org/I18014758
+            - country_code: CA
               display_name: Simon Fraser University
-              ror: https://ror.org/0213rcc28
-              country_code: CA
-              type: education
+              id: https://openalex.org/I18014758
               lineage:
               - https://openalex.org/I18014758
+              ror: https://ror.org/0213rcc28
+              type: education
             raw_affiliation_strings:
             - "Canadian Institute for Studies in Publishing, Simon Fraser University"
             author:
-              id: https://openalex.org/A5085171399
               display_name: Juan Pablo Alperin
+              id: https://openalex.org/A5085171399
               orcid: https://orcid.org/0000-0002-9344-7439
             is_corresponding: false
+            affiliations:
+            - raw_affiliation_string: |-
+                Space Science Engineering Center, University of
+                Wisconsin, Madison, WI, USA
+              institution_ids:
+              - https://openalex.org/I135310074
             raw_author_name: Juan Pablo Alperin
             countries:
             - CA
             author_position: first
           - institutions:
-            - id: https://openalex.org/I18014758
+            - country_code: CA
               display_name: Simon Fraser University
-              ror: https://ror.org/0213rcc28
-              country_code: CA
-              type: education
+              id: https://openalex.org/I18014758
               lineage:
               - https://openalex.org/I18014758
+              ror: https://ror.org/0213rcc28
+              type: education
             raw_affiliation_strings:
             - "Canadian Institute for Studies in Publishing, Simon Fraser University"
             author:
-              id: https://openalex.org/A5085171399
               display_name: Juan Pablo Alperin
+              id: https://openalex.org/A5085171399
               orcid: https://orcid.org/0000-0002-9344-7439
             is_corresponding: false
+            affiliations:
+            - raw_affiliation_string: |-
+                Space Science Engineering Center, University of
+                Wisconsin, Madison, WI, USA
+              institution_ids:
+              - https://openalex.org/I135310074
             raw_author_name: Juan Pablo Alperin
             countries:
             - CA
@@ -6962,10 +7062,15 @@ components:
             is_oa: true
             pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
             source:
+              is_core: true
               host_organization_lineage:
               - https://openalex.org/P4310321285
               - https://openalex.org/P4310319900
               - https://openalex.org/P4310319965
+              host_organization_lineage_names:
+              - Elsevier BV
+              - Elsevier
+              - Elsevier Group
               is_in_doaj: true
               issn:
               - 2167-8359
@@ -6985,27 +7090,27 @@ components:
           - crossref
           - pubmed
           topics:
-          - score: 3.616076749251911
+          - score: 3.6160767
             subfield:
-              id: 9
+              id: id
               display_name: display_name
             field:
-              id: 9
+              id: id
               display_name: display_name
             domain:
-              id: 9
+              id: id
               display_name: display_name
             id: id
             display_name: display_name
-          - score: 3.616076749251911
+          - score: 3.6160767
             subfield:
-              id: 9
+              id: id
               display_name: display_name
             field:
-              id: 9
+              id: id
               display_name: display_name
             domain:
-              id: 9
+              id: id
               display_name: display_name
             id: id
             display_name: display_name
@@ -7041,10 +7146,15 @@ components:
             is_oa: true
             pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
             source:
+              is_core: true
               host_organization_lineage:
               - https://openalex.org/P4310321285
               - https://openalex.org/P4310319900
               - https://openalex.org/P4310319965
+              host_organization_lineage_names:
+              - Elsevier BV
+              - Elsevier
+              - Elsevier Group
               is_in_doaj: true
               issn:
               - 2167-8359
@@ -7063,10 +7173,15 @@ components:
             is_oa: true
             pdf_url: http://www.scielo.br/pdf/jaos/v18n1/a10v18n1.pdf
             source:
+              is_core: true
               host_organization_lineage:
               - https://openalex.org/P4310321285
               - https://openalex.org/P4310319900
               - https://openalex.org/P4310319965
+              host_organization_lineage_names:
+              - Elsevier BV
+              - Elsevier
+              - Elsevier Group
               is_in_doaj: true
               issn:
               - 2167-8359

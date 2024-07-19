@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **CitedByCount** | Pointer to **int32** | The number of citations to works tagged with this topic. | [optional] 
 **WorksApiUrl** | Pointer to **string** | URL to retrieve works tagged with this topic. | [optional] 
 **CreatedDate** | Pointer to **string** | The date this topic was created in the OpenAlex database, expressed as an ISO 8601 date string. | [optional] 
+**Siblings** | Pointer to [**[]ListTopics200ResponseResultsInnerSiblingsInner**](ListTopics200ResponseResultsInnerSiblingsInner.md) | Topics that are closely related to this topic. | [optional] 
 
 ## Methods
 
@@ -377,6 +378,31 @@ SetCreatedDate sets CreatedDate field to given value.
 `func (o *ListTopics200ResponseResultsInner) HasCreatedDate() bool`
 
 HasCreatedDate returns a boolean if a field has been set.
+
+### GetSiblings
+
+`func (o *ListTopics200ResponseResultsInner) GetSiblings() []ListTopics200ResponseResultsInnerSiblingsInner`
+
+GetSiblings returns the Siblings field if non-nil, zero value otherwise.
+
+### GetSiblingsOk
+
+`func (o *ListTopics200ResponseResultsInner) GetSiblingsOk() (*[]ListTopics200ResponseResultsInnerSiblingsInner, bool)`
+
+GetSiblingsOk returns a tuple with the Siblings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSiblings
+
+`func (o *ListTopics200ResponseResultsInner) SetSiblings(v []ListTopics200ResponseResultsInnerSiblingsInner)`
+
+SetSiblings sets Siblings field to given value.
+
+### HasSiblings
+
+`func (o *ListTopics200ResponseResultsInner) HasSiblings() bool`
+
+HasSiblings returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

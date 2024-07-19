@@ -5,16 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The OpenAlex ID for this concept. | 
-**Wikidata** | Pointer to **string** | The Wikidata ID for this concept. | [optional] 
+**Wikidata** | **string** | The Wikidata ID for this concept. | 
 **DisplayName** | **string** | The human-readable name of the concept. | 
 **Level** | **int32** | The hierarchical level of the concept. Level 0 is the most general, and level 5 is the most specific. | 
-**Score** | **float32** |  | 
+**Score** | Pointer to **float32** |  | [optional] 
 
 ## Methods
 
 ### NewListAuthors200ResponseResultsInnerXConceptsInner
 
-`func NewListAuthors200ResponseResultsInnerXConceptsInner(id string, displayName string, level int32, score float32, ) *ListAuthors200ResponseResultsInnerXConceptsInner`
+`func NewListAuthors200ResponseResultsInnerXConceptsInner(id string, wikidata string, displayName string, level int32, ) *ListAuthors200ResponseResultsInnerXConceptsInner`
 
 NewListAuthors200ResponseResultsInnerXConceptsInner instantiates a new ListAuthors200ResponseResultsInnerXConceptsInner object
 This constructor will assign default values to properties that have it defined,
@@ -68,11 +68,6 @@ and a boolean to check if the value has been set.
 
 SetWikidata sets Wikidata field to given value.
 
-### HasWikidata
-
-`func (o *ListAuthors200ResponseResultsInnerXConceptsInner) HasWikidata() bool`
-
-HasWikidata returns a boolean if a field has been set.
 
 ### GetDisplayName
 
@@ -133,6 +128,11 @@ and a boolean to check if the value has been set.
 
 SetScore sets Score field to given value.
 
+### HasScore
+
+`func (o *ListAuthors200ResponseResultsInnerXConceptsInner) HasScore() bool`
+
+HasScore returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

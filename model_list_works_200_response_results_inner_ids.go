@@ -22,7 +22,7 @@ type ListWorks200ResponseResultsInnerIds struct {
 	// The DOI for this work.
 	Doi *string `json:"doi,omitempty"`
 	// The Microsoft Academic Graph ID for this work.
-	Mag *int32 `json:"mag,omitempty"`
+	Mag *string `json:"mag,omitempty"`
 	// The OpenAlex ID for this work.
 	Openalex *string `json:"openalex,omitempty"`
 	// The PubMed Central ID for this work.
@@ -81,9 +81,9 @@ func (o *ListWorks200ResponseResultsInnerIds) SetDoi(v string) {
 }
 
 // GetMag returns the Mag field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerIds) GetMag() int32 {
+func (o *ListWorks200ResponseResultsInnerIds) GetMag() string {
 	if o == nil || IsNil(o.Mag) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Mag
@@ -91,7 +91,7 @@ func (o *ListWorks200ResponseResultsInnerIds) GetMag() int32 {
 
 // GetMagOk returns a tuple with the Mag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerIds) GetMagOk() (*int32, bool) {
+func (o *ListWorks200ResponseResultsInnerIds) GetMagOk() (*string, bool) {
 	if o == nil || IsNil(o.Mag) {
 		return nil, false
 	}
@@ -107,8 +107,8 @@ func (o *ListWorks200ResponseResultsInnerIds) HasMag() bool {
 	return false
 }
 
-// SetMag gets a reference to the given int32 and assigns it to the Mag field.
-func (o *ListWorks200ResponseResultsInnerIds) SetMag(v int32) {
+// SetMag gets a reference to the given string and assigns it to the Mag field.
+func (o *ListWorks200ResponseResultsInnerIds) SetMag(v string) {
 	o.Mag = &v
 }
 

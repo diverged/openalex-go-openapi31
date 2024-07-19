@@ -8,7 +8,9 @@ Name | Type | Description | Notes
 **DisplayName** | **string** | The name of the source. | 
 **HostOrganization** | Pointer to **string** | The OpenAlex ID of the host organization for this source. | [optional] 
 **HostOrganizationLineage** | Pointer to **[]string** | OpenAlex IDs of the host organization&#39;s lineage, from most specific to most general. | [optional] 
+**HostOrganizationLineageNames** | Pointer to **[]string** | The display names of the host organization&#39;s lineage, from most specific to most general. | [optional] 
 **HostOrganizationName** | Pointer to **string** | The display_name of the host organization, shown for convenience. | [optional] 
+**IsCore** | Pointer to **bool** | Whether this source is identified as a \&quot;core source\&quot; by [CWTS](https://www.cwts.nl/), used in the [Open Leiden Ranking](https://open.leidenranking.com/) of universities around the world. The list of core sources can be found [here](https://zenodo.org/records/10949671). | [optional] 
 **IsInDoaj** | Pointer to **bool** | Whether this source is listed in the Directory of Open Access Journals (DOAJ). | [optional] 
 **IsOa** | Pointer to **bool** | Whether this is currently a fully open-access source. | [optional] 
 **Issn** | Pointer to **[]string** | The ISSNs (International Standard Serial Numbers) used by this source. | [optional] 
@@ -124,6 +126,31 @@ SetHostOrganizationLineage sets HostOrganizationLineage field to given value.
 
 HasHostOrganizationLineage returns a boolean if a field has been set.
 
+### GetHostOrganizationLineageNames
+
+`func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) GetHostOrganizationLineageNames() []string`
+
+GetHostOrganizationLineageNames returns the HostOrganizationLineageNames field if non-nil, zero value otherwise.
+
+### GetHostOrganizationLineageNamesOk
+
+`func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) GetHostOrganizationLineageNamesOk() (*[]string, bool)`
+
+GetHostOrganizationLineageNamesOk returns a tuple with the HostOrganizationLineageNames field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHostOrganizationLineageNames
+
+`func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) SetHostOrganizationLineageNames(v []string)`
+
+SetHostOrganizationLineageNames sets HostOrganizationLineageNames field to given value.
+
+### HasHostOrganizationLineageNames
+
+`func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) HasHostOrganizationLineageNames() bool`
+
+HasHostOrganizationLineageNames returns a boolean if a field has been set.
+
 ### GetHostOrganizationName
 
 `func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) GetHostOrganizationName() string`
@@ -148,6 +175,31 @@ SetHostOrganizationName sets HostOrganizationName field to given value.
 `func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) HasHostOrganizationName() bool`
 
 HasHostOrganizationName returns a boolean if a field has been set.
+
+### GetIsCore
+
+`func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) GetIsCore() bool`
+
+GetIsCore returns the IsCore field if non-nil, zero value otherwise.
+
+### GetIsCoreOk
+
+`func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) GetIsCoreOk() (*bool, bool)`
+
+GetIsCoreOk returns a tuple with the IsCore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCore
+
+`func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) SetIsCore(v bool)`
+
+SetIsCore sets IsCore field to given value.
+
+### HasIsCore
+
+`func (o *ListWorks200ResponseResultsInnerBestOaLocationSource) HasIsCore() bool`
+
+HasIsCore returns a boolean if a field has been set.
 
 ### GetIsInDoaj
 

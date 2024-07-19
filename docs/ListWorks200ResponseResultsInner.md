@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Biblio** | Pointer to [**ListWorks200ResponseResultsInnerBiblio**](ListWorks200ResponseResultsInnerBiblio.md) |  | [optional] 
 **CitedByApiUrl** | Pointer to **string** | A URL that displays a list of works that cite this work. | [optional] 
 **CitedByCount** | Pointer to **int32** | The number of citations to this work. | [optional] 
-**Concepts** | Pointer to [**[]ListConcepts200ResponseResultsInnerAncestorsInner**](ListConcepts200ResponseResultsInnerAncestorsInner.md) | List of concepts (research topics) associated with the work. These are algorithmically inferred based on the work&#39;s content. | [optional] 
+**Concepts** | Pointer to **[]map[string]interface{}** | List of concepts (research topics) associated with the work. These are algorithmically inferred based on the work&#39;s content. | [optional] 
 **CorrespondingAuthorIds** | Pointer to **[]string** | OpenAlex IDs of any authors for which authorships.is_corresponding is true. | [optional] 
 **CorrespondingInstitutionIds** | Pointer to **[]string** | OpenAlex IDs of any institutions found within an authorship for which authorships.is_corresponding is true. | [optional] 
 **CountriesDistinctCount** | Pointer to **int32** | Number of distinct country_codes among the authorships for this work. | [optional] 
@@ -271,20 +271,20 @@ HasCitedByCount returns a boolean if a field has been set.
 
 ### GetConcepts
 
-`func (o *ListWorks200ResponseResultsInner) GetConcepts() []ListConcepts200ResponseResultsInnerAncestorsInner`
+`func (o *ListWorks200ResponseResultsInner) GetConcepts() []map[string]interface{}`
 
 GetConcepts returns the Concepts field if non-nil, zero value otherwise.
 
 ### GetConceptsOk
 
-`func (o *ListWorks200ResponseResultsInner) GetConceptsOk() (*[]ListConcepts200ResponseResultsInnerAncestorsInner, bool)`
+`func (o *ListWorks200ResponseResultsInner) GetConceptsOk() (*[]map[string]interface{}, bool)`
 
 GetConceptsOk returns a tuple with the Concepts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConcepts
 
-`func (o *ListWorks200ResponseResultsInner) SetConcepts(v []ListConcepts200ResponseResultsInnerAncestorsInner)`
+`func (o *ListWorks200ResponseResultsInner) SetConcepts(v []map[string]interface{})`
 
 SetConcepts sets Concepts field to given value.
 

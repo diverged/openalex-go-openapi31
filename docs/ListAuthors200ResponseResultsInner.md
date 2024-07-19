@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksApiUrl** | Pointer to **string** | A URL that will get you a list of all this author&#39;s works. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of Works this author has created. | [optional] 
-**XConcepts** | Pointer to [**[]ListAuthors200ResponseResultsInnerXConceptsInner**](ListAuthors200ResponseResultsInnerXConceptsInner.md) | The concepts most frequently applied to works created by this author (deprecated). | [optional] 
+**XConcepts** | Pointer to **[]map[string]interface{}** | The concepts most frequently applied to works created by this author (deprecated). | [optional] 
 
 ## Methods
 
@@ -417,20 +417,20 @@ HasWorksCount returns a boolean if a field has been set.
 
 ### GetXConcepts
 
-`func (o *ListAuthors200ResponseResultsInner) GetXConcepts() []ListAuthors200ResponseResultsInnerXConceptsInner`
+`func (o *ListAuthors200ResponseResultsInner) GetXConcepts() []map[string]interface{}`
 
 GetXConcepts returns the XConcepts field if non-nil, zero value otherwise.
 
 ### GetXConceptsOk
 
-`func (o *ListAuthors200ResponseResultsInner) GetXConceptsOk() (*[]ListAuthors200ResponseResultsInnerXConceptsInner, bool)`
+`func (o *ListAuthors200ResponseResultsInner) GetXConceptsOk() (*[]map[string]interface{}, bool)`
 
 GetXConceptsOk returns a tuple with the XConcepts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetXConcepts
 
-`func (o *ListAuthors200ResponseResultsInner) SetXConcepts(v []ListAuthors200ResponseResultsInnerXConceptsInner)`
+`func (o *ListAuthors200ResponseResultsInner) SetXConcepts(v []map[string]interface{})`
 
 SetXConcepts sets XConcepts field to given value.
 

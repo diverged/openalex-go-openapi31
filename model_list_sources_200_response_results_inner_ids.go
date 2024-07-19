@@ -22,7 +22,7 @@ type ListSources200ResponseResultsInnerIds struct {
 	Openalex *string `json:"openalex,omitempty"`
 	IssnL *string `json:"issn_l,omitempty"`
 	Issn []string `json:"issn,omitempty"`
-	Mag *int32 `json:"mag,omitempty"`
+	Mag *string `json:"mag,omitempty"`
 	Fatcat *string `json:"fatcat,omitempty"`
 	Wikidata *string `json:"wikidata,omitempty"`
 }
@@ -141,9 +141,9 @@ func (o *ListSources200ResponseResultsInnerIds) SetIssn(v []string) {
 }
 
 // GetMag returns the Mag field value if set, zero value otherwise.
-func (o *ListSources200ResponseResultsInnerIds) GetMag() int32 {
+func (o *ListSources200ResponseResultsInnerIds) GetMag() string {
 	if o == nil || IsNil(o.Mag) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Mag
@@ -151,7 +151,7 @@ func (o *ListSources200ResponseResultsInnerIds) GetMag() int32 {
 
 // GetMagOk returns a tuple with the Mag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListSources200ResponseResultsInnerIds) GetMagOk() (*int32, bool) {
+func (o *ListSources200ResponseResultsInnerIds) GetMagOk() (*string, bool) {
 	if o == nil || IsNil(o.Mag) {
 		return nil, false
 	}
@@ -167,8 +167,8 @@ func (o *ListSources200ResponseResultsInnerIds) HasMag() bool {
 	return false
 }
 
-// SetMag gets a reference to the given int32 and assigns it to the Mag field.
-func (o *ListSources200ResponseResultsInnerIds) SetMag(v int32) {
+// SetMag gets a reference to the given string and assigns it to the Mag field.
+func (o *ListSources200ResponseResultsInnerIds) SetMag(v string) {
 	o.Mag = &v
 }
 

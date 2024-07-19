@@ -69,8 +69,8 @@ type ListSources200ResponseResultsInner struct {
 	WorksApiUrl *string `json:"works_api_url,omitempty"`
 	// The number of Works this source hosts.
 	WorksCount *int32 `json:"works_count,omitempty"`
-	// The Concepts most frequently applied to works hosted by this source. Each is represented as a dehydrated Concept object, with one additional attribute - score (Float) The strength of association between this source and the listed concept, from 0-100.
-	XConcepts []ListConcepts200ResponseResultsInnerAncestorsInner `json:"x_concepts,omitempty"`
+	// The Concepts most frequently applied to works hosted by this source.
+	XConcepts []map[string]interface{} `json:"x_concepts,omitempty"`
 }
 
 // NewListSources200ResponseResultsInner instantiates a new ListSources200ResponseResultsInner object
@@ -923,9 +923,9 @@ func (o *ListSources200ResponseResultsInner) SetWorksCount(v int32) {
 }
 
 // GetXConcepts returns the XConcepts field value if set, zero value otherwise.
-func (o *ListSources200ResponseResultsInner) GetXConcepts() []ListConcepts200ResponseResultsInnerAncestorsInner {
+func (o *ListSources200ResponseResultsInner) GetXConcepts() []map[string]interface{} {
 	if o == nil || IsNil(o.XConcepts) {
-		var ret []ListConcepts200ResponseResultsInnerAncestorsInner
+		var ret []map[string]interface{}
 		return ret
 	}
 	return o.XConcepts
@@ -933,7 +933,7 @@ func (o *ListSources200ResponseResultsInner) GetXConcepts() []ListConcepts200Res
 
 // GetXConceptsOk returns a tuple with the XConcepts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListSources200ResponseResultsInner) GetXConceptsOk() ([]ListConcepts200ResponseResultsInnerAncestorsInner, bool) {
+func (o *ListSources200ResponseResultsInner) GetXConceptsOk() ([]map[string]interface{}, bool) {
 	if o == nil || IsNil(o.XConcepts) {
 		return nil, false
 	}
@@ -949,8 +949,8 @@ func (o *ListSources200ResponseResultsInner) HasXConcepts() bool {
 	return false
 }
 
-// SetXConcepts gets a reference to the given []ListConcepts200ResponseResultsInnerAncestorsInner and assigns it to the XConcepts field.
-func (o *ListSources200ResponseResultsInner) SetXConcepts(v []ListConcepts200ResponseResultsInnerAncestorsInner) {
+// SetXConcepts gets a reference to the given []map[string]interface{} and assigns it to the XConcepts field.
+func (o *ListSources200ResponseResultsInner) SetXConcepts(v []map[string]interface{}) {
 	o.XConcepts = v
 }
 

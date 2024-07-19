@@ -16,11 +16,11 @@ import (
 	"fmt"
 )
 
-// checks if the ListConcepts200ResponseResultsInnerRelatedConceptsInner type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListConcepts200ResponseResultsInnerRelatedConceptsInner{}
+// checks if the ListAuthors200ResponseResultsInnerXConceptsInnerInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ListAuthors200ResponseResultsInnerXConceptsInnerInner{}
 
-// ListConcepts200ResponseResultsInnerRelatedConceptsInner Concepts that are similar to this one. Each listed concept is a dehydrated Concept object, with one additional attribute - score (Float)
-type ListConcepts200ResponseResultsInnerRelatedConceptsInner struct {
+// ListAuthors200ResponseResultsInnerXConceptsInnerInner struct for ListAuthors200ResponseResultsInnerXConceptsInnerInner
+type ListAuthors200ResponseResultsInnerXConceptsInnerInner struct {
 	// The OpenAlex ID for this concept.
 	Id string `json:"id"`
 	// The Wikidata ID for this concept.
@@ -29,18 +29,18 @@ type ListConcepts200ResponseResultsInnerRelatedConceptsInner struct {
 	DisplayName string `json:"display_name"`
 	// The hierarchical level of the concept. Level 0 is the most general, and level 5 is the most specific.
 	Level int32 `json:"level"`
-	// The strength of association between this concept and the listed concept, on a scale of 0-100.
+	// The strength of association between this source and the listed concept, from 0-100.
 	Score NullableFloat32 `json:"score,omitempty"`
 }
 
-type _ListConcepts200ResponseResultsInnerRelatedConceptsInner ListConcepts200ResponseResultsInnerRelatedConceptsInner
+type _ListAuthors200ResponseResultsInnerXConceptsInnerInner ListAuthors200ResponseResultsInnerXConceptsInnerInner
 
-// NewListConcepts200ResponseResultsInnerRelatedConceptsInner instantiates a new ListConcepts200ResponseResultsInnerRelatedConceptsInner object
+// NewListAuthors200ResponseResultsInnerXConceptsInnerInner instantiates a new ListAuthors200ResponseResultsInnerXConceptsInnerInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListConcepts200ResponseResultsInnerRelatedConceptsInner(id string, wikidata string, displayName string, level int32) *ListConcepts200ResponseResultsInnerRelatedConceptsInner {
-	this := ListConcepts200ResponseResultsInnerRelatedConceptsInner{}
+func NewListAuthors200ResponseResultsInnerXConceptsInnerInner(id string, wikidata string, displayName string, level int32) *ListAuthors200ResponseResultsInnerXConceptsInnerInner {
+	this := ListAuthors200ResponseResultsInnerXConceptsInnerInner{}
 	this.Id = id
 	this.Wikidata = wikidata
 	this.DisplayName = displayName
@@ -48,16 +48,16 @@ func NewListConcepts200ResponseResultsInnerRelatedConceptsInner(id string, wikid
 	return &this
 }
 
-// NewListConcepts200ResponseResultsInnerRelatedConceptsInnerWithDefaults instantiates a new ListConcepts200ResponseResultsInnerRelatedConceptsInner object
+// NewListAuthors200ResponseResultsInnerXConceptsInnerInnerWithDefaults instantiates a new ListAuthors200ResponseResultsInnerXConceptsInnerInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewListConcepts200ResponseResultsInnerRelatedConceptsInnerWithDefaults() *ListConcepts200ResponseResultsInnerRelatedConceptsInner {
-	this := ListConcepts200ResponseResultsInnerRelatedConceptsInner{}
+func NewListAuthors200ResponseResultsInnerXConceptsInnerInnerWithDefaults() *ListAuthors200ResponseResultsInnerXConceptsInnerInner {
+	this := ListAuthors200ResponseResultsInnerXConceptsInnerInner{}
 	return &this
 }
 
 // GetId returns the Id field value
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetId() string {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetId() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -68,7 +68,7 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetId() string
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetIdOk() (*string, bool) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -76,12 +76,12 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetIdOk() (*st
 }
 
 // SetId sets field value
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetId(v string) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetId(v string) {
 	o.Id = v
 }
 
 // GetWikidata returns the Wikidata field value
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetWikidata() string {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetWikidata() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -92,7 +92,7 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetWikidata() 
 
 // GetWikidataOk returns a tuple with the Wikidata field value
 // and a boolean to check if the value has been set.
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetWikidataOk() (*string, bool) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetWikidataOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -100,12 +100,12 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetWikidataOk(
 }
 
 // SetWikidata sets field value
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetWikidata(v string) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetWikidata(v string) {
 	o.Wikidata = v
 }
 
 // GetDisplayName returns the DisplayName field value
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetDisplayName() string {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetDisplayName() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -116,7 +116,7 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetDisplayName
 
 // GetDisplayNameOk returns a tuple with the DisplayName field value
 // and a boolean to check if the value has been set.
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetDisplayNameOk() (*string, bool) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetDisplayNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -124,12 +124,12 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetDisplayName
 }
 
 // SetDisplayName sets field value
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetDisplayName(v string) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetDisplayName(v string) {
 	o.DisplayName = v
 }
 
 // GetLevel returns the Level field value
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetLevel() int32 {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetLevel() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -140,7 +140,7 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetLevel() int
 
 // GetLevelOk returns a tuple with the Level field value
 // and a boolean to check if the value has been set.
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetLevelOk() (*int32, bool) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetLevelOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -148,12 +148,12 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetLevelOk() (
 }
 
 // SetLevel sets field value
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetLevel(v int32) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetLevel(v int32) {
 	o.Level = v
 }
 
 // GetScore returns the Score field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetScore() float32 {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetScore() float32 {
 	if o == nil || IsNil(o.Score.Get()) {
 		var ret float32
 		return ret
@@ -164,7 +164,7 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetScore() flo
 // GetScoreOk returns a tuple with the Score field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetScoreOk() (*float32, bool) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) GetScoreOk() (*float32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -172,7 +172,7 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) GetScoreOk() (
 }
 
 // HasScore returns a boolean if a field has been set.
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) HasScore() bool {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) HasScore() bool {
 	if o != nil && o.Score.IsSet() {
 		return true
 	}
@@ -181,20 +181,20 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) HasScore() boo
 }
 
 // SetScore gets a reference to the given NullableFloat32 and assigns it to the Score field.
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetScore(v float32) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetScore(v float32) {
 	o.Score.Set(&v)
 }
 // SetScoreNil sets the value for Score to be an explicit nil
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) SetScoreNil() {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) SetScoreNil() {
 	o.Score.Set(nil)
 }
 
 // UnsetScore ensures that no value is present for Score, not even an explicit nil
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) UnsetScore() {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) UnsetScore() {
 	o.Score.Unset()
 }
 
-func (o ListConcepts200ResponseResultsInnerRelatedConceptsInner) MarshalJSON() ([]byte, error) {
+func (o ListAuthors200ResponseResultsInnerXConceptsInnerInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -202,7 +202,7 @@ func (o ListConcepts200ResponseResultsInnerRelatedConceptsInner) MarshalJSON() (
 	return json.Marshal(toSerialize)
 }
 
-func (o ListConcepts200ResponseResultsInnerRelatedConceptsInner) ToMap() (map[string]interface{}, error) {
+func (o ListAuthors200ResponseResultsInnerXConceptsInnerInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["wikidata"] = o.Wikidata
@@ -214,7 +214,7 @@ func (o ListConcepts200ResponseResultsInnerRelatedConceptsInner) ToMap() (map[st
 	return toSerialize, nil
 }
 
-func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) UnmarshalJSON(data []byte) (err error) {
+func (o *ListAuthors200ResponseResultsInnerXConceptsInnerInner) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -239,53 +239,53 @@ func (o *ListConcepts200ResponseResultsInnerRelatedConceptsInner) UnmarshalJSON(
 		}
 	}
 
-	varListConcepts200ResponseResultsInnerRelatedConceptsInner := _ListConcepts200ResponseResultsInnerRelatedConceptsInner{}
+	varListAuthors200ResponseResultsInnerXConceptsInnerInner := _ListAuthors200ResponseResultsInnerXConceptsInnerInner{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varListConcepts200ResponseResultsInnerRelatedConceptsInner)
+	err = decoder.Decode(&varListAuthors200ResponseResultsInnerXConceptsInnerInner)
 
 	if err != nil {
 		return err
 	}
 
-	*o = ListConcepts200ResponseResultsInnerRelatedConceptsInner(varListConcepts200ResponseResultsInnerRelatedConceptsInner)
+	*o = ListAuthors200ResponseResultsInnerXConceptsInnerInner(varListAuthors200ResponseResultsInnerXConceptsInnerInner)
 
 	return err
 }
 
-type NullableListConcepts200ResponseResultsInnerRelatedConceptsInner struct {
-	value *ListConcepts200ResponseResultsInnerRelatedConceptsInner
+type NullableListAuthors200ResponseResultsInnerXConceptsInnerInner struct {
+	value *ListAuthors200ResponseResultsInnerXConceptsInnerInner
 	isSet bool
 }
 
-func (v NullableListConcepts200ResponseResultsInnerRelatedConceptsInner) Get() *ListConcepts200ResponseResultsInnerRelatedConceptsInner {
+func (v NullableListAuthors200ResponseResultsInnerXConceptsInnerInner) Get() *ListAuthors200ResponseResultsInnerXConceptsInnerInner {
 	return v.value
 }
 
-func (v *NullableListConcepts200ResponseResultsInnerRelatedConceptsInner) Set(val *ListConcepts200ResponseResultsInnerRelatedConceptsInner) {
+func (v *NullableListAuthors200ResponseResultsInnerXConceptsInnerInner) Set(val *ListAuthors200ResponseResultsInnerXConceptsInnerInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableListConcepts200ResponseResultsInnerRelatedConceptsInner) IsSet() bool {
+func (v NullableListAuthors200ResponseResultsInnerXConceptsInnerInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableListConcepts200ResponseResultsInnerRelatedConceptsInner) Unset() {
+func (v *NullableListAuthors200ResponseResultsInnerXConceptsInnerInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableListConcepts200ResponseResultsInnerRelatedConceptsInner(val *ListConcepts200ResponseResultsInnerRelatedConceptsInner) *NullableListConcepts200ResponseResultsInnerRelatedConceptsInner {
-	return &NullableListConcepts200ResponseResultsInnerRelatedConceptsInner{value: val, isSet: true}
+func NewNullableListAuthors200ResponseResultsInnerXConceptsInnerInner(val *ListAuthors200ResponseResultsInnerXConceptsInnerInner) *NullableListAuthors200ResponseResultsInnerXConceptsInnerInner {
+	return &NullableListAuthors200ResponseResultsInnerXConceptsInnerInner{value: val, isSet: true}
 }
 
-func (v NullableListConcepts200ResponseResultsInnerRelatedConceptsInner) MarshalJSON() ([]byte, error) {
+func (v NullableListAuthors200ResponseResultsInnerXConceptsInnerInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableListConcepts200ResponseResultsInnerRelatedConceptsInner) UnmarshalJSON(src []byte) error {
+func (v *NullableListAuthors200ResponseResultsInnerXConceptsInnerInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

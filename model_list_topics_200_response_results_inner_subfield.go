@@ -20,7 +20,7 @@ var _ MappedNullable = &ListTopics200ResponseResultsInnerSubfield{}
 // ListTopics200ResponseResultsInnerSubfield struct for ListTopics200ResponseResultsInnerSubfield
 type ListTopics200ResponseResultsInnerSubfield struct {
 	// The ID of the subfield.
-	Id *int32 `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	// The name of the subfield.
 	DisplayName *string `json:"display_name,omitempty"`
 }
@@ -43,9 +43,9 @@ func NewListTopics200ResponseResultsInnerSubfieldWithDefaults() *ListTopics200Re
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ListTopics200ResponseResultsInnerSubfield) GetId() int32 {
+func (o *ListTopics200ResponseResultsInnerSubfield) GetId() string {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Id
@@ -53,7 +53,7 @@ func (o *ListTopics200ResponseResultsInnerSubfield) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListTopics200ResponseResultsInnerSubfield) GetIdOk() (*int32, bool) {
+func (o *ListTopics200ResponseResultsInnerSubfield) GetIdOk() (*string, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *ListTopics200ResponseResultsInnerSubfield) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ListTopics200ResponseResultsInnerSubfield) SetId(v int32) {
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *ListTopics200ResponseResultsInnerSubfield) SetId(v string) {
 	o.Id = &v
 }
 

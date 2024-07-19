@@ -1,0 +1,72 @@
+# ListPublishers200ResponseResultsInnerParentPublisher
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **string** | The OpenAlex ID for the parent publisher. | 
+**DisplayName** | **string** | The display name of the parent publisher. | 
+
+## Methods
+
+### NewListPublishers200ResponseResultsInnerParentPublisher
+
+`func NewListPublishers200ResponseResultsInnerParentPublisher(id string, displayName string, ) *ListPublishers200ResponseResultsInnerParentPublisher`
+
+NewListPublishers200ResponseResultsInnerParentPublisher instantiates a new ListPublishers200ResponseResultsInnerParentPublisher object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewListPublishers200ResponseResultsInnerParentPublisherWithDefaults
+
+`func NewListPublishers200ResponseResultsInnerParentPublisherWithDefaults() *ListPublishers200ResponseResultsInnerParentPublisher`
+
+NewListPublishers200ResponseResultsInnerParentPublisherWithDefaults instantiates a new ListPublishers200ResponseResultsInnerParentPublisher object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *ListPublishers200ResponseResultsInnerParentPublisher) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ListPublishers200ResponseResultsInnerParentPublisher) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ListPublishers200ResponseResultsInnerParentPublisher) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetDisplayName
+
+`func (o *ListPublishers200ResponseResultsInnerParentPublisher) GetDisplayName() string`
+
+GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
+
+### GetDisplayNameOk
+
+`func (o *ListPublishers200ResponseResultsInnerParentPublisher) GetDisplayNameOk() (*string, bool)`
+
+GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayName
+
+`func (o *ListPublishers200ResponseResultsInnerParentPublisher) SetDisplayName(v string)`
+
+SetDisplayName sets DisplayName field to given value.
+
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

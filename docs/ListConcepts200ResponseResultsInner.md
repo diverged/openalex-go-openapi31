@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **ImageThumbnailUrl** | Pointer to **string** | Same as image_url, but it&#39;s a smaller image. | [optional] 
 **International** | Pointer to [**ListConcepts200ResponseResultsInnerInternational**](ListConcepts200ResponseResultsInnerInternational.md) |  | [optional] 
 **Ancestors** | Pointer to [**[]ListConcepts200ResponseResultsInnerAncestorsInner**](ListConcepts200ResponseResultsInnerAncestorsInner.md) | List of concepts that this concept descends from, as dehydrated Concept objects. | [optional] 
-**RelatedConcepts** | Pointer to [**[]ListConcepts200ResponseResultsInnerRelatedConceptsInner**](ListConcepts200ResponseResultsInnerRelatedConceptsInner.md) | Concepts that are similar to this one. | [optional] 
+**RelatedConcepts** | Pointer to **[]map[string]interface{}** |  | [optional] 
 **CountsByYear** | Pointer to [**[]ListAuthors200ResponseResultsInnerCountsByYearInner**](ListAuthors200ResponseResultsInnerCountsByYearInner.md) | The values of works_count and cited_by_count for each of the last ten years, binned by year. | [optional] 
 **WorksApiUrl** | Pointer to **string** | An URL that will get you a list of all the works tagged with this concept. | [optional] 
 **UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
@@ -344,20 +344,20 @@ HasAncestors returns a boolean if a field has been set.
 
 ### GetRelatedConcepts
 
-`func (o *ListConcepts200ResponseResultsInner) GetRelatedConcepts() []ListConcepts200ResponseResultsInnerRelatedConceptsInner`
+`func (o *ListConcepts200ResponseResultsInner) GetRelatedConcepts() []map[string]interface{}`
 
 GetRelatedConcepts returns the RelatedConcepts field if non-nil, zero value otherwise.
 
 ### GetRelatedConceptsOk
 
-`func (o *ListConcepts200ResponseResultsInner) GetRelatedConceptsOk() (*[]ListConcepts200ResponseResultsInnerRelatedConceptsInner, bool)`
+`func (o *ListConcepts200ResponseResultsInner) GetRelatedConceptsOk() (*[]map[string]interface{}, bool)`
 
 GetRelatedConceptsOk returns a tuple with the RelatedConcepts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelatedConcepts
 
-`func (o *ListConcepts200ResponseResultsInner) SetRelatedConcepts(v []ListConcepts200ResponseResultsInnerRelatedConceptsInner)`
+`func (o *ListConcepts200ResponseResultsInner) SetRelatedConcepts(v []map[string]interface{})`
 
 SetRelatedConcepts sets RelatedConcepts field to given value.
 
