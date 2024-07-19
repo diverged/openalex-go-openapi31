@@ -2855,7 +2855,7 @@ components:
           example: https://api.openalex.org/works?filter=concept.id:C2778407487
           type: string
         updated_date:
-          description: The last time anything in this author object changed. Formatted
+          description: The last time anything in this concept object changed. Formatted
             as ISO 8601 extended format without time zone designator.
           example: 2024-07-13T06:17:17.932040
           format: custom_date_time
@@ -3166,7 +3166,7 @@ components:
         summary_stats:
           $ref: '#/components/schemas/listFunders_200_response_results_inner_summary_stats'
         updated_date:
-          description: The last time anything in this author object changed. Formatted
+          description: The last time anything in this funder object changed. Formatted
             as ISO 8601 extended format without time zone designator.
           example: 2024-07-13T06:17:17.932040
           format: custom_date_time
@@ -3645,8 +3645,8 @@ components:
           example: education
           type: string
         updated_date:
-          description: The last time anything in this author object changed. Formatted
-            as ISO 8601 extended format without time zone designator.
+          description: The last time anything in this institution object changed.
+            Formatted as ISO 8601 extended format without time zone designator.
           example: 2024-07-13T06:17:17.932040
           format: custom_date_time
           type: string
@@ -3913,15 +3913,30 @@ components:
           description: The number of works in OpenAlex that have this keyword.
           example: 12345
           type: integer
+        works_api_url:
+          description: An URL that will get you a list of all the works with this
+            keyword.
+          example: https://api.openalex.org/works?filter=keywords.id:keywords/diagnosis
+          type: string
         cited_by_count:
           description: The total number of citations received by all works with this
             keyword.
           example: 98765
           type: integer
+        updated_date:
+          description: The last time anything in this keyword object changed. Formatted
+            as ISO 8601 extended format without time zone designator.
+          example: 2024-07-13T06:17:17.932040
+          format: custom_date_time
+          type: string
+        created_date:
+          description: The date this keyword object was created in the OpenAlex dataset.
+          example: 2017-08-08
+          format: date
+          type: string
       required:
       - display_name
       - id
-      - score
     listKeywords_200_response:
       example:
         meta:
@@ -4168,7 +4183,7 @@ components:
         summary_stats:
           $ref: '#/components/schemas/listPublishers_200_response_results_inner_summary_stats'
         updated_date:
-          description: The last time anything in this author object changed. Formatted
+          description: The last time anything in this publisher object changed. Formatted
             as ISO 8601 extended format without time zone designator.
           example: 2024-07-13T06:17:17.932040
           format: custom_date_time
@@ -4587,7 +4602,7 @@ components:
           example: journal
           type: string
         updated_date:
-          description: The last time anything in this author object changed. Formatted
+          description: The last time anything in this source object changed. Formatted
             as ISO 8601 extended format without time zone designator.
           example: 2024-07-13T06:17:17.932040
           format: custom_date_time
@@ -4954,7 +4969,7 @@ components:
           example: 21737
           type: integer
         updated_date:
-          description: The last time anything in this author object changed. Formatted
+          description: The last time anything in this topic object changed. Formatted
             as ISO 8601 extended format without time zone designator.
           example: 2024-07-13T06:17:17.932040
           format: custom_date_time
@@ -6314,8 +6329,7 @@ components:
             $ref: '#/components/schemas/listWorks_200_response_results_inner_counts_by_year_inner'
           type: array
         created_date:
-          description: The date and time this Work object was created in the OpenAlex
-            dataset.
+          description: The date this Work object was created in the OpenAlex dataset.
           example: 2017-08-08
           format: date
           type: string
@@ -6496,7 +6510,7 @@ components:
           example: journal-article
           type: string
         updated_date:
-          description: The last time anything in this author object changed. Formatted
+          description: The last time anything in this work object changed. Formatted
             as ISO 8601 extended format without time zone designator.
           example: 2024-07-13T06:17:17.932040
           format: custom_date_time

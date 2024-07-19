@@ -129,6 +129,18 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 		resp, httpRes, err := apiClient.DefaultAPI.ListKeywords(context.Background()).Execute()
 
+		if err != nil {
+			t.Errorf("Error: %v", err)
+		}
+		if httpRes == nil {
+			t.Error("Received nil HTTP response")
+		} else {
+			t.Logf("HTTP Status Code: %d", httpRes.StatusCode)
+		}
+		if resp == nil {
+			t.Error("Received nil response")
+		}
+
 		require.Nil(t, err)
 		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)

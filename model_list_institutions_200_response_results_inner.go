@@ -57,7 +57,7 @@ type ListInstitutions200ResponseResultsInner struct {
 	SummaryStats *ListInstitutions200ResponseResultsInnerSummaryStats `json:"summary_stats,omitempty"`
 	// The institution's primary type, using the ROR \"type\" controlled vocabulary.
 	Type *string `json:"type,omitempty"`
-	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
+	// The last time anything in this institution object changed. Formatted as ISO 8601 extended format without time zone designator.
 	UpdatedDate *string `json:"updated_date,omitempty"`
 	// A URL that will get you a list of all the Works affiliated with this institution.
 	WorksApiUrl *string `json:"works_api_url,omitempty"`

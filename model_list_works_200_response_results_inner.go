@@ -41,7 +41,7 @@ type ListWorks200ResponseResultsInner struct {
 	CountriesDistinctCount *int32 `json:"countries_distinct_count,omitempty"`
 	// Cited_by_count for each of the last ten years, binned by year.
 	CountsByYear []ListWorks200ResponseResultsInnerCountsByYearInner `json:"counts_by_year,omitempty"`
-	// The date and time this Work object was created in the OpenAlex dataset.
+	// The date this Work object was created in the OpenAlex dataset.
 	CreatedDate *string `json:"created_date,omitempty"`
 	// The title of this work (same as title).
 	DisplayName *string `json:"display_name,omitempty"`
@@ -99,7 +99,7 @@ type ListWorks200ResponseResultsInner struct {
 	Type *string `json:"type,omitempty"`
 	// Legacy type information, using Crossref's \"type\" controlled vocabulary.
 	TypeCrossref *string `json:"type_crossref,omitempty"`
-	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
+	// The last time anything in this work object changed. Formatted as ISO 8601 extended format without time zone designator.
 	UpdatedDate *string `json:"updated_date,omitempty"`
 }
 

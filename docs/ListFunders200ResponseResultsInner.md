@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **ImageUrl** | Pointer to **string** | URL where you can get an image representing this funder. | [optional] 
 **Roles** | Pointer to [**[]ListFunders200ResponseResultsInnerRolesInner**](ListFunders200ResponseResultsInnerRolesInner.md) | List of role objects, which include the role, the id, and the works_count. | [optional] 
 **SummaryStats** | Pointer to [**ListFunders200ResponseResultsInnerSummaryStats**](ListFunders200ResponseResultsInnerSummaryStats.md) |  | [optional] 
-**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this funder object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of works linked to this funder. | [optional] 
 
 ## Methods

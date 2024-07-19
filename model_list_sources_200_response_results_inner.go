@@ -63,7 +63,7 @@ type ListSources200ResponseResultsInner struct {
 	SummaryStats *ListSources200ResponseResultsInnerSummaryStats `json:"summary_stats,omitempty"`
 	// The type of source.
 	Type *string `json:"type,omitempty"`
-	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
+	// The last time anything in this source object changed. Formatted as ISO 8601 extended format without time zone designator.
 	UpdatedDate *string `json:"updated_date,omitempty"`
 	// A URL that will get you a list of all this source's Works. We express this as an API URL (instead of just listing the works themselves) because sometimes a source's publication list is too long to reasonably fit into a single Source object.
 	WorksApiUrl *string `json:"works_api_url,omitempty"`

@@ -48,7 +48,7 @@ type ListPublishers200ResponseResultsInner struct {
 	// An URL that will get you a list of all the sources published by this publisher.
 	SourcesApiUrl *string `json:"sources_api_url,omitempty"`
 	SummaryStats *ListPublishers200ResponseResultsInnerSummaryStats `json:"summary_stats,omitempty"`
-	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
+	// The last time anything in this publisher object changed. Formatted as ISO 8601 extended format without time zone designator.
 	UpdatedDate *string `json:"updated_date,omitempty"`
 	// The number of works published by this publisher.
 	WorksCount *int32 `json:"works_count,omitempty"`

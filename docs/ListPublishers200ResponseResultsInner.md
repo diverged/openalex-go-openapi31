@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Roles** | Pointer to [**[]ListFunders200ResponseResultsInnerRolesInner**](ListFunders200ResponseResultsInnerRolesInner.md) | List of role objects, which include the role, the id, and the works_count. | [optional] 
 **SourcesApiUrl** | Pointer to **string** | An URL that will get you a list of all the sources published by this publisher. | [optional] 
 **SummaryStats** | Pointer to [**ListPublishers200ResponseResultsInnerSummaryStats**](ListPublishers200ResponseResultsInnerSummaryStats.md) |  | [optional] 
-**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this publisher object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of works published by this publisher. | [optional] 
 
 ## Methods

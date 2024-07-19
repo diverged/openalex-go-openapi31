@@ -46,7 +46,7 @@ type ListConcepts200ResponseResultsInner struct {
 	CountsByYear []ListAuthors200ResponseResultsInnerCountsByYearInner `json:"counts_by_year,omitempty"`
 	// An URL that will get you a list of all the works tagged with this concept.
 	WorksApiUrl *string `json:"works_api_url,omitempty"`
-	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
+	// The last time anything in this concept object changed. Formatted as ISO 8601 extended format without time zone designator.
 	UpdatedDate *string `json:"updated_date,omitempty"`
 	// The date this Concept object was created in the OpenAlex dataset, expressed as an ISO 8601 date string.
 	CreatedDate *string `json:"created_date,omitempty"`

@@ -47,7 +47,7 @@ type ListFunders200ResponseResultsInner struct {
 	// List of role objects, which include the role, the id, and the works_count.
 	Roles []ListFunders200ResponseResultsInnerRolesInner `json:"roles,omitempty"`
 	SummaryStats *ListFunders200ResponseResultsInnerSummaryStats `json:"summary_stats,omitempty"`
-	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
+	// The last time anything in this funder object changed. Formatted as ISO 8601 extended format without time zone designator.
 	UpdatedDate *string `json:"updated_date,omitempty"`
 	// The number of works linked to this funder.
 	WorksCount *int32 `json:"works_count,omitempty"`

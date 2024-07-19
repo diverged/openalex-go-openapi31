@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Ids** | Pointer to [**ListTopics200ResponseResultsInnerIds**](ListTopics200ResponseResultsInnerIds.md) |  | [optional] 
 **Keywords** | Pointer to **[]string** | Keywords consisting of one or several words each, meant to represent the content of the papers in the topic. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of works tagged with this topic. | [optional] 
-**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this topic object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **CitedByCount** | Pointer to **int32** | The number of citations to works tagged with this topic. | [optional] 
 **WorksApiUrl** | Pointer to **string** | URL to retrieve works tagged with this topic. | [optional] 
 **CreatedDate** | Pointer to **string** | The date this topic was created in the OpenAlex database, expressed as an ISO 8601 date string. | [optional] 

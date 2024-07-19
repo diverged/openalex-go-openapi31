@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **Ror** | Pointer to **string** | The ROR ID for this institution. | [optional] 
 **SummaryStats** | Pointer to [**ListInstitutions200ResponseResultsInnerSummaryStats**](ListInstitutions200ResponseResultsInnerSummaryStats.md) |  | [optional] 
 **Type** | Pointer to **string** | The institution&#39;s primary type, using the ROR \&quot;type\&quot; controlled vocabulary. | [optional] 
-**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this institution object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksApiUrl** | Pointer to **string** | A URL that will get you a list of all the Works affiliated with this institution. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of Works created by authors affiliated with this institution. | [optional] 
 **XConcepts** | Pointer to **[]map[string]interface{}** | The Concepts most frequently applied to works affiliated with this institution. | [optional] 

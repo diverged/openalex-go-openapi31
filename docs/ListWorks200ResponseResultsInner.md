@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **CorrespondingInstitutionIds** | Pointer to **[]string** | OpenAlex IDs of any institutions found within an authorship for which authorships.is_corresponding is true. | [optional] 
 **CountriesDistinctCount** | Pointer to **int32** | Number of distinct country_codes among the authorships for this work. | [optional] 
 **CountsByYear** | Pointer to [**[]ListWorks200ResponseResultsInnerCountsByYearInner**](ListWorks200ResponseResultsInnerCountsByYearInner.md) | Cited_by_count for each of the last ten years, binned by year. | [optional] 
-**CreatedDate** | Pointer to **string** | The date and time this Work object was created in the OpenAlex dataset. | [optional] 
+**CreatedDate** | Pointer to **string** | The date this Work object was created in the OpenAlex dataset. | [optional] 
 **DisplayName** | Pointer to **string** | The title of this work (same as title). | [optional] 
 **Doi** | Pointer to **string** | The DOI for the work. | [optional] 
 **FulltextOrigin** | Pointer to **string** | If a work&#39;s full text is searchable in OpenAlex, this tells you how we got the text. | [optional] 
@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **Topics** | Pointer to [**[]ListWorks200ResponseResultsInnerTopicsInner**](ListWorks200ResponseResultsInnerTopicsInner.md) | The top ranked Topics for this work. | [optional] 
 **Type** | Pointer to **string** | The type of the work. | [optional] 
 **TypeCrossref** | Pointer to **string** | Legacy type information, using Crossref&#39;s \&quot;type\&quot; controlled vocabulary. | [optional] 
-**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this work object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 
 ## Methods
 

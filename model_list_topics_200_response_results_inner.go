@@ -37,7 +37,7 @@ type ListTopics200ResponseResultsInner struct {
 	Keywords []string `json:"keywords,omitempty"`
 	// The number of works tagged with this topic.
 	WorksCount *int32 `json:"works_count,omitempty"`
-	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
+	// The last time anything in this topic object changed. Formatted as ISO 8601 extended format without time zone designator.
 	UpdatedDate *string `json:"updated_date,omitempty"`
 	// The number of citations to works tagged with this topic.
 	CitedByCount *int32 `json:"cited_by_count,omitempty"`

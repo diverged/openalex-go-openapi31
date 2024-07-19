@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **Societies** | Pointer to [**[]ListSources200ResponseResultsInnerSocietiesInner**](ListSources200ResponseResultsInnerSocietiesInner.md) | Societies on whose behalf the source is published and maintained, obtained from our crowdsourced list. | [optional] 
 **SummaryStats** | Pointer to [**ListSources200ResponseResultsInnerSummaryStats**](ListSources200ResponseResultsInnerSummaryStats.md) |  | [optional] 
 **Type** | Pointer to **string** | The type of source. | [optional] 
-**UpdatedDate** | Pointer to **string** | The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
+**UpdatedDate** | Pointer to **string** | The last time anything in this source object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksApiUrl** | Pointer to **string** | A URL that will get you a list of all this source&#39;s Works. We express this as an API URL (instead of just listing the works themselves) because sometimes a source&#39;s publication list is too long to reasonably fit into a single Source object. | [optional] 
 **WorksCount** | Pointer to **int32** | The number of Works this source hosts. | [optional] 
 **XConcepts** | Pointer to **[]map[string]interface{}** | The Concepts most frequently applied to works hosted by this source. | [optional] 

@@ -26,11 +26,17 @@ type ListKeywords200ResponseResultsInner struct {
 	// The name of the keyword.
 	DisplayName string `json:"display_name"`
 	// The similarity score of the keyword to the work's title and abstract text. Higher scores indicate greater relevance.
-	Score float32 `json:"score"`
+	Score *float32 `json:"score,omitempty"`
 	// The number of works in OpenAlex that have this keyword.
 	WorksCount *int32 `json:"works_count,omitempty"`
+	// An URL that will get you a list of all the works with this keyword.
+	WorksApiUrl *string `json:"works_api_url,omitempty"`
 	// The total number of citations received by all works with this keyword.
 	CitedByCount *int32 `json:"cited_by_count,omitempty"`
+	// The last time anything in this keyword object changed. Formatted as ISO 8601 extended format without time zone designator.
+	UpdatedDate *string `json:"updated_date,omitempty"`
+	// The date this keyword object was created in the OpenAlex dataset.
+	CreatedDate *string `json:"created_date,omitempty"`
 }
 
 type _ListKeywords200ResponseResultsInner ListKeywords200ResponseResultsInner
@@ -39,11 +45,10 @@ type _ListKeywords200ResponseResultsInner ListKeywords200ResponseResultsInner
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListKeywords200ResponseResultsInner(id string, displayName string, score float32) *ListKeywords200ResponseResultsInner {
+func NewListKeywords200ResponseResultsInner(id string, displayName string) *ListKeywords200ResponseResultsInner {
 	this := ListKeywords200ResponseResultsInner{}
 	this.Id = id
 	this.DisplayName = displayName
-	this.Score = score
 	return &this
 }
 
@@ -103,28 +108,36 @@ func (o *ListKeywords200ResponseResultsInner) SetDisplayName(v string) {
 	o.DisplayName = v
 }
 
-// GetScore returns the Score field value
+// GetScore returns the Score field value if set, zero value otherwise.
 func (o *ListKeywords200ResponseResultsInner) GetScore() float32 {
-	if o == nil {
+	if o == nil || IsNil(o.Score) {
 		var ret float32
 		return ret
 	}
-
-	return o.Score
+	return *o.Score
 }
 
-// GetScoreOk returns a tuple with the Score field value
+// GetScoreOk returns a tuple with the Score field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ListKeywords200ResponseResultsInner) GetScoreOk() (*float32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Score) {
 		return nil, false
 	}
-	return &o.Score, true
+	return o.Score, true
 }
 
-// SetScore sets field value
+// HasScore returns a boolean if a field has been set.
+func (o *ListKeywords200ResponseResultsInner) HasScore() bool {
+	if o != nil && !IsNil(o.Score) {
+		return true
+	}
+
+	return false
+}
+
+// SetScore gets a reference to the given float32 and assigns it to the Score field.
 func (o *ListKeywords200ResponseResultsInner) SetScore(v float32) {
-	o.Score = v
+	o.Score = &v
 }
 
 // GetWorksCount returns the WorksCount field value if set, zero value otherwise.
@@ -159,6 +172,38 @@ func (o *ListKeywords200ResponseResultsInner) SetWorksCount(v int32) {
 	o.WorksCount = &v
 }
 
+// GetWorksApiUrl returns the WorksApiUrl field value if set, zero value otherwise.
+func (o *ListKeywords200ResponseResultsInner) GetWorksApiUrl() string {
+	if o == nil || IsNil(o.WorksApiUrl) {
+		var ret string
+		return ret
+	}
+	return *o.WorksApiUrl
+}
+
+// GetWorksApiUrlOk returns a tuple with the WorksApiUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListKeywords200ResponseResultsInner) GetWorksApiUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.WorksApiUrl) {
+		return nil, false
+	}
+	return o.WorksApiUrl, true
+}
+
+// HasWorksApiUrl returns a boolean if a field has been set.
+func (o *ListKeywords200ResponseResultsInner) HasWorksApiUrl() bool {
+	if o != nil && !IsNil(o.WorksApiUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetWorksApiUrl gets a reference to the given string and assigns it to the WorksApiUrl field.
+func (o *ListKeywords200ResponseResultsInner) SetWorksApiUrl(v string) {
+	o.WorksApiUrl = &v
+}
+
 // GetCitedByCount returns the CitedByCount field value if set, zero value otherwise.
 func (o *ListKeywords200ResponseResultsInner) GetCitedByCount() int32 {
 	if o == nil || IsNil(o.CitedByCount) {
@@ -191,6 +236,70 @@ func (o *ListKeywords200ResponseResultsInner) SetCitedByCount(v int32) {
 	o.CitedByCount = &v
 }
 
+// GetUpdatedDate returns the UpdatedDate field value if set, zero value otherwise.
+func (o *ListKeywords200ResponseResultsInner) GetUpdatedDate() string {
+	if o == nil || IsNil(o.UpdatedDate) {
+		var ret string
+		return ret
+	}
+	return *o.UpdatedDate
+}
+
+// GetUpdatedDateOk returns a tuple with the UpdatedDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListKeywords200ResponseResultsInner) GetUpdatedDateOk() (*string, bool) {
+	if o == nil || IsNil(o.UpdatedDate) {
+		return nil, false
+	}
+	return o.UpdatedDate, true
+}
+
+// HasUpdatedDate returns a boolean if a field has been set.
+func (o *ListKeywords200ResponseResultsInner) HasUpdatedDate() bool {
+	if o != nil && !IsNil(o.UpdatedDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdatedDate gets a reference to the given string and assigns it to the UpdatedDate field.
+func (o *ListKeywords200ResponseResultsInner) SetUpdatedDate(v string) {
+	o.UpdatedDate = &v
+}
+
+// GetCreatedDate returns the CreatedDate field value if set, zero value otherwise.
+func (o *ListKeywords200ResponseResultsInner) GetCreatedDate() string {
+	if o == nil || IsNil(o.CreatedDate) {
+		var ret string
+		return ret
+	}
+	return *o.CreatedDate
+}
+
+// GetCreatedDateOk returns a tuple with the CreatedDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListKeywords200ResponseResultsInner) GetCreatedDateOk() (*string, bool) {
+	if o == nil || IsNil(o.CreatedDate) {
+		return nil, false
+	}
+	return o.CreatedDate, true
+}
+
+// HasCreatedDate returns a boolean if a field has been set.
+func (o *ListKeywords200ResponseResultsInner) HasCreatedDate() bool {
+	if o != nil && !IsNil(o.CreatedDate) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedDate gets a reference to the given string and assigns it to the CreatedDate field.
+func (o *ListKeywords200ResponseResultsInner) SetCreatedDate(v string) {
+	o.CreatedDate = &v
+}
+
 func (o ListKeywords200ResponseResultsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -203,12 +312,23 @@ func (o ListKeywords200ResponseResultsInner) ToMap() (map[string]interface{}, er
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["display_name"] = o.DisplayName
-	toSerialize["score"] = o.Score
+	if !IsNil(o.Score) {
+		toSerialize["score"] = o.Score
+	}
 	if !IsNil(o.WorksCount) {
 		toSerialize["works_count"] = o.WorksCount
 	}
+	if !IsNil(o.WorksApiUrl) {
+		toSerialize["works_api_url"] = o.WorksApiUrl
+	}
 	if !IsNil(o.CitedByCount) {
 		toSerialize["cited_by_count"] = o.CitedByCount
+	}
+	if !IsNil(o.UpdatedDate) {
+		toSerialize["updated_date"] = o.UpdatedDate
+	}
+	if !IsNil(o.CreatedDate) {
+		toSerialize["created_date"] = o.CreatedDate
 	}
 	return toSerialize, nil
 }
@@ -220,7 +340,6 @@ func (o *ListKeywords200ResponseResultsInner) UnmarshalJSON(data []byte) (err er
 	requiredProperties := []string{
 		"id",
 		"display_name",
-		"score",
 	}
 
 	allProperties := make(map[string]interface{})
