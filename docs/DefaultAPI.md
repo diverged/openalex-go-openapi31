@@ -39,7 +39,7 @@ import (
 
 func main() {
 	entityType := "entityType_example" // string | 
-	q := "flori" // string | The query string for autocomplete suggestions.
+	q := "flori" // string | The search string supplied by the user for autocomplete suggestions.  Additional parameters: - filter: Optional filter to apply to the autocomplete results. Uses the same syntax as entity filters. - search: Optional search query to apply to the autocomplete results. Uses the same syntax as entity search. 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -69,7 +69,7 @@ Other parameters are passed through a pointer to a apiAutocompleteEntitiesReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **q** | **string** | The query string for autocomplete suggestions. | 
+ **q** | **string** | The search string supplied by the user for autocomplete suggestions.  Additional parameters: - filter: Optional filter to apply to the autocomplete results. Uses the same syntax as entity filters. - search: Optional search query to apply to the autocomplete results. Uses the same syntax as entity search.  | 
 
 ### Return type
 
