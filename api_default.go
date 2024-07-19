@@ -30,7 +30,7 @@ type ApiAutocompleteEntitiesRequest struct {
 	q *string
 }
 
-// The search string supplied by the user for autocomplete suggestions.  Additional parameters: - filter: Optional filter to apply to the autocomplete results. Uses the same syntax as entity filters. - search: Optional search query to apply to the autocomplete results. Uses the same syntax as entity search. 
+// The query string for autocomplete suggestions.
 func (r ApiAutocompleteEntitiesRequest) Q(q string) ApiAutocompleteEntitiesRequest {
 	r.q = &q
 	return r

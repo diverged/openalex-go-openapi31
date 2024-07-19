@@ -1730,7 +1730,24 @@ paths:
           - works
           type: string
         style: simple
-      - $ref: '#/components/parameters/autocomplete'
+      - description: The query string for autocomplete suggestions.
+        examples:
+          simple_query:
+            summary: Simple autocomplete query
+            value: flori
+          with_filter:
+            summary: Autocomplete query with filter
+            value: flori&filter=publication_year:2010
+          with_search:
+            summary: Autocomplete query with search
+            value: flori&search=frogs
+        explode: true
+        in: query
+        name: q
+        required: true
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:

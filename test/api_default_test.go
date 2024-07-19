@@ -27,9 +27,11 @@ func Test_openapi_DefaultAPIService(t *testing.T) {
 
 		// 		t.Skip("skip test")  // remove to run test
 
-		var entityType string
+		// var entityType string
+		var entityType string = "authors" // Example entity type
+		var query string = "example"      // Example query
 
-		resp, httpRes, err := apiClient.DefaultAPI.AutocompleteEntities(context.Background(), entityType).Execute()
+		resp, httpRes, err := apiClient.DefaultAPI.AutocompleteEntities(context.Background(), entityType).Q(query).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
