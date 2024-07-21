@@ -125,6 +125,8 @@ Class | Method | HTTP request | Description
  - [ListInstitutions200ResponseResultsInnerInternational](docs/ListInstitutions200ResponseResultsInnerInternational.md)
  - [ListInstitutions200ResponseResultsInnerRepositoriesInner](docs/ListInstitutions200ResponseResultsInnerRepositoriesInner.md)
  - [ListInstitutions200ResponseResultsInnerSummaryStats](docs/ListInstitutions200ResponseResultsInnerSummaryStats.md)
+ - [ListInstitutions200ResponseResultsInnerTopicsInner](docs/ListInstitutions200ResponseResultsInnerTopicsInner.md)
+ - [ListInstitutions200ResponseResultsInnerTopicsInnerDomain](docs/ListInstitutions200ResponseResultsInnerTopicsInnerDomain.md)
  - [ListKeywords200Response](docs/ListKeywords200Response.md)
  - [ListKeywords200ResponseResultsInner](docs/ListKeywords200ResponseResultsInner.md)
  - [ListPublishers200Response](docs/ListPublishers200Response.md)
@@ -164,9 +166,7 @@ Class | Method | HTTP request | Description
  - [ListWorks200ResponseResultsInnerOpenAccess](docs/ListWorks200ResponseResultsInnerOpenAccess.md)
  - [ListWorks200ResponseResultsInnerPrimaryLocation](docs/ListWorks200ResponseResultsInnerPrimaryLocation.md)
  - [ListWorks200ResponseResultsInnerPrimaryTopic](docs/ListWorks200ResponseResultsInnerPrimaryTopic.md)
- - [ListWorks200ResponseResultsInnerPrimaryTopicDomain](docs/ListWorks200ResponseResultsInnerPrimaryTopicDomain.md)
  - [ListWorks200ResponseResultsInnerSustainableDevelopmentGoalsInner](docs/ListWorks200ResponseResultsInnerSustainableDevelopmentGoalsInner.md)
- - [ListWorks200ResponseResultsInnerTopicsInner](docs/ListWorks200ResponseResultsInnerTopicsInner.md)
 
 
 ## Documentation For Authorization

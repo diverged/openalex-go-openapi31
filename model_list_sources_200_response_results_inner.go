@@ -61,6 +61,10 @@ type ListSources200ResponseResultsInner struct {
 	// Societies on whose behalf the source is published and maintained, obtained from our crowdsourced list.
 	Societies []ListSources200ResponseResultsInnerSocietiesInner `json:"societies,omitempty"`
 	SummaryStats *ListSources200ResponseResultsInnerSummaryStats `json:"summary_stats,omitempty"`
+	// Topics that are frequently associated with works affiliated with this source, in descending order of count.
+	Topics []ListInstitutions200ResponseResultsInnerTopicsInner `json:"topics,omitempty"`
+	// Topics that are frequently associated with works affiliated with this source, in descending order of value.
+	TopicShare []ListInstitutions200ResponseResultsInnerTopicsInner `json:"topic_share,omitempty"`
 	// The type of source.
 	Type *string `json:"type,omitempty"`
 	// The last time anything in this source object changed. Formatted as ISO 8601 extended format without time zone designator.
@@ -794,6 +798,70 @@ func (o *ListSources200ResponseResultsInner) SetSummaryStats(v ListSources200Res
 	o.SummaryStats = &v
 }
 
+// GetTopics returns the Topics field value if set, zero value otherwise.
+func (o *ListSources200ResponseResultsInner) GetTopics() []ListInstitutions200ResponseResultsInnerTopicsInner {
+	if o == nil || IsNil(o.Topics) {
+		var ret []ListInstitutions200ResponseResultsInnerTopicsInner
+		return ret
+	}
+	return o.Topics
+}
+
+// GetTopicsOk returns a tuple with the Topics field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListSources200ResponseResultsInner) GetTopicsOk() ([]ListInstitutions200ResponseResultsInnerTopicsInner, bool) {
+	if o == nil || IsNil(o.Topics) {
+		return nil, false
+	}
+	return o.Topics, true
+}
+
+// HasTopics returns a boolean if a field has been set.
+func (o *ListSources200ResponseResultsInner) HasTopics() bool {
+	if o != nil && !IsNil(o.Topics) {
+		return true
+	}
+
+	return false
+}
+
+// SetTopics gets a reference to the given []ListInstitutions200ResponseResultsInnerTopicsInner and assigns it to the Topics field.
+func (o *ListSources200ResponseResultsInner) SetTopics(v []ListInstitutions200ResponseResultsInnerTopicsInner) {
+	o.Topics = v
+}
+
+// GetTopicShare returns the TopicShare field value if set, zero value otherwise.
+func (o *ListSources200ResponseResultsInner) GetTopicShare() []ListInstitutions200ResponseResultsInnerTopicsInner {
+	if o == nil || IsNil(o.TopicShare) {
+		var ret []ListInstitutions200ResponseResultsInnerTopicsInner
+		return ret
+	}
+	return o.TopicShare
+}
+
+// GetTopicShareOk returns a tuple with the TopicShare field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListSources200ResponseResultsInner) GetTopicShareOk() ([]ListInstitutions200ResponseResultsInnerTopicsInner, bool) {
+	if o == nil || IsNil(o.TopicShare) {
+		return nil, false
+	}
+	return o.TopicShare, true
+}
+
+// HasTopicShare returns a boolean if a field has been set.
+func (o *ListSources200ResponseResultsInner) HasTopicShare() bool {
+	if o != nil && !IsNil(o.TopicShare) {
+		return true
+	}
+
+	return false
+}
+
+// SetTopicShare gets a reference to the given []ListInstitutions200ResponseResultsInnerTopicsInner and assigns it to the TopicShare field.
+func (o *ListSources200ResponseResultsInner) SetTopicShare(v []ListInstitutions200ResponseResultsInnerTopicsInner) {
+	o.TopicShare = v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ListSources200ResponseResultsInner) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -1029,6 +1097,12 @@ func (o ListSources200ResponseResultsInner) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.SummaryStats) {
 		toSerialize["summary_stats"] = o.SummaryStats
+	}
+	if !IsNil(o.Topics) {
+		toSerialize["topics"] = o.Topics
+	}
+	if !IsNil(o.TopicShare) {
+		toSerialize["topic_share"] = o.TopicShare
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

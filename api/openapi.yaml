@@ -3425,6 +3425,56 @@ components:
           type: integer
         i10_index:
           type: integer
+    listInstitutions_200_response_results_inner_topics_inner_domain:
+      example:
+        id: id
+        display_name: display_name
+      properties:
+        display_name:
+          type: string
+        id:
+          type: string
+    listInstitutions_200_response_results_inner_topics_inner:
+      description: "A simplified representation of a topic, used when a topic is referenced\
+        \ by another entity."
+      example:
+        score: 1.4658129
+        subfield:
+          id: id
+          display_name: display_name
+        field:
+          id: id
+          display_name: display_name
+        domain:
+          id: id
+          display_name: display_name
+        count: 6
+        id: id
+        display_name: display_name
+        value: 5.962134
+      properties:
+        count:
+          description: The number of works associated with this topic.
+          type: integer
+        display_name:
+          description: The name of the topic.
+          type: string
+        domain:
+          $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner_domain'
+        field:
+          $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner_domain'
+        id:
+          description: The OpenAlex ID for this topic.
+          type: string
+        score:
+          description: The strength of the connection between a work and this topic.
+          format: float
+          type: number
+        subfield:
+          $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner_domain'
+        value:
+          format: float
+          type: number
     listInstitutions_200_response_results_inner:
       example:
         lineage:
@@ -3487,6 +3537,35 @@ components:
         international:
           display_name:
             key: display_name
+        topic_share:
+        - score: 1.4658129
+          subfield:
+            id: id
+            display_name: display_name
+          field:
+            id: id
+            display_name: display_name
+          domain:
+            id: id
+            display_name: display_name
+          count: 6
+          id: id
+          display_name: display_name
+          value: 5.962134
+        - score: 1.4658129
+          subfield:
+            id: id
+            display_name: display_name
+          field:
+            id: id
+            display_name: display_name
+          domain:
+            id: id
+            display_name: display_name
+          count: 6
+          id: id
+          display_name: display_name
+          value: 5.962134
         x_concepts:
         - "{}"
         - "{}"
@@ -3494,6 +3573,35 @@ components:
         display_name_alternatives:
         - UNC-Chapel Hill
         image_url: https://upload.wikimedia.org/wikipedia/en/5/5c/University_of_North_Carolina_at_Chapel_Hill_seal.svg
+        topics:
+        - score: 1.4658129
+          subfield:
+            id: id
+            display_name: display_name
+          field:
+            id: id
+            display_name: display_name
+          domain:
+            id: id
+            display_name: display_name
+          count: 6
+          id: id
+          display_name: display_name
+          value: 5.962134
+        - score: 1.4658129
+          subfield:
+            id: id
+            display_name: display_name
+          field:
+            id: id
+            display_name: display_name
+          domain:
+            id: id
+            display_name: display_name
+          count: 6
+          id: id
+          display_name: display_name
+          value: 5.962134
         display_name: University of North Carolina at Chapel Hill
         country_code: country_code
         display_name_acronyms:
@@ -3613,6 +3721,18 @@ components:
           type: string
         summary_stats:
           $ref: '#/components/schemas/listInstitutions_200_response_results_inner_summary_stats'
+        topics:
+          description: "Topics that are frequently associated with works affiliated\
+            \ with this institution, in descending order of count."
+          items:
+            $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner'
+          type: array
+        topic_share:
+          description: "Topics that are frequently associated with works affiliated\
+            \ with this institution, in descending order of value."
+          items:
+            $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner'
+          type: array
         type:
           description: "The institution's primary type, using the ROR \"type\" controlled\
             \ vocabulary."
@@ -3757,6 +3877,35 @@ components:
           international:
             display_name:
               key: display_name
+          topic_share:
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
           x_concepts:
           - "{}"
           - "{}"
@@ -3764,6 +3913,35 @@ components:
           display_name_alternatives:
           - UNC-Chapel Hill
           image_url: https://upload.wikimedia.org/wikipedia/en/5/5c/University_of_North_Carolina_at_Chapel_Hill_seal.svg
+          topics:
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
           display_name: University of North Carolina at Chapel Hill
           country_code: country_code
           display_name_acronyms:
@@ -3838,6 +4016,35 @@ components:
           international:
             display_name:
               key: display_name
+          topic_share:
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
           x_concepts:
           - "{}"
           - "{}"
@@ -3845,6 +4052,35 @@ components:
           display_name_alternatives:
           - UNC-Chapel Hill
           image_url: https://upload.wikimedia.org/wikipedia/en/5/5c/University_of_North_Carolina_at_Chapel_Hill_seal.svg
+          topics:
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
           display_name: University of North Carolina at Chapel Hill
           country_code: country_code
           display_name_acronyms:
@@ -4398,6 +4634,35 @@ components:
             College Counseling Association
         host_organization: https://openalex.org/P4310320595
         apc_usd: 5200
+        topic_share:
+        - score: 1.4658129
+          subfield:
+            id: id
+            display_name: display_name
+          field:
+            id: id
+            display_name: display_name
+          domain:
+            id: id
+            display_name: display_name
+          count: 6
+          id: id
+          display_name: display_name
+          value: 5.962134
+        - score: 1.4658129
+          subfield:
+            id: id
+            display_name: display_name
+          field:
+            id: id
+            display_name: display_name
+          domain:
+            id: id
+            display_name: display_name
+          count: 6
+          id: id
+          display_name: display_name
+          value: 5.962134
         x_concepts:
         - id: https://openalex.org/C121332964
           wikidata: https://www.wikidata.org/wiki/Q413
@@ -4410,6 +4675,35 @@ components:
           level: 0
           score: 65.9
         cited_by_count: 133702
+        topics:
+        - score: 1.4658129
+          subfield:
+            id: id
+            display_name: display_name
+          field:
+            id: id
+            display_name: display_name
+          domain:
+            id: id
+            display_name: display_name
+          count: 6
+          id: id
+          display_name: display_name
+          value: 5.962134
+        - score: 1.4658129
+          subfield:
+            id: id
+            display_name: display_name
+          field:
+            id: id
+            display_name: display_name
+          domain:
+            id: id
+            display_name: display_name
+          count: 6
+          id: id
+          display_name: display_name
+          value: 5.962134
         display_name: PeerJ
         host_organization_name: Elsevier BV
         country_code: GB
@@ -4572,6 +4866,18 @@ components:
           type: array
         summary_stats:
           $ref: '#/components/schemas/listSources_200_response_results_inner_summary_stats'
+        topics:
+          description: "Topics that are frequently associated with works affiliated\
+            \ with this source, in descending order of count."
+          items:
+            $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner'
+          type: array
+        topic_share:
+          description: "Topics that are frequently associated with works affiliated\
+            \ with this source, in descending order of value."
+          items:
+            $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner'
+          type: array
         type:
           description: The type of source.
           enum:
@@ -4696,6 +5002,35 @@ components:
               College Counseling Association
           host_organization: https://openalex.org/P4310320595
           apc_usd: 5200
+          topic_share:
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
           x_concepts:
           - id: https://openalex.org/C121332964
             wikidata: https://www.wikidata.org/wiki/Q413
@@ -4708,6 +5043,35 @@ components:
             level: 0
             score: 65.9
           cited_by_count: 133702
+          topics:
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
           display_name: PeerJ
           host_organization_name: Elsevier BV
           country_code: GB
@@ -4756,6 +5120,35 @@ components:
               College Counseling Association
           host_organization: https://openalex.org/P4310320595
           apc_usd: 5200
+          topic_share:
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
           x_concepts:
           - id: https://openalex.org/C121332964
             wikidata: https://www.wikidata.org/wiki/Q413
@@ -4768,6 +5161,35 @@ components:
             level: 0
             score: 65.9
           cited_by_count: 133702
+          topics:
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
+          - score: 1.4658129
+            subfield:
+              id: id
+              display_name: display_name
+            field:
+              id: id
+              display_name: display_name
+            domain:
+              id: id
+              display_name: display_name
+            count: 6
+            id: id
+            display_name: display_name
+            value: 5.962134
           display_name: PeerJ
           host_organization_name: Elsevier BV
           country_code: GB
@@ -5727,61 +6149,8 @@ components:
           - submittedVersion
           example: publishedVersion
           type: string
-    listWorks_200_response_results_inner_primary_topic_domain:
-      example:
-        id: id
-        display_name: display_name
-      properties:
-        display_name:
-          type: string
-        id:
-          type: string
     listWorks_200_response_results_inner_primary_topic:
       description: The top ranked Topic for this work.
-      example:
-        score: 9.301444
-        subfield:
-          id: id
-          display_name: display_name
-        field:
-          id: id
-          display_name: display_name
-        domain:
-          id: id
-          display_name: display_name
-        id: id
-        display_name: display_name
-      properties:
-        display_name:
-          description: The name of the topic.
-          type: string
-        domain:
-          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
-        field:
-          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
-        id:
-          description: The OpenAlex ID for this topic.
-          type: string
-        score:
-          description: The strength of the connection between the work and this topic.
-          format: float
-          type: number
-        subfield:
-          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
-    listWorks_200_response_results_inner_sustainable_development_goals_inner:
-      properties:
-        id:
-          description: The OpenAlex ID for this sustainable development goal.
-          type: string
-        display_name:
-          description: The name of the sustainable development goal.
-          type: string
-        score:
-          description: The relevance score of this goal for the work.
-          type: number
-    listWorks_200_response_results_inner_topics_inner:
-      description: "A simplified representation of a topic, used when a topic is referenced\
-        \ by another entity."
       example:
         score: 3.6160767
         subfield:
@@ -5793,25 +6162,44 @@ components:
         domain:
           id: id
           display_name: display_name
+        count: 9
         id: id
         display_name: display_name
+        value: 2.027123
       properties:
+        count:
+          description: The number of works associated with this topic.
+          type: integer
         display_name:
           description: The name of the topic.
           type: string
         domain:
-          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
+          $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner_domain'
         field:
-          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
+          $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner_domain'
         id:
           description: The OpenAlex ID for this topic.
           type: string
         score:
-          description: The strength of the connection between the work and this topic.
+          description: The strength of the connection between a work and this topic.
           format: float
           type: number
         subfield:
-          $ref: '#/components/schemas/listWorks_200_response_results_inner_primary_topic_domain'
+          $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner_domain'
+        value:
+          format: float
+          type: number
+    listWorks_200_response_results_inner_sustainable_development_goals_inner:
+      properties:
+        id:
+          description: The OpenAlex ID for this sustainable development goal.
+          type: string
+        display_name:
+          description: The name of the sustainable development goal.
+          type: string
+        score:
+          description: The relevance score of this goal for the work.
+          type: number
     listWorks_200_response_results_inner:
       example:
         apc_list:
@@ -5876,7 +6264,7 @@ components:
           landing_page_url: https://doi.org/10.1590/s1678-77572010000100010
           version: publishedVersion
         primary_topic:
-          score: 9.301444
+          score: 3.6160767
           subfield:
             id: id
             display_name: display_name
@@ -5886,8 +6274,10 @@ components:
           domain:
             id: id
             display_name: display_name
+          count: 9
           id: id
           display_name: display_name
+          value: 2.027123
         language: en
         related_works:
         - related_works
@@ -6054,7 +6444,7 @@ components:
         - crossref
         - pubmed
         topics:
-        - score: 3.6160767
+        - score: 1.4658129
           subfield:
             id: id
             display_name: display_name
@@ -6064,9 +6454,11 @@ components:
           domain:
             id: id
             display_name: display_name
+          count: 6
           id: id
           display_name: display_name
-        - score: 3.6160767
+          value: 5.962134
+        - score: 1.4658129
           subfield:
             id: id
             display_name: display_name
@@ -6076,8 +6468,10 @@ components:
           domain:
             id: id
             display_name: display_name
+          count: 6
           id: id
           display_name: display_name
+          value: 5.962134
         referenced_works:
         - https://openalex.org/W2741809807
         - https://openalex.org/W2741809808
@@ -6481,7 +6875,7 @@ components:
         topics:
           description: The top ranked Topics for this work.
           items:
-            $ref: '#/components/schemas/listWorks_200_response_results_inner_topics_inner'
+            $ref: '#/components/schemas/listInstitutions_200_response_results_inner_topics_inner'
           type: array
         type:
           description: The type of the work.
@@ -6570,7 +6964,7 @@ components:
             landing_page_url: https://doi.org/10.1590/s1678-77572010000100010
             version: publishedVersion
           primary_topic:
-            score: 9.301444
+            score: 3.6160767
             subfield:
               id: id
               display_name: display_name
@@ -6580,8 +6974,10 @@ components:
             domain:
               id: id
               display_name: display_name
+            count: 9
             id: id
             display_name: display_name
+            value: 2.027123
           language: en
           related_works:
           - related_works
@@ -6748,7 +7144,7 @@ components:
           - crossref
           - pubmed
           topics:
-          - score: 3.6160767
+          - score: 1.4658129
             subfield:
               id: id
               display_name: display_name
@@ -6758,9 +7154,11 @@ components:
             domain:
               id: id
               display_name: display_name
+            count: 6
             id: id
             display_name: display_name
-          - score: 3.6160767
+            value: 5.962134
+          - score: 1.4658129
             subfield:
               id: id
               display_name: display_name
@@ -6770,8 +7168,10 @@ components:
             domain:
               id: id
               display_name: display_name
+            count: 6
             id: id
             display_name: display_name
+            value: 5.962134
           referenced_works:
           - https://openalex.org/W2741809807
           - https://openalex.org/W2741809808
@@ -6926,7 +7326,7 @@ components:
             landing_page_url: https://doi.org/10.1590/s1678-77572010000100010
             version: publishedVersion
           primary_topic:
-            score: 9.301444
+            score: 3.6160767
             subfield:
               id: id
               display_name: display_name
@@ -6936,8 +7336,10 @@ components:
             domain:
               id: id
               display_name: display_name
+            count: 9
             id: id
             display_name: display_name
+            value: 2.027123
           language: en
           related_works:
           - related_works
@@ -7104,7 +7506,7 @@ components:
           - crossref
           - pubmed
           topics:
-          - score: 3.6160767
+          - score: 1.4658129
             subfield:
               id: id
               display_name: display_name
@@ -7114,9 +7516,11 @@ components:
             domain:
               id: id
               display_name: display_name
+            count: 6
             id: id
             display_name: display_name
-          - score: 3.6160767
+            value: 5.962134
+          - score: 1.4658129
             subfield:
               id: id
               display_name: display_name
@@ -7126,8 +7530,10 @@ components:
             domain:
               id: id
               display_name: display_name
+            count: 6
             id: id
             display_name: display_name
+            value: 5.962134
           referenced_works:
           - https://openalex.org/W2741809807
           - https://openalex.org/W2741809808
