@@ -62,9 +62,9 @@ type ListSources200ResponseResultsInner struct {
 	Societies []ListSources200ResponseResultsInnerSocietiesInner `json:"societies,omitempty"`
 	SummaryStats *ListSources200ResponseResultsInnerSummaryStats `json:"summary_stats,omitempty"`
 	// Topics that are frequently associated with works affiliated with this source, in descending order of count.
-	Topics []ListInstitutions200ResponseResultsInnerTopicsInner `json:"topics,omitempty"`
+	Topics []ListAuthors200ResponseResultsInnerTopicsInner `json:"topics,omitempty"`
 	// Topics that are frequently associated with works affiliated with this source, in descending order of value.
-	TopicShare []ListInstitutions200ResponseResultsInnerTopicsInner `json:"topic_share,omitempty"`
+	TopicShare []ListAuthors200ResponseResultsInnerTopicsInner `json:"topic_share,omitempty"`
 	// The type of source.
 	Type *string `json:"type,omitempty"`
 	// The last time anything in this source object changed. Formatted as ISO 8601 extended format without time zone designator.
@@ -799,9 +799,9 @@ func (o *ListSources200ResponseResultsInner) SetSummaryStats(v ListSources200Res
 }
 
 // GetTopics returns the Topics field value if set, zero value otherwise.
-func (o *ListSources200ResponseResultsInner) GetTopics() []ListInstitutions200ResponseResultsInnerTopicsInner {
+func (o *ListSources200ResponseResultsInner) GetTopics() []ListAuthors200ResponseResultsInnerTopicsInner {
 	if o == nil || IsNil(o.Topics) {
-		var ret []ListInstitutions200ResponseResultsInnerTopicsInner
+		var ret []ListAuthors200ResponseResultsInnerTopicsInner
 		return ret
 	}
 	return o.Topics
@@ -809,7 +809,7 @@ func (o *ListSources200ResponseResultsInner) GetTopics() []ListInstitutions200Re
 
 // GetTopicsOk returns a tuple with the Topics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListSources200ResponseResultsInner) GetTopicsOk() ([]ListInstitutions200ResponseResultsInnerTopicsInner, bool) {
+func (o *ListSources200ResponseResultsInner) GetTopicsOk() ([]ListAuthors200ResponseResultsInnerTopicsInner, bool) {
 	if o == nil || IsNil(o.Topics) {
 		return nil, false
 	}
@@ -825,15 +825,15 @@ func (o *ListSources200ResponseResultsInner) HasTopics() bool {
 	return false
 }
 
-// SetTopics gets a reference to the given []ListInstitutions200ResponseResultsInnerTopicsInner and assigns it to the Topics field.
-func (o *ListSources200ResponseResultsInner) SetTopics(v []ListInstitutions200ResponseResultsInnerTopicsInner) {
+// SetTopics gets a reference to the given []ListAuthors200ResponseResultsInnerTopicsInner and assigns it to the Topics field.
+func (o *ListSources200ResponseResultsInner) SetTopics(v []ListAuthors200ResponseResultsInnerTopicsInner) {
 	o.Topics = v
 }
 
 // GetTopicShare returns the TopicShare field value if set, zero value otherwise.
-func (o *ListSources200ResponseResultsInner) GetTopicShare() []ListInstitutions200ResponseResultsInnerTopicsInner {
+func (o *ListSources200ResponseResultsInner) GetTopicShare() []ListAuthors200ResponseResultsInnerTopicsInner {
 	if o == nil || IsNil(o.TopicShare) {
-		var ret []ListInstitutions200ResponseResultsInnerTopicsInner
+		var ret []ListAuthors200ResponseResultsInnerTopicsInner
 		return ret
 	}
 	return o.TopicShare
@@ -841,7 +841,7 @@ func (o *ListSources200ResponseResultsInner) GetTopicShare() []ListInstitutions2
 
 // GetTopicShareOk returns a tuple with the TopicShare field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListSources200ResponseResultsInner) GetTopicShareOk() ([]ListInstitutions200ResponseResultsInnerTopicsInner, bool) {
+func (o *ListSources200ResponseResultsInner) GetTopicShareOk() ([]ListAuthors200ResponseResultsInnerTopicsInner, bool) {
 	if o == nil || IsNil(o.TopicShare) {
 		return nil, false
 	}
@@ -857,8 +857,8 @@ func (o *ListSources200ResponseResultsInner) HasTopicShare() bool {
 	return false
 }
 
-// SetTopicShare gets a reference to the given []ListInstitutions200ResponseResultsInnerTopicsInner and assigns it to the TopicShare field.
-func (o *ListSources200ResponseResultsInner) SetTopicShare(v []ListInstitutions200ResponseResultsInnerTopicsInner) {
+// SetTopicShare gets a reference to the given []ListAuthors200ResponseResultsInnerTopicsInner and assigns it to the TopicShare field.
+func (o *ListSources200ResponseResultsInner) SetTopicShare(v []ListAuthors200ResponseResultsInnerTopicsInner) {
 	o.TopicShare = v
 }
 

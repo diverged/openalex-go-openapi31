@@ -94,7 +94,7 @@ type ListWorks200ResponseResultsInner struct {
 	// The title of this work.
 	Title *string `json:"title,omitempty"`
 	// The top ranked Topics for this work.
-	Topics []ListInstitutions200ResponseResultsInnerTopicsInner `json:"topics,omitempty"`
+	Topics []ListAuthors200ResponseResultsInnerTopicsInner `json:"topics,omitempty"`
 	// The type of the work.
 	Type *string `json:"type,omitempty"`
 	// Legacy type information, using Crossref's \"type\" controlled vocabulary.
@@ -1433,9 +1433,9 @@ func (o *ListWorks200ResponseResultsInner) SetTitle(v string) {
 }
 
 // GetTopics returns the Topics field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInner) GetTopics() []ListInstitutions200ResponseResultsInnerTopicsInner {
+func (o *ListWorks200ResponseResultsInner) GetTopics() []ListAuthors200ResponseResultsInnerTopicsInner {
 	if o == nil || IsNil(o.Topics) {
-		var ret []ListInstitutions200ResponseResultsInnerTopicsInner
+		var ret []ListAuthors200ResponseResultsInnerTopicsInner
 		return ret
 	}
 	return o.Topics
@@ -1443,7 +1443,7 @@ func (o *ListWorks200ResponseResultsInner) GetTopics() []ListInstitutions200Resp
 
 // GetTopicsOk returns a tuple with the Topics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInner) GetTopicsOk() ([]ListInstitutions200ResponseResultsInnerTopicsInner, bool) {
+func (o *ListWorks200ResponseResultsInner) GetTopicsOk() ([]ListAuthors200ResponseResultsInnerTopicsInner, bool) {
 	if o == nil || IsNil(o.Topics) {
 		return nil, false
 	}
@@ -1459,8 +1459,8 @@ func (o *ListWorks200ResponseResultsInner) HasTopics() bool {
 	return false
 }
 
-// SetTopics gets a reference to the given []ListInstitutions200ResponseResultsInnerTopicsInner and assigns it to the Topics field.
-func (o *ListWorks200ResponseResultsInner) SetTopics(v []ListInstitutions200ResponseResultsInnerTopicsInner) {
+// SetTopics gets a reference to the given []ListAuthors200ResponseResultsInnerTopicsInner and assigns it to the Topics field.
+func (o *ListWorks200ResponseResultsInner) SetTopics(v []ListAuthors200ResponseResultsInnerTopicsInner) {
 	o.Topics = v
 }
 

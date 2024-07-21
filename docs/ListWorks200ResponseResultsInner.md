@@ -45,7 +45,7 @@ Name | Type | Description | Notes
 **RelatedWorks** | Pointer to **[]string** | OpenAlex IDs for works related to this work. These are computed algorithmically based on shared concepts. | [optional] 
 **SustainableDevelopmentGoals** | Pointer to [**[]ListWorks200ResponseResultsInnerSustainableDevelopmentGoalsInner**](ListWorks200ResponseResultsInnerSustainableDevelopmentGoalsInner.md) | The UN Sustainable Development Goals relevant to this work. | [optional] 
 **Title** | Pointer to **string** | The title of this work. | [optional] 
-**Topics** | Pointer to [**[]ListInstitutions200ResponseResultsInnerTopicsInner**](ListInstitutions200ResponseResultsInnerTopicsInner.md) | The top ranked Topics for this work. | [optional] 
+**Topics** | Pointer to [**[]ListAuthors200ResponseResultsInnerTopicsInner**](ListAuthors200ResponseResultsInnerTopicsInner.md) | The top ranked Topics for this work. | [optional] 
 **Type** | Pointer to **string** | The type of the work. | [optional] 
 **TypeCrossref** | Pointer to **string** | Legacy type information, using Crossref&#39;s \&quot;type\&quot; controlled vocabulary. | [optional] 
 **UpdatedDate** | Pointer to **string** | The last time anything in this work object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
@@ -1096,20 +1096,20 @@ HasTitle returns a boolean if a field has been set.
 
 ### GetTopics
 
-`func (o *ListWorks200ResponseResultsInner) GetTopics() []ListInstitutions200ResponseResultsInnerTopicsInner`
+`func (o *ListWorks200ResponseResultsInner) GetTopics() []ListAuthors200ResponseResultsInnerTopicsInner`
 
 GetTopics returns the Topics field if non-nil, zero value otherwise.
 
 ### GetTopicsOk
 
-`func (o *ListWorks200ResponseResultsInner) GetTopicsOk() (*[]ListInstitutions200ResponseResultsInnerTopicsInner, bool)`
+`func (o *ListWorks200ResponseResultsInner) GetTopicsOk() (*[]ListAuthors200ResponseResultsInnerTopicsInner, bool)`
 
 GetTopicsOk returns a tuple with the Topics field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTopics
 
-`func (o *ListWorks200ResponseResultsInner) SetTopics(v []ListInstitutions200ResponseResultsInnerTopicsInner)`
+`func (o *ListWorks200ResponseResultsInner) SetTopics(v []ListAuthors200ResponseResultsInnerTopicsInner)`
 
 SetTopics sets Topics field to given value.
 

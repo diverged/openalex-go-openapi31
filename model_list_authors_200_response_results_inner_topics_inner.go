@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ListWorks200ResponseResultsInnerPrimaryTopic type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListWorks200ResponseResultsInnerPrimaryTopic{}
+// checks if the ListAuthors200ResponseResultsInnerTopicsInner type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ListAuthors200ResponseResultsInnerTopicsInner{}
 
-// ListWorks200ResponseResultsInnerPrimaryTopic The top ranked Topic for this work.
-type ListWorks200ResponseResultsInnerPrimaryTopic struct {
+// ListAuthors200ResponseResultsInnerTopicsInner A simplified representation of a topic, used when a topic is referenced by another entity.
+type ListAuthors200ResponseResultsInnerTopicsInner struct {
 	// The number of works associated with this topic.
 	Count *int32 `json:"count,omitempty"`
 	// The name of the topic.
@@ -33,25 +33,25 @@ type ListWorks200ResponseResultsInnerPrimaryTopic struct {
 	Value *float32 `json:"value,omitempty"`
 }
 
-// NewListWorks200ResponseResultsInnerPrimaryTopic instantiates a new ListWorks200ResponseResultsInnerPrimaryTopic object
+// NewListAuthors200ResponseResultsInnerTopicsInner instantiates a new ListAuthors200ResponseResultsInnerTopicsInner object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListWorks200ResponseResultsInnerPrimaryTopic() *ListWorks200ResponseResultsInnerPrimaryTopic {
-	this := ListWorks200ResponseResultsInnerPrimaryTopic{}
+func NewListAuthors200ResponseResultsInnerTopicsInner() *ListAuthors200ResponseResultsInnerTopicsInner {
+	this := ListAuthors200ResponseResultsInnerTopicsInner{}
 	return &this
 }
 
-// NewListWorks200ResponseResultsInnerPrimaryTopicWithDefaults instantiates a new ListWorks200ResponseResultsInnerPrimaryTopic object
+// NewListAuthors200ResponseResultsInnerTopicsInnerWithDefaults instantiates a new ListAuthors200ResponseResultsInnerTopicsInner object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewListWorks200ResponseResultsInnerPrimaryTopicWithDefaults() *ListWorks200ResponseResultsInnerPrimaryTopic {
-	this := ListWorks200ResponseResultsInnerPrimaryTopic{}
+func NewListAuthors200ResponseResultsInnerTopicsInnerWithDefaults() *ListAuthors200ResponseResultsInnerTopicsInner {
+	this := ListAuthors200ResponseResultsInnerTopicsInner{}
 	return &this
 }
 
 // GetCount returns the Count field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetCount() int32 {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetCount() int32 {
 	if o == nil || IsNil(o.Count) {
 		var ret int32
 		return ret
@@ -61,7 +61,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetCount() int32 {
 
 // GetCountOk returns a tuple with the Count field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetCountOk() (*int32, bool) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetCountOk() (*int32, bool) {
 	if o == nil || IsNil(o.Count) {
 		return nil, false
 	}
@@ -69,7 +69,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetCountOk() (*int32, boo
 }
 
 // HasCount returns a boolean if a field has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasCount() bool {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasCount() bool {
 	if o != nil && !IsNil(o.Count) {
 		return true
 	}
@@ -78,12 +78,12 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasCount() bool {
 }
 
 // SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetCount(v int32) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetCount(v int32) {
 	o.Count = &v
 }
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDisplayName() string {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetDisplayName() string {
 	if o == nil || IsNil(o.DisplayName) {
 		var ret string
 		return ret
@@ -93,7 +93,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDisplayName() string {
 
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDisplayNameOk() (*string, bool) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetDisplayNameOk() (*string, bool) {
 	if o == nil || IsNil(o.DisplayName) {
 		return nil, false
 	}
@@ -101,7 +101,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDisplayNameOk() (*stri
 }
 
 // HasDisplayName returns a boolean if a field has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasDisplayName() bool {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasDisplayName() bool {
 	if o != nil && !IsNil(o.DisplayName) {
 		return true
 	}
@@ -110,12 +110,12 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasDisplayName() bool {
 }
 
 // SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetDisplayName(v string) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
 // GetDomain returns the Domain field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDomain() ListAuthors200ResponseResultsInnerTopicsInnerDomain {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetDomain() ListAuthors200ResponseResultsInnerTopicsInnerDomain {
 	if o == nil || IsNil(o.Domain) {
 		var ret ListAuthors200ResponseResultsInnerTopicsInnerDomain
 		return ret
@@ -125,7 +125,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDomain() ListAuthors20
 
 // GetDomainOk returns a tuple with the Domain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDomainOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetDomainOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool) {
 	if o == nil || IsNil(o.Domain) {
 		return nil, false
 	}
@@ -133,7 +133,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDomainOk() (*ListAutho
 }
 
 // HasDomain returns a boolean if a field has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasDomain() bool {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasDomain() bool {
 	if o != nil && !IsNil(o.Domain) {
 		return true
 	}
@@ -142,12 +142,12 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasDomain() bool {
 }
 
 // SetDomain gets a reference to the given ListAuthors200ResponseResultsInnerTopicsInnerDomain and assigns it to the Domain field.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetDomain(v ListAuthors200ResponseResultsInnerTopicsInnerDomain) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetDomain(v ListAuthors200ResponseResultsInnerTopicsInnerDomain) {
 	o.Domain = &v
 }
 
 // GetField returns the Field field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetField() ListAuthors200ResponseResultsInnerTopicsInnerDomain {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetField() ListAuthors200ResponseResultsInnerTopicsInnerDomain {
 	if o == nil || IsNil(o.Field) {
 		var ret ListAuthors200ResponseResultsInnerTopicsInnerDomain
 		return ret
@@ -157,7 +157,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetField() ListAuthors200
 
 // GetFieldOk returns a tuple with the Field field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetFieldOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetFieldOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool) {
 	if o == nil || IsNil(o.Field) {
 		return nil, false
 	}
@@ -165,7 +165,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetFieldOk() (*ListAuthor
 }
 
 // HasField returns a boolean if a field has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasField() bool {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasField() bool {
 	if o != nil && !IsNil(o.Field) {
 		return true
 	}
@@ -174,12 +174,12 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasField() bool {
 }
 
 // SetField gets a reference to the given ListAuthors200ResponseResultsInnerTopicsInnerDomain and assigns it to the Field field.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetField(v ListAuthors200ResponseResultsInnerTopicsInnerDomain) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetField(v ListAuthors200ResponseResultsInnerTopicsInnerDomain) {
 	o.Field = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetId() string {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetId() string {
 	if o == nil || IsNil(o.Id) {
 		var ret string
 		return ret
@@ -189,7 +189,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetIdOk() (*string, bool) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetIdOk() (*string, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -197,7 +197,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetIdOk() (*string, bool)
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasId() bool {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -206,12 +206,12 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetId(v string) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetId(v string) {
 	o.Id = &v
 }
 
 // GetScore returns the Score field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetScore() float32 {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetScore() float32 {
 	if o == nil || IsNil(o.Score) {
 		var ret float32
 		return ret
@@ -221,7 +221,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetScore() float32 {
 
 // GetScoreOk returns a tuple with the Score field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetScoreOk() (*float32, bool) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetScoreOk() (*float32, bool) {
 	if o == nil || IsNil(o.Score) {
 		return nil, false
 	}
@@ -229,7 +229,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetScoreOk() (*float32, b
 }
 
 // HasScore returns a boolean if a field has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasScore() bool {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasScore() bool {
 	if o != nil && !IsNil(o.Score) {
 		return true
 	}
@@ -238,12 +238,12 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasScore() bool {
 }
 
 // SetScore gets a reference to the given float32 and assigns it to the Score field.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetScore(v float32) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetScore(v float32) {
 	o.Score = &v
 }
 
 // GetSubfield returns the Subfield field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetSubfield() ListAuthors200ResponseResultsInnerTopicsInnerDomain {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetSubfield() ListAuthors200ResponseResultsInnerTopicsInnerDomain {
 	if o == nil || IsNil(o.Subfield) {
 		var ret ListAuthors200ResponseResultsInnerTopicsInnerDomain
 		return ret
@@ -253,7 +253,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetSubfield() ListAuthors
 
 // GetSubfieldOk returns a tuple with the Subfield field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetSubfieldOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetSubfieldOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool) {
 	if o == nil || IsNil(o.Subfield) {
 		return nil, false
 	}
@@ -261,7 +261,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetSubfieldOk() (*ListAut
 }
 
 // HasSubfield returns a boolean if a field has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasSubfield() bool {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasSubfield() bool {
 	if o != nil && !IsNil(o.Subfield) {
 		return true
 	}
@@ -270,12 +270,12 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasSubfield() bool {
 }
 
 // SetSubfield gets a reference to the given ListAuthors200ResponseResultsInnerTopicsInnerDomain and assigns it to the Subfield field.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetSubfield(v ListAuthors200ResponseResultsInnerTopicsInnerDomain) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetSubfield(v ListAuthors200ResponseResultsInnerTopicsInnerDomain) {
 	o.Subfield = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetValue() float32 {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetValue() float32 {
 	if o == nil || IsNil(o.Value) {
 		var ret float32
 		return ret
@@ -285,7 +285,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetValue() float32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetValueOk() (*float32, bool) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetValueOk() (*float32, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -293,7 +293,7 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetValueOk() (*float32, b
 }
 
 // HasValue returns a boolean if a field has been set.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasValue() bool {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasValue() bool {
 	if o != nil && !IsNil(o.Value) {
 		return true
 	}
@@ -302,11 +302,11 @@ func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasValue() bool {
 }
 
 // SetValue gets a reference to the given float32 and assigns it to the Value field.
-func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetValue(v float32) {
+func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetValue(v float32) {
 	o.Value = &v
 }
 
-func (o ListWorks200ResponseResultsInnerPrimaryTopic) MarshalJSON() ([]byte, error) {
+func (o ListAuthors200ResponseResultsInnerTopicsInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -314,7 +314,7 @@ func (o ListWorks200ResponseResultsInnerPrimaryTopic) MarshalJSON() ([]byte, err
 	return json.Marshal(toSerialize)
 }
 
-func (o ListWorks200ResponseResultsInnerPrimaryTopic) ToMap() (map[string]interface{}, error) {
+func (o ListAuthors200ResponseResultsInnerTopicsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Count) {
 		toSerialize["count"] = o.Count
@@ -343,38 +343,38 @@ func (o ListWorks200ResponseResultsInnerPrimaryTopic) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 
-type NullableListWorks200ResponseResultsInnerPrimaryTopic struct {
-	value *ListWorks200ResponseResultsInnerPrimaryTopic
+type NullableListAuthors200ResponseResultsInnerTopicsInner struct {
+	value *ListAuthors200ResponseResultsInnerTopicsInner
 	isSet bool
 }
 
-func (v NullableListWorks200ResponseResultsInnerPrimaryTopic) Get() *ListWorks200ResponseResultsInnerPrimaryTopic {
+func (v NullableListAuthors200ResponseResultsInnerTopicsInner) Get() *ListAuthors200ResponseResultsInnerTopicsInner {
 	return v.value
 }
 
-func (v *NullableListWorks200ResponseResultsInnerPrimaryTopic) Set(val *ListWorks200ResponseResultsInnerPrimaryTopic) {
+func (v *NullableListAuthors200ResponseResultsInnerTopicsInner) Set(val *ListAuthors200ResponseResultsInnerTopicsInner) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableListWorks200ResponseResultsInnerPrimaryTopic) IsSet() bool {
+func (v NullableListAuthors200ResponseResultsInnerTopicsInner) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableListWorks200ResponseResultsInnerPrimaryTopic) Unset() {
+func (v *NullableListAuthors200ResponseResultsInnerTopicsInner) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableListWorks200ResponseResultsInnerPrimaryTopic(val *ListWorks200ResponseResultsInnerPrimaryTopic) *NullableListWorks200ResponseResultsInnerPrimaryTopic {
-	return &NullableListWorks200ResponseResultsInnerPrimaryTopic{value: val, isSet: true}
+func NewNullableListAuthors200ResponseResultsInnerTopicsInner(val *ListAuthors200ResponseResultsInnerTopicsInner) *NullableListAuthors200ResponseResultsInnerTopicsInner {
+	return &NullableListAuthors200ResponseResultsInnerTopicsInner{value: val, isSet: true}
 }
 
-func (v NullableListWorks200ResponseResultsInnerPrimaryTopic) MarshalJSON() ([]byte, error) {
+func (v NullableListAuthors200ResponseResultsInnerTopicsInner) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableListWorks200ResponseResultsInnerPrimaryTopic) UnmarshalJSON(src []byte) error {
+func (v *NullableListAuthors200ResponseResultsInnerTopicsInner) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

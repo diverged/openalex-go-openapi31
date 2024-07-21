@@ -24,8 +24,8 @@ Name | Type | Description | Notes
 **Roles** | Pointer to [**[]ListFunders200ResponseResultsInnerRolesInner**](ListFunders200ResponseResultsInnerRolesInner.md) | List of roles this institution plays, including itself and potentially funder and publisher roles. | [optional] 
 **Ror** | Pointer to **string** | The ROR ID for this institution. | [optional] 
 **SummaryStats** | Pointer to [**ListInstitutions200ResponseResultsInnerSummaryStats**](ListInstitutions200ResponseResultsInnerSummaryStats.md) |  | [optional] 
-**Topics** | Pointer to [**[]ListInstitutions200ResponseResultsInnerTopicsInner**](ListInstitutions200ResponseResultsInnerTopicsInner.md) | Topics that are frequently associated with works affiliated with this institution, in descending order of count. | [optional] 
-**TopicShare** | Pointer to [**[]ListInstitutions200ResponseResultsInnerTopicsInner**](ListInstitutions200ResponseResultsInnerTopicsInner.md) | Topics that are frequently associated with works affiliated with this institution, in descending order of value. | [optional] 
+**Topics** | Pointer to [**[]ListAuthors200ResponseResultsInnerTopicsInner**](ListAuthors200ResponseResultsInnerTopicsInner.md) | Topics that are frequently associated with works affiliated with this institution, in descending order of count. | [optional] 
+**TopicShare** | Pointer to [**[]ListAuthors200ResponseResultsInnerTopicsInner**](ListAuthors200ResponseResultsInnerTopicsInner.md) | Topics that are frequently associated with works affiliated with this institution, in descending order of value. | [optional] 
 **Type** | Pointer to **string** | The institution&#39;s primary type, using the ROR \&quot;type\&quot; controlled vocabulary. | [optional] 
 **UpdatedDate** | Pointer to **string** | The last time anything in this institution object changed. Formatted as ISO 8601 extended format without time zone designator. | [optional] 
 **WorksApiUrl** | Pointer to **string** | A URL that will get you a list of all the Works affiliated with this institution. | [optional] 
@@ -553,20 +553,20 @@ HasSummaryStats returns a boolean if a field has been set.
 
 ### GetTopics
 
-`func (o *ListInstitutions200ResponseResultsInner) GetTopics() []ListInstitutions200ResponseResultsInnerTopicsInner`
+`func (o *ListInstitutions200ResponseResultsInner) GetTopics() []ListAuthors200ResponseResultsInnerTopicsInner`
 
 GetTopics returns the Topics field if non-nil, zero value otherwise.
 
 ### GetTopicsOk
 
-`func (o *ListInstitutions200ResponseResultsInner) GetTopicsOk() (*[]ListInstitutions200ResponseResultsInnerTopicsInner, bool)`
+`func (o *ListInstitutions200ResponseResultsInner) GetTopicsOk() (*[]ListAuthors200ResponseResultsInnerTopicsInner, bool)`
 
 GetTopicsOk returns a tuple with the Topics field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTopics
 
-`func (o *ListInstitutions200ResponseResultsInner) SetTopics(v []ListInstitutions200ResponseResultsInnerTopicsInner)`
+`func (o *ListInstitutions200ResponseResultsInner) SetTopics(v []ListAuthors200ResponseResultsInnerTopicsInner)`
 
 SetTopics sets Topics field to given value.
 
@@ -578,20 +578,20 @@ HasTopics returns a boolean if a field has been set.
 
 ### GetTopicShare
 
-`func (o *ListInstitutions200ResponseResultsInner) GetTopicShare() []ListInstitutions200ResponseResultsInnerTopicsInner`
+`func (o *ListInstitutions200ResponseResultsInner) GetTopicShare() []ListAuthors200ResponseResultsInnerTopicsInner`
 
 GetTopicShare returns the TopicShare field if non-nil, zero value otherwise.
 
 ### GetTopicShareOk
 
-`func (o *ListInstitutions200ResponseResultsInner) GetTopicShareOk() (*[]ListInstitutions200ResponseResultsInnerTopicsInner, bool)`
+`func (o *ListInstitutions200ResponseResultsInner) GetTopicShareOk() (*[]ListAuthors200ResponseResultsInnerTopicsInner, bool)`
 
 GetTopicShareOk returns a tuple with the TopicShare field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTopicShare
 
-`func (o *ListInstitutions200ResponseResultsInner) SetTopicShare(v []ListInstitutions200ResponseResultsInnerTopicsInner)`
+`func (o *ListInstitutions200ResponseResultsInner) SetTopicShare(v []ListAuthors200ResponseResultsInnerTopicsInner)`
 
 SetTopicShare sets TopicShare field to given value.
 

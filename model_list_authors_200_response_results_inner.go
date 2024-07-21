@@ -40,6 +40,10 @@ type ListAuthors200ResponseResultsInner struct {
 	// The ORCID ID for this author.
 	Orcid *string `json:"orcid,omitempty"`
 	SummaryStats *ListAuthors200ResponseResultsInnerSummaryStats `json:"summary_stats,omitempty"`
+	// Topics that are frequently associated with works affiliated with this source, in descending order of count.
+	Topics []ListAuthors200ResponseResultsInnerTopicsInner `json:"topics,omitempty"`
+	// Topics that are frequently associated with works affiliated with this source, in descending order of value.
+	TopicShare []ListAuthors200ResponseResultsInnerTopicsInner `json:"topic_share,omitempty"`
 	// The last time anything in this author object changed. Formatted as ISO 8601 extended format without time zone designator.
 	UpdatedDate *string `json:"updated_date,omitempty"`
 	// A URL that will get you a list of all this author's works.
@@ -451,6 +455,70 @@ func (o *ListAuthors200ResponseResultsInner) SetSummaryStats(v ListAuthors200Res
 	o.SummaryStats = &v
 }
 
+// GetTopics returns the Topics field value if set, zero value otherwise.
+func (o *ListAuthors200ResponseResultsInner) GetTopics() []ListAuthors200ResponseResultsInnerTopicsInner {
+	if o == nil || IsNil(o.Topics) {
+		var ret []ListAuthors200ResponseResultsInnerTopicsInner
+		return ret
+	}
+	return o.Topics
+}
+
+// GetTopicsOk returns a tuple with the Topics field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListAuthors200ResponseResultsInner) GetTopicsOk() ([]ListAuthors200ResponseResultsInnerTopicsInner, bool) {
+	if o == nil || IsNil(o.Topics) {
+		return nil, false
+	}
+	return o.Topics, true
+}
+
+// HasTopics returns a boolean if a field has been set.
+func (o *ListAuthors200ResponseResultsInner) HasTopics() bool {
+	if o != nil && !IsNil(o.Topics) {
+		return true
+	}
+
+	return false
+}
+
+// SetTopics gets a reference to the given []ListAuthors200ResponseResultsInnerTopicsInner and assigns it to the Topics field.
+func (o *ListAuthors200ResponseResultsInner) SetTopics(v []ListAuthors200ResponseResultsInnerTopicsInner) {
+	o.Topics = v
+}
+
+// GetTopicShare returns the TopicShare field value if set, zero value otherwise.
+func (o *ListAuthors200ResponseResultsInner) GetTopicShare() []ListAuthors200ResponseResultsInnerTopicsInner {
+	if o == nil || IsNil(o.TopicShare) {
+		var ret []ListAuthors200ResponseResultsInnerTopicsInner
+		return ret
+	}
+	return o.TopicShare
+}
+
+// GetTopicShareOk returns a tuple with the TopicShare field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ListAuthors200ResponseResultsInner) GetTopicShareOk() ([]ListAuthors200ResponseResultsInnerTopicsInner, bool) {
+	if o == nil || IsNil(o.TopicShare) {
+		return nil, false
+	}
+	return o.TopicShare, true
+}
+
+// HasTopicShare returns a boolean if a field has been set.
+func (o *ListAuthors200ResponseResultsInner) HasTopicShare() bool {
+	if o != nil && !IsNil(o.TopicShare) {
+		return true
+	}
+
+	return false
+}
+
+// SetTopicShare gets a reference to the given []ListAuthors200ResponseResultsInnerTopicsInner and assigns it to the TopicShare field.
+func (o *ListAuthors200ResponseResultsInner) SetTopicShare(v []ListAuthors200ResponseResultsInnerTopicsInner) {
+	o.TopicShare = v
+}
+
 // GetUpdatedDate returns the UpdatedDate field value if set, zero value otherwise.
 func (o *ListAuthors200ResponseResultsInner) GetUpdatedDate() string {
 	if o == nil || IsNil(o.UpdatedDate) {
@@ -624,6 +692,12 @@ func (o ListAuthors200ResponseResultsInner) ToMap() (map[string]interface{}, err
 	}
 	if !IsNil(o.SummaryStats) {
 		toSerialize["summary_stats"] = o.SummaryStats
+	}
+	if !IsNil(o.Topics) {
+		toSerialize["topics"] = o.Topics
+	}
+	if !IsNil(o.TopicShare) {
+		toSerialize["topic_share"] = o.TopicShare
 	}
 	if !IsNil(o.UpdatedDate) {
 		toSerialize["updated_date"] = o.UpdatedDate

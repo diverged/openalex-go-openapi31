@@ -1,4 +1,4 @@
-# ListWorks200ResponseResultsInnerPrimaryTopic
+# ListAuthors200ResponseResultsInnerTopicsInner
 
 ## Properties
 
@@ -15,220 +15,220 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewListWorks200ResponseResultsInnerPrimaryTopic
+### NewListAuthors200ResponseResultsInnerTopicsInner
 
-`func NewListWorks200ResponseResultsInnerPrimaryTopic() *ListWorks200ResponseResultsInnerPrimaryTopic`
+`func NewListAuthors200ResponseResultsInnerTopicsInner() *ListAuthors200ResponseResultsInnerTopicsInner`
 
-NewListWorks200ResponseResultsInnerPrimaryTopic instantiates a new ListWorks200ResponseResultsInnerPrimaryTopic object
+NewListAuthors200ResponseResultsInnerTopicsInner instantiates a new ListAuthors200ResponseResultsInnerTopicsInner object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListWorks200ResponseResultsInnerPrimaryTopicWithDefaults
+### NewListAuthors200ResponseResultsInnerTopicsInnerWithDefaults
 
-`func NewListWorks200ResponseResultsInnerPrimaryTopicWithDefaults() *ListWorks200ResponseResultsInnerPrimaryTopic`
+`func NewListAuthors200ResponseResultsInnerTopicsInnerWithDefaults() *ListAuthors200ResponseResultsInnerTopicsInner`
 
-NewListWorks200ResponseResultsInnerPrimaryTopicWithDefaults instantiates a new ListWorks200ResponseResultsInnerPrimaryTopic object
+NewListAuthors200ResponseResultsInnerTopicsInnerWithDefaults instantiates a new ListAuthors200ResponseResultsInnerTopicsInner object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCount
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetCount() int32`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetCount() int32`
 
 GetCount returns the Count field if non-nil, zero value otherwise.
 
 ### GetCountOk
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetCountOk() (*int32, bool)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetCountOk() (*int32, bool)`
 
 GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCount
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetCount(v int32)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetCount(v int32)`
 
 SetCount sets Count field to given value.
 
 ### HasCount
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasCount() bool`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
 
 ### GetDisplayName
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDisplayName() string`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetDisplayName() string`
 
 GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
 
 ### GetDisplayNameOk
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDisplayNameOk() (*string, bool)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetDisplayNameOk() (*string, bool)`
 
 GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisplayName
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetDisplayName(v string)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetDisplayName(v string)`
 
 SetDisplayName sets DisplayName field to given value.
 
 ### HasDisplayName
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasDisplayName() bool`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasDisplayName() bool`
 
 HasDisplayName returns a boolean if a field has been set.
 
 ### GetDomain
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDomain() ListAuthors200ResponseResultsInnerTopicsInnerDomain`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetDomain() ListAuthors200ResponseResultsInnerTopicsInnerDomain`
 
 GetDomain returns the Domain field if non-nil, zero value otherwise.
 
 ### GetDomainOk
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetDomainOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetDomainOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool)`
 
 GetDomainOk returns a tuple with the Domain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDomain
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetDomain(v ListAuthors200ResponseResultsInnerTopicsInnerDomain)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetDomain(v ListAuthors200ResponseResultsInnerTopicsInnerDomain)`
 
 SetDomain sets Domain field to given value.
 
 ### HasDomain
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasDomain() bool`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasDomain() bool`
 
 HasDomain returns a boolean if a field has been set.
 
 ### GetField
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetField() ListAuthors200ResponseResultsInnerTopicsInnerDomain`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetField() ListAuthors200ResponseResultsInnerTopicsInnerDomain`
 
 GetField returns the Field field if non-nil, zero value otherwise.
 
 ### GetFieldOk
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetFieldOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetFieldOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool)`
 
 GetFieldOk returns a tuple with the Field field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetField
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetField(v ListAuthors200ResponseResultsInnerTopicsInnerDomain)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetField(v ListAuthors200ResponseResultsInnerTopicsInnerDomain)`
 
 SetField sets Field field to given value.
 
 ### HasField
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasField() bool`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasField() bool`
 
 HasField returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetId() string`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetIdOk() (*string, bool)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetId(v string)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetId(v string)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasId() bool`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetScore
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetScore() float32`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetScore() float32`
 
 GetScore returns the Score field if non-nil, zero value otherwise.
 
 ### GetScoreOk
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetScoreOk() (*float32, bool)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetScoreOk() (*float32, bool)`
 
 GetScoreOk returns a tuple with the Score field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScore
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetScore(v float32)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetScore(v float32)`
 
 SetScore sets Score field to given value.
 
 ### HasScore
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasScore() bool`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasScore() bool`
 
 HasScore returns a boolean if a field has been set.
 
 ### GetSubfield
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetSubfield() ListAuthors200ResponseResultsInnerTopicsInnerDomain`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetSubfield() ListAuthors200ResponseResultsInnerTopicsInnerDomain`
 
 GetSubfield returns the Subfield field if non-nil, zero value otherwise.
 
 ### GetSubfieldOk
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetSubfieldOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetSubfieldOk() (*ListAuthors200ResponseResultsInnerTopicsInnerDomain, bool)`
 
 GetSubfieldOk returns a tuple with the Subfield field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubfield
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetSubfield(v ListAuthors200ResponseResultsInnerTopicsInnerDomain)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetSubfield(v ListAuthors200ResponseResultsInnerTopicsInnerDomain)`
 
 SetSubfield sets Subfield field to given value.
 
 ### HasSubfield
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasSubfield() bool`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasSubfield() bool`
 
 HasSubfield returns a boolean if a field has been set.
 
 ### GetValue
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetValue() float32`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetValue() float32`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) GetValueOk() (*float32, bool)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) GetValueOk() (*float32, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) SetValue(v float32)`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) SetValue(v float32)`
 
 SetValue sets Value field to given value.
 
 ### HasValue
 
-`func (o *ListWorks200ResponseResultsInnerPrimaryTopic) HasValue() bool`
+`func (o *ListAuthors200ResponseResultsInnerTopicsInner) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
 
